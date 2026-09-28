@@ -15,13 +15,13 @@ interface ItemRedeSocial {
   readonly icone: ReactNode;
 }
 
-const LINKS_INSTITUCIONAIS: readonly ItemLinkInstitucional[] = [
+const linksInstitucionais: readonly ItemLinkInstitucional[] = [
   { rotulo: "Termos de Uso", endereco: "#" },
   { rotulo: "Privacidade", endereco: "#" },
   { rotulo: "Trabalhe Conosco", endereco: "#" },
 ];
 
-const REDES_SOCIAIS: readonly ItemRedeSocial[] = [
+const redesSociais: readonly ItemRedeSocial[] = [
   {
     rotulo: "Instagram",
     endereco: "#",
@@ -104,7 +104,7 @@ export function Footer() {
               Institucional
             </h4>
             <nav className="flex flex-col space-y-2 text-sm font-medium text-white/80">
-              {LINKS_INSTITUCIONAIS.map((linkInstitucional) => (
+              {linksInstitucionais.map((linkInstitucional) => (
                 <Link
                   key={linkInstitucional.rotulo}
                   className="hover:text-street-yellowCustom transition-colors w-fit"
@@ -120,7 +120,7 @@ export function Footer() {
               Siga-nos
             </h4>
             <div className="flex flex-col space-y-2.5 text-sm font-medium">
-              {REDES_SOCIAIS.map((redeSocial) => (
+              {redesSociais.map((redeSocial) => (
                 <Link
                   key={redeSocial.rotulo}
                   className="flex items-center gap-3 group text-white/80 hover:text-street-yellowCustom transition-colors"
