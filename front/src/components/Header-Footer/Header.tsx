@@ -8,7 +8,7 @@ interface ItemLinkNavegacao {
   readonly endereco: string;
 }
 
-const LINKS_NAVEGACAO: readonly ItemLinkNavegacao[] = [
+const linksDeNavegacao: readonly ItemLinkNavegacao[] = [
   { rotulo: "Sobre", endereco: "/sobre" },
   { rotulo: "Programação", endereco: "/programacao" },
   { rotulo: "Oficinas", endereco: "/oficinas" },
@@ -28,7 +28,7 @@ export function Header() {
     setMenuMobileAberto(false);
   }
 
-  const iconeMenuMobile = menuMobileAberto ? "close" : "menu";
+  const iconeMenuMobile:string = menuMobileAberto ? "close" : "menu";
 
   return (
     <header
@@ -46,7 +46,7 @@ export function Header() {
           />
         </Link>
         <nav className="hidden lg:flex items-center gap-7">
-          {LINKS_NAVEGACAO.map((linkNavegacao) => (
+          {linksDeNavegacao.map((linkNavegacao) => (
             <Link
               key={linkNavegacao.rotulo}
               className="text-sm font-semibold text-white/90 hover:text-street-yellowCustom transition-colors relative py-1"
@@ -77,7 +77,7 @@ export function Header() {
           className={`fixed left-0 right-0 top-24 bottom-0 ${menuMobileAberto ? "translate-x-0" : "-translate-x-full"} 
         lg:hidden border-t border-white/10 bg-brand-darkCustom px-4 pt-4 pb-28 space-y-3 transition-transform duration-1000`}
         >
-          {LINKS_NAVEGACAO.map((linkNavegacao) => (
+          {linksDeNavegacao.map((linkNavegacao) => (
             <div
               className="flex flex-row spacebetween items-center justify-start bg-[rgba(255,255,255,0.05)] rounded-2xl
              border-[1rem] border-[rgba(0,0,0,0.00)]"
