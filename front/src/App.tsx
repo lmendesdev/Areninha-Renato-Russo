@@ -1,19 +1,16 @@
 import { Header } from "./components/Header-Footer/Header";
 import { Footer } from "./components/Header-Footer/Footer";
-import { CardAvisos } from "./components/cardAvisos/CardAvisos";
+import CardDataHistoria from "./components/cardDataHistoria/CardDataHistoria";
 function App() {
   return (
     <div className="min-h-screen bg-bg-whiteCustom text-brand-darkCustom flex flex-col">
       <Header />
       <main className="flex-1 max-w-7xl mx-auto px-4 md:px-10 py-12 w-full">
-        <CardAvisos 
-          imagem="https://res.cloudinary.com/dqjv8xw0g/image/upload/v1697040915/areninha/2023-10-11_19-00_-_Oficina_de_Canto_-_Areninha_Cultural_-_Foto_de_Divulga%C3%A7%C3%A3o_-_Cr%C3%A9dito_de_Divulga%C3%A7%C3%A3o_-_1_-_1_-_1_-_1_-_1_-_1_-_1_-_1_-_1_-_1_-_1_-_1_-_1_-_1_-_1_-_1_-_1_-_1_-_1_-_1_-_1_-_1_-_1.jpg"
-          altImagem="Oficina de Canto"
-          titulo="Oficina de Canto"
-          dia={28}
-          mes={9}
-          ano={2026}
-          descricao="Aprenda técnicas vocais e melhore sua performance em apresentações musicais. Esta oficina é ideal para cantores iniciantes e avançados que desejam aprimorar suas habilidades. "
+        <CardDataHistoria
+          dataAno={2024}
+          titulo="Areninha Cultural Renato Russo"
+          descricao="A Areninha Cultural Renato Russo é um espaço cultural localizado no bairro de Realengo, na Zona Oeste do Rio de Janeiro. O local oferece uma variedade de atividades culturais, incluindo apresentações musicais, peças teatrais, oficinas de arte e eventos comunitários. A Areninha busca promover a cultura local e proporcionar um ambiente acolhedor para a comunidade."
+          cor="azul"
         />
       </main>
       <Footer />
