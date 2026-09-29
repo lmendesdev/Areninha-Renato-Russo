@@ -77,8 +77,8 @@ export function CardProgramacao({
                 {tag}
               </span>
               <span className="bg-street-yellowCustom text-brand-darkCustom border border-brand-darkCustom text-xs font-bold px-3 py-0.5 rounded-full">
-                {dia}/{mes}/{ano}{" "}
-                {verificarEhHoje(dia, mes, ano) ? "{horario}" : ""}
+                {dia < 10 ? `0${dia}` : dia}/{mes < 10 ? `0${mes}` : mes}/{ano}{" "}
+                {verificarEhHoje(dia, mes, ano) ? ` - ${horario}` : ""}
               </span>
             </div>
             <h3 className="text-lg font-extrabold text-brand-darkCustom leading-tight mb-2">

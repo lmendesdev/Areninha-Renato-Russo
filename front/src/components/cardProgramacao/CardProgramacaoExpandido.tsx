@@ -55,7 +55,8 @@ export function CardProgramacaoExpandido({
 }: PropriedadesCardProgramacaoExpandido) {
   const textoAlternativo:string = altImagem || titulo;
   const nomeDoMes:string = formatarNomeDoMes(mes);
-  const meia: number = valor ? valor / 2 : 0;
+  const valorIngresso:number | string | undefined = valor === undefined ? 'Valor a definir' : (valor ? valor : "Evento gratuito");
+  const meia: number = typeof valorIngresso === 'number' ? valorIngresso / 2 : 0;
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8 bg-brand-darkCustom/60 backdrop-blur-sm overflow-y-auto">
       <div className="relative w-full max-w-5xl bg-white border-4 border-brand-darkCustom rounded-3xl shadow-[10px_10px_0px_#FFD600,10px_10px_0px_4px_#0A2435] overflow-hidden flex flex-col md:flex-row my-auto animate-in fade-in zoom-in-95 duration-200">
@@ -73,7 +74,7 @@ export function CardProgramacaoExpandido({
               alt={textoAlternativo}
               className="w-full h-full object-cover"
               src={imagem}
-              fetchPriority="high"
+              loading="lazy"
               decoding="async"
             />
           </div>
@@ -116,10 +117,10 @@ export function CardProgramacaoExpandido({
                   Ingresso
                 </span>
                 <p className="font-extrabold text-sm text-brand-darkCustom">
-                  {valor ? `R$ ${valor} / R$ ${meia}` : "Gratuito"}
+                  {typeof valorIngresso === 'number' ? `R$ ${valorIngresso} / R$ ${meia}` : valorIngresso}
                 </p>
                 <p className="text-xs font-semibold text-brand-darkCustom/70">
-                  {valor ? "Total / Meia" : ""}
+                  {typeof valorIngresso === 'number' ? "Total / Meia" : ""}
                 </p>
               </div>
             </div>

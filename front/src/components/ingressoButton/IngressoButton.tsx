@@ -1,5 +1,4 @@
 import ingressoIcon from "../../assets/IngressoIcon/ingressoIcon.svg";
-import { useNavigate } from "react-router-dom";
 
 export interface IngressoButtonProps {
   readonly estilo?: string;
