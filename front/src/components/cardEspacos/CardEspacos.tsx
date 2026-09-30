@@ -20,7 +20,7 @@ function corTagParaEstilo(corTag: CorTagEspaco = "amarelo"): string {
     default:
       return "";
   }
-};
+}
 
 export function CardEspacos({
   tag,
@@ -28,7 +28,6 @@ export function CardEspacos({
   descricao,
   corTag = "amarelo",
 }: PropriedadesCardEspacos) {
-
   const estiloTag: string = corTagParaEstilo(corTag);
 
   return (

@@ -28,7 +28,7 @@ export function Header() {
     setMenuMobileAberto(false);
   }
 
-  const iconeMenuMobile:string = menuMobileAberto ? "close" : "menu";
+  const iconeMenuMobile: string = menuMobileAberto ? "close" : "menu";
 
   return (
     <header

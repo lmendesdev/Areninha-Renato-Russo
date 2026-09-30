@@ -18,13 +18,13 @@ export interface PropriedadesCardProgramacao {
 }
 function verificarEhHoje(dia: number, mes: number, ano: number): boolean {
   const dataAtual = new Date();
-  const diaAtual:number = dataAtual.getDate();
-  const mesAtual:number = dataAtual.getMonth() + 1;
-  const anoAtual:number = dataAtual.getFullYear();
+  const diaAtual: number = dataAtual.getDate();
+  const mesAtual: number = dataAtual.getMonth() + 1;
+  const anoAtual: number = dataAtual.getFullYear();
 
-  const ehMesmoDia:boolean = dia === diaAtual;
-  const ehMesmoMes:boolean = mes === mesAtual;
-  const ehMesmoAno:boolean = ano === anoAtual;
+  const ehMesmoDia: boolean = dia === diaAtual;
+  const ehMesmoMes: boolean = mes === mesAtual;
+  const ehMesmoAno: boolean = ano === anoAtual;
 
   return ehMesmoDia && ehMesmoMes && ehMesmoAno;
 }
@@ -46,9 +46,9 @@ export function CardProgramacao({
 }: PropriedadesCardProgramacao) {
   const [expandido, setExpandido] = useState(false);
 
-  const textoAlt:string = altImagem || 'Evento Areninha';
+  const textoAlt: string = altImagem || "Evento Areninha";
 
-  const ehHoje:boolean = verificarEhHoje(dia, mes, ano);
+  const ehHoje: boolean = verificarEhHoje(dia, mes, ano);
 
   return (
     <>
