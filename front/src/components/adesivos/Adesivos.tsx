@@ -95,7 +95,8 @@ export function Adesivos({ children }: PropriedadesAdesivos) {
       return;
     }
 
-    referenciaLimite.current = elemento.closest("main") ?? elemento;
+    referenciaLimite.current =
+      elemento.closest("section") ?? elemento.closest("main") ?? elemento;
   }
 
   function aoIniciarArrasto(id: string) {
