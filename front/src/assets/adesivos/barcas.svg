@@ -1,0 +1,25 @@
+<svg width="180" height="106" viewBox="0 0 180 106" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="ticketClip">
+      <rect x="2" y="2" width="176" height="102" rx="12"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#ticketClip)">
+    <rect x="2" y="2" width="176" height="102" rx="12" fill="#FFFDF3"/>
+    <rect x="2" y="78" width="176" height="26" fill="#FFD600" fill-opacity="0.65"/>
+    <line x1="2" y1="78" x2="178" y2="78" stroke="#0A2435" stroke-opacity="0.35" stroke-width="1.5"/>
+  </g>
+  <rect x="2" y="2" width="176" height="102" rx="12" stroke="#0A2435" stroke-width="3.5"/>
+
+  <path d="M14 21 L22 21 L24 17 L12 17 Z M16 14 L20 14 L20 17 L16 17 Z" fill="#FF5A1F"/>
+  <text x="27" y="21" fill="#FF5A1F" font-family="Poppins, sans-serif" font-weight="900" font-size="9" letter-spacing="0.08em">BARCAS RJ</text>
+  <text x="166" y="21" text-anchor="end" fill="#0A2435" font-family="monospace" font-weight="700" font-size="10">Nº 1982</text>
+
+  <line x1="12" y1="29" x2="168" y2="29" stroke="#0A2435" stroke-opacity="0.4" stroke-width="2" stroke-dasharray="4 3"/>
+
+  <text x="14" y="50" fill="#0A2435" font-family="Poppins, monospace" font-weight="900" font-size="13" letter-spacing="0.02em">COCOTÁ • PRAÇA XV</text>
+  <text x="14" y="65" fill="#0A2435" fill-opacity="0.7" font-family="Poppins, sans-serif" font-weight="700" font-size="8.5" letter-spacing="0.1em">TRANSPORTE &amp; BAÍA</text>
+
+  <text x="14" y="94" fill="#0A2435" font-family="monospace" font-weight="700" font-size="8.5">VIA ILHA GOV</text>
+  <text x="166" y="94" text-anchor="end" fill="#FF5A1F" font-family="Poppins, sans-serif" font-weight="900" font-size="8.5">VÁLIDO HOJE</text>
+</svg>

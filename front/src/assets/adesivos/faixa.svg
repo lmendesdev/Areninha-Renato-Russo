@@ -1,0 +1,13 @@
+<svg width="244" height="48" viewBox="0 0 244 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <polygon
+    points="8,2 240,4 235,46 3,44"
+    fill="#FFD600"
+    stroke="#0A2435"
+    stroke-width="2.5"
+    stroke-dasharray="6 4"
+  />
+  
+  <circle cx="24" cy="24" r="4.5" fill="#FF5A1F"/>
+  <text x="122" y="29.5" text-anchor="middle" fill="#0A2435" font-family="Poppins, monospace" font-weight="900" font-size="15" letter-spacing="0.1em">★ CULTURA VIVA ★</text>
+  <circle cx="220" cy="24" r="4.5" fill="#FF5A1F"/>
+</svg>
