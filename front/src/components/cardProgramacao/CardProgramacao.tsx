@@ -52,7 +52,7 @@ export function CardProgramacao({
 
   return (
     <>
-      <article className="bg-white rounded-3xl md:w-[24rem] border-2 border-brand-darkCustom sticker-shadow-lg flex flex-col h-max-[30rem] overflow-hidden p-5 transition-transform hover:-translate-y-1">
+      <article className="bg-white rounded-3xl md:max-w-[24rem] border-2 border-brand-darkCustom sticker-shadow-lg flex flex-col h-max-[30rem] overflow-hidden p-5 transition-transform hover:-translate-y-1">
         <div className="h-48 w-full rounded-2xl overflow-hidden relative shrink-0 border border-brand-darkCustom/10">
           <img
             alt={textoAlt}
