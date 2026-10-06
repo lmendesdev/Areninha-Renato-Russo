@@ -143,7 +143,6 @@ export function Home() {
           <Adesivos>
             <div className="max-w-7xl mx-auto px-4 md:px-10 py-16 md:py-24">
               <div className="max-w-4xl mx-auto text-center">
-                {/* Badge Adesivo Inclinado */}
                 <div className="inline-block mb-6 transform -rotate-2">
                   <span className="bg-street-yellowCustom text-brand-darkCustom font-black text-xs md:text-sm uppercase tracking-wider px-5 py-2 rounded-full border-2 border-brand-darkCustom sticker-shadow-sm inline-flex items-center gap-2">
                     <span className="inline-block w-2.5 h-2.5 rounded-full bg-fest-orangeCustom animate-pulse" />
