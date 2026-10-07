@@ -1,0 +1,63 @@
+<svg
+  width="1440"
+  height="500"
+  viewBox="0 0 1440 500"
+  preserveAspectRatio="none"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <linearGradient
+      gradientUnits="userSpaceOnUse"
+      id="tentShade"
+      x1="720"
+      x2="720"
+      y1="0"
+      y2="500"
+    >
+      <stop offset="0%" stop-color="#0A2435" stop-opacity="0.9" />
+      <stop offset="35%" stop-color="#0A2435" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#0A2435" stop-opacity="0.95" />
+    </linearGradient>
+    <radialGradient cx="50%" cy="0%" id="centerMastGlow" r="60%">
+      <stop offset="0%" stop-color="#FFD600" stop-opacity="0.3" />
+      <stop offset="40%" stop-color="#1D4ED8" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#0A2435" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <path d="M720 0 L-120 500 L-20 500 Z" fill="#F8FAFC" fill-opacity="0.92" />
+  <path d="M720 0 L-20 500 L90 500 Z" fill="#1D4ED8" fill-opacity="0.95" />
+  <path d="M720 0 L90 500 L210 500 Z" fill="#F1F5F9" fill-opacity="0.9" />
+  <path d="M720 0 L210 500 L340 500 Z" fill="#1E40AF" fill-opacity="0.95" />
+  <path d="M720 0 L340 500 L470 500 Z" fill="#F8FAFC" fill-opacity="0.92" />
+  <path d="M720 0 L470 500 L600 500 Z" fill="#1D4ED8" fill-opacity="0.95" />
+  <path d="M720 0 L600 500 L720 500 Z" fill="#F1F5F9" fill-opacity="0.92" />
+  <path d="M720 0 L720 500 L840 500 Z" fill="#1D4ED8" fill-opacity="0.95" />
+  <path d="M720 0 L840 500 L970 500 Z" fill="#F8FAFC" fill-opacity="0.92" />
+  <path d="M720 0 L970 500 L1100 500 Z" fill="#1E40AF" fill-opacity="0.95" />
+  <path d="M720 0 L1100 500 L1230 500 Z" fill="#F1F5F9" fill-opacity="0.9" />
+  <path d="M720 0 L1230 500 L1350 500 Z" fill="#1D4ED8" fill-opacity="0.95" />
+  <path d="M720 0 L1350 500 L1460 500 Z" fill="#F8FAFC" fill-opacity="0.92" />
+  <path d="M720 0 L1460 500 L1580 500 Z" fill="#1D4ED8" fill-opacity="0.95" />
+  <path
+    d="M720 0 L-20 500 M720 0 L90 500 M720 0 L210 500 M720 0 L340 500 M720 0 L470 500 M720 0 L600 500 M720 0 L720 500 M720 0 L840 500 M720 0 L970 500 M720 0 L1100 500 M720 0 L1230 500 M720 0 L1350 500 M720 0 L1460 500"
+    stroke="#0A2435"
+    stroke-opacity="0.45"
+    stroke-width="3"
+  />
+  <path
+    d="M-50 420 Q 150 460, 350 420 Q 550 380, 720 420 Q 900 460, 1100 420 Q 1300 380, 1500 420"
+    fill="none"
+    stroke="#FFD600"
+    stroke-dasharray="10 8"
+    stroke-opacity="0.4"
+    stroke-width="3"
+  />
+  <path
+    d="M0 480 Q 60 505 120 480 Q 180 505 240 480 Q 300 505 360 480 Q 420 505 480 480 Q 540 505 600 480 Q 660 505 720 480 Q 780 505 840 480 Q 900 505 960 480 Q 1020 505 1080 480 Q 1140 505 1200 480 Q 1260 505 1320 480 Q 1380 505 1440 480 L1440 500 L0 500 Z"
+    fill="#0A2435"
+    fill-opacity="0.8"
+  />
+  <rect fill="url(#tentShade)" height="500" width="1440" />
+  <rect fill="url(#centerMastGlow)" height="500" width="1440" />
+</svg>

@@ -1,8 +1,8 @@
-import Oficina from "./pages/Oficina";
+import Historia from "./pages/Historia";
 function App() {
   return (
     <div className="min-h-screen bg-bg-whiteCustom text-brand-darkCustom flex flex-col">
-      <Oficina />
+      <Historia />
     </div>
   );
 }
