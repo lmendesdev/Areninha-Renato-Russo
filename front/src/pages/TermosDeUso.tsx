@@ -10,12 +10,13 @@ export function TermosDeUso() {
         <article className="max-w-3xl mx-auto space-y-8">
           <header className="border-b border-black/15 pb-6">
             <h1 className="text-3xl md:text-4xl font-bold text-black tracking-tight mb-2">
-              Termos de Uso e Privacidade
+              Termos de Uso
             </h1>
             <p className="text-sm text-black/70">
               Última atualização: Outubro de 2026
             </p>
           </header>
+
           <section className="space-y-3">
             <h2 className="text-xl md:text-2xl font-semibold text-black">
               1. Objetivo do Site
@@ -46,53 +47,39 @@ export function TermosDeUso() {
 
           <section className="space-y-3">
             <h2 className="text-xl md:text-2xl font-semibold text-black">
-              3. Links Externos, Ingressos e Inscrições
+              3. Programação, Horários e Eventos
             </h2>
             <p className="text-base leading-relaxed text-black">
-              Este site não realiza cobranças financeiras nem exige cadastro de
-              usuários em seu próprio domínio. Os botões de aquisição de
-              ingressos e de inscrição em oficinas redirecionam o visitante para
-              plataformas externas ou formulários específicos, que possuem suas
-              próprias políticas de uso, segurança e privacidade.
-            </p>
-          </section>
-          <section className="space-y-3">
-            <h2 className="text-xl md:text-2xl font-semibold text-black">
-              4. Formulário de Sugestões e Contato
-            </h2>
-            <p className="text-base leading-relaxed text-black">
-              O envio de mensagens pela página de Sugestões e Contato é
-              totalmente voluntário, sendo o preenchimento de nome e e-mail
-              opcional. As mensagens e o e-mail eventualmente informados são
-              utilizados unicamente pela equipe de gestão para responder dúvidas,
-              acolher sugestões da comunidade e aprimorar o site e as atividades
-              da Areninha Cultural Renato Russo.
-            </p>
-          </section>
-          <section className="space-y-3">
-            <h2 className="text-xl md:text-2xl font-semibold text-black">
-              5. Hospedagem e Métricas de Tráfego
-            </h2>
-            <p className="text-base leading-relaxed text-black">
-              Este portal é hospedado em uma plataforma virtual que coleta métricas
-              técnicas e estatísticas agregadas de acesso (como volume de
-              visitas, páginas mais acessadas, tipo de navegador e desempenho de
-              carregamento). Esses dados são anônimos, não identificam
-              pessoalmente o visitante e são utilizados apenas para monitorar a
-              estabilidade e melhorar a experiência de navegação do site.
+              As datas, os horários, as classificações indicativas e a
+              disponibilidade de vagas em espetáculos e oficinas divulgados
+              neste site estão sujeitos a alterações por motivos técnicos,
+              operacionais ou climáticos, respeitando sempre a capacidade máxima
+              de lotação de cada ambiente da Areninha Cultural Renato Russo.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-xl md:text-2xl font-semibold text-black">
-              6. Atualizações e Contato Oficial
+              4. Links Externos, Ingressos e Inscrições
             </h2>
             <p className="text-base leading-relaxed text-black">
-              A programação de eventos, os horários das oficinas e o conteúdo
-              destes Termos de Uso podem ser atualizados a qualquer momento, sem
-              aviso prévio, para refletir mudanças operacionais do espaço
-              cultural. Em caso de dúvidas ou solicitações, entre em contato pelo
-              e-mail oficial:{" "}
+              Este portal não realiza vendas nem processa pagamentos em seu
+              próprio domínio. Os botões de aquisição ou retirada de ingressos e
+              de inscrição em oficinas redirecionam o visitante para plataformas
+              externas ou formulários específicos, que operam sob suas próprias
+              regras, termos de serviço e responsabilidades.
+            </p>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-xl md:text-2xl font-semibold text-black">
+              5. Atualizações e Contato Oficial
+            </h2>
+            <p className="text-base leading-relaxed text-black">
+              Estes Termos de Uso podem ser atualizados a qualquer momento, sem
+              aviso prévio, para refletir melhorias no portal ou mudanças nas
+              diretrizes operacionais do espaço cultural. Em caso de dúvidas ou
+              solicitações, entre em contato pelo e-mail oficial:{" "}
               <a
                 href="mailto:gestaoculturalareninharrusso@gmail.com"
                 className="underline font-medium"
@@ -104,6 +91,7 @@ export function TermosDeUso() {
           </section>
         </article>
       </main>
+
       <Footer />
     </div>
   );
