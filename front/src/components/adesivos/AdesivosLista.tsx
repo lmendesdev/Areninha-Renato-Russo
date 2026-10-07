@@ -22,7 +22,7 @@ export interface ConfiguracaoAdesivo {
   readonly posicaoInicial: PosicaoInicialAdesivo;
 }
 
-export const LISTA_ADESIVOS: readonly ConfiguracaoAdesivo[] = [
+export const listaAdesivos: readonly ConfiguracaoAdesivo[] = [
   {
     id: "sticker-sunglasses",
     imagem: oculosSvg,
@@ -81,4 +81,4 @@ export const LISTA_ADESIVOS: readonly ConfiguracaoAdesivo[] = [
   },
 ];
 
-export default LISTA_ADESIVOS;
+export default listaAdesivos;
