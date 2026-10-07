@@ -1,8 +1,8 @@
-import TermosDeUso  from "./pages/TermosDeUso";
+import Privacidade  from "./pages/privacidade";
 function App() {
   return (
     <div className="min-h-screen bg-bg-whiteCustom text-brand-darkCustom flex flex-col">
-      <TermosDeUso />
+      <Privacidade />
     </div>
   );
 }
