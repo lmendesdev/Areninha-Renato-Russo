@@ -1,8 +1,8 @@
-import Contato  from "./pages/Contato";
+import TermosDeUso  from "./pages/TermosDeUso";
 function App() {
   return (
     <div className="min-h-screen bg-bg-whiteCustom text-brand-darkCustom flex flex-col">
-      <Contato />
+      <TermosDeUso />
     </div>
   );
 }
