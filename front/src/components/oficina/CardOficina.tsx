@@ -43,7 +43,7 @@ export function CardOficina({
 
   return (
     <>
-      <article className="bg-white rounded-3xl md:w-[24rem] border-2 border-brand-darkCustom sticker-shadow-lg flex flex-col justify-between overflow-hidden transition-transform hover:-translate-y-1 group">
+      <article className="bg-white rounded-3xl w-full md:max-w-[24rem] border-2 border-brand-darkCustom sticker-shadow-lg flex flex-col justify-between overflow-hidden transition-transform hover:-translate-y-1 group">
         <div className="relative overflow-hidden border-b-2 border-brand-darkCustom h-60">
           <img
             alt={textoAlternativo}
