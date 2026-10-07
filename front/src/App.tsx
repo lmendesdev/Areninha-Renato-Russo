@@ -1,8 +1,8 @@
-import Espaco from "./pages/Espaco";
+import Noticias from "./pages/Noticias";
 function App() {
   return (
     <div className="min-h-screen bg-bg-whiteCustom text-brand-darkCustom flex flex-col">
-      <Espaco />
+      <Noticias />
     </div>
   );
 }
