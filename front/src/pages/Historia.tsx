@@ -131,7 +131,6 @@ export function Historia() {
                 e poesia e área externa integrada ao parque.
               </p>
             </div>
-
             <div className="space-y-8">
               {marcosHistoricos.map((marco) => (
                 <CardDataHistoria
@@ -145,7 +144,6 @@ export function Historia() {
             </div>
           </div>
         </section>
-
         <section className="bg-brand-darkCustom text-white py-16 md:py-24 border-y-[2.5px] border-brand-darkCustom relative overflow-hidden">
           <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden opacity-15 select-none">
             <img
@@ -176,7 +174,6 @@ export function Historia() {
             </div>
           </div>
         </section>
-
         <section className="py-16 md:py-24 bg-bg-grayCustom relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
             <div className="text-center mb-14">
@@ -188,7 +185,6 @@ export function Historia() {
                 na Areninha.
               </p>
             </div>
-
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
               {listaEquipe.map((membro) => (
                 <CardProfissionais
