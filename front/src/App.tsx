@@ -1,8 +1,8 @@
-import Home from "./pages/Home";
+import Programacao from "./pages/Programacao";
 function App() {
   return (
     <div className="min-h-screen bg-bg-whiteCustom text-brand-darkCustom flex flex-col">
-      <Home />
+      <Programacao />
     </div>
   );
 }

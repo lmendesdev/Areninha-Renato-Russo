@@ -1,13 +1,13 @@
 import { useState, useRef, type ReactNode, type RefObject } from "react";
 import { motion } from "motion/react";
-import { LISTA_ADESIVOS, type PosicaoInicialAdesivo } from "./AdesivosLista";
+import { listaAdesivos, type PosicaoInicialAdesivo } from "./AdesivosLista";
 
-const Z_INDEX_INICIAL = 20;
-const Z_INDEX_TOPO_INICIAL = 30;
-const INCREMENTO_Z_INDEX = 2;
-const INCLINACAO_ARRASTO_GRAUS = 4;
-const ESCALA_ARRASTO = 1.06;
-const ELASTICIDADE_ARRASTO = 0.05;
+const zIndexInicial = 20;
+const zIndexTopoInicial = 30;
+const incrementoZIndex = 2;
+const inclinacaoArrastoGraus = 4;
+const escalaArrasto = 1.06;
+const elasticidadeArrasto = 0.05;
 
 export interface PropriedadesAdesivoArrastavel {
   readonly id: string;
@@ -23,10 +23,10 @@ export interface PropriedadesAdesivoArrastavel {
 
 function calcularRotacaoArrasto(rotacaoBase: number): number {
   if (rotacaoBase > 0) {
-    return rotacaoBase + INCLINACAO_ARRASTO_GRAUS;
+    return rotacaoBase + inclinacaoArrastoGraus;
   }
 
-  return rotacaoBase - INCLINACAO_ARRASTO_GRAUS;
+  return rotacaoBase - inclinacaoArrastoGraus;
 }
 
 export function AdesivoArrastavel({
@@ -49,11 +49,11 @@ export function AdesivoArrastavel({
       drag
       dragConstraints={referenciaLimite}
       dragMomentum={false}
-      dragElastic={ELASTICIDADE_ARRASTO}
+      dragElastic={elasticidadeArrasto}
       onDragStart={() => aoIniciarArrasto(id)}
       initial={{ rotate: rotacaoInicial, scale: 1 }}
       whileDrag={{
-        scale: ESCALA_ARRASTO,
+        scale: escalaArrasto,
         rotate: rotacaoDuranteArrasto,
       }}
       className="lambe-sticker"
@@ -79,7 +79,7 @@ export interface PropriedadesAdesivos {
 export function Adesivos({ children }: PropriedadesAdesivos) {
   const referenciaLimite = useRef<HTMLElement | null>(null);
 
-  const [topoZIndex, setTopoZIndex] = useState<number>(Z_INDEX_TOPO_INICIAL);
+  const [topoZIndex, setTopoZIndex] = useState<number>(zIndexTopoInicial);
 
   const [zIndicesPorId, setZIndicesPorId] = useState<Record<string, number>>(
     {},
@@ -100,7 +100,7 @@ export function Adesivos({ children }: PropriedadesAdesivos) {
   }
 
   function aoIniciarArrasto(id: string) {
-    const proximoZIndex = topoZIndex + INCREMENTO_Z_INDEX;
+    const proximoZIndex = topoZIndex + incrementoZIndex;
 
     setTopoZIndex(proximoZIndex);
 
@@ -122,10 +122,10 @@ export function Adesivos({ children }: PropriedadesAdesivos) {
     setChaveReset((valorAnterior) => valorAnterior + 1);
     setIdsMovidos([]);
     setZIndicesPorId({});
-    setTopoZIndex(Z_INDEX_TOPO_INICIAL);
+    setTopoZIndex(zIndexTopoInicial);
   }
 
-  const totalColados = LISTA_ADESIVOS.length;
+  const totalColados = listaAdesivos.length;
   const totalMovidos = idsMovidos.length;
   const temAdesivosMovidos = totalMovidos > 0;
 
@@ -157,8 +157,8 @@ export function Adesivos({ children }: PropriedadesAdesivos) {
           <span>Resetar</span>
         </button>
       </div>
-      {LISTA_ADESIVOS.map((adesivo) => {
-        const zIndexAdesivo = zIndicesPorId[adesivo.id] ?? Z_INDEX_INICIAL;
+      {listaAdesivos.map((adesivo) => {
+        const zIndexAdesivo = zIndicesPorId[adesivo.id] ?? zIndexInicial;
 
         return (
           <AdesivoArrastavel
