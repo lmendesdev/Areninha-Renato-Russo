@@ -1,8 +1,8 @@
-import Programacao from "./pages/Programacao";
+import Oficina from "./pages/Oficina";
 function App() {
   return (
     <div className="min-h-screen bg-bg-whiteCustom text-brand-darkCustom flex flex-col">
-      <Programacao />
+      <Oficina />
     </div>
   );
 }
