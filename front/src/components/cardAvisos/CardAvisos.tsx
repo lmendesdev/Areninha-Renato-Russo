@@ -86,7 +86,6 @@ export function CardAvisos({
           </div>
         </div>
       </article>
-      <div>
         {expandido && (
           <CardAvisosExpandido
             titulo={titulo}
@@ -99,7 +98,6 @@ export function CardAvisos({
             funcaoSair={() => setExpandido(false)}
           />
         )}
-      </div>
     </>
   );
 }
