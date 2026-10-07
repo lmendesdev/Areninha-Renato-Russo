@@ -18,13 +18,13 @@ export interface PropriedadesCardProgramacao {
 }
 function verificarEhHoje(dia: number, mes: number, ano: number): boolean {
   const dataAtual = new Date();
-  const diaAtual:number = dataAtual.getDate();
-  const mesAtual:number = dataAtual.getMonth() + 1;
-  const anoAtual:number = dataAtual.getFullYear();
+  const diaAtual: number = dataAtual.getDate();
+  const mesAtual: number = dataAtual.getMonth() + 1;
+  const anoAtual: number = dataAtual.getFullYear();
 
-  const ehMesmoDia:boolean = dia === diaAtual;
-  const ehMesmoMes:boolean = mes === mesAtual;
-  const ehMesmoAno:boolean = ano === anoAtual;
+  const ehMesmoDia: boolean = dia === diaAtual;
+  const ehMesmoMes: boolean = mes === mesAtual;
+  const ehMesmoAno: boolean = ano === anoAtual;
 
   return ehMesmoDia && ehMesmoMes && ehMesmoAno;
 }
@@ -46,13 +46,13 @@ export function CardProgramacao({
 }: PropriedadesCardProgramacao) {
   const [expandido, setExpandido] = useState(false);
 
-  const textoAlt:string = altImagem || 'Evento Areninha';
+  const textoAlt: string = altImagem || "Evento Areninha";
 
-  const ehHoje:boolean = verificarEhHoje(dia, mes, ano);
+  const ehHoje: boolean = verificarEhHoje(dia, mes, ano);
 
   return (
     <>
-      <article className="bg-white rounded-3xl md:w-[24rem] border-2 border-brand-darkCustom sticker-shadow-lg flex flex-col h-max-[30rem] overflow-hidden p-5 transition-transform hover:-translate-y-1">
+      <article className="bg-white rounded-3xl md:max-w-[24rem] border-2 border-brand-darkCustom sticker-shadow-lg flex flex-col h-max-[30rem] overflow-hidden p-5 transition-transform hover:-translate-y-1">
         <div className="h-48 w-full rounded-2xl overflow-hidden relative shrink-0 border border-brand-darkCustom/10">
           <img
             alt={textoAlt}

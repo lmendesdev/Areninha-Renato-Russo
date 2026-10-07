@@ -1,11 +1,15 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { IngressoButton } from "../ingressoButton/IngressoButton";
 import AreninhaLogo from "../../assets/AreninhaIcon/AreninhaIcon.webp";
 
 interface ItemLinkNavegacao {
   readonly rotulo: string;
   readonly endereco: string;
+}
+
+export interface PropriedadesHeader {
+  readonly paginaAtiva?: string;
 }
 
 const linksDeNavegacao: readonly ItemLinkNavegacao[] = [
@@ -17,8 +21,10 @@ const linksDeNavegacao: readonly ItemLinkNavegacao[] = [
   { rotulo: "Sugestões", endereco: "/sugestoes" },
 ];
 
-export function Header() {
+export function Header({ paginaAtiva }: PropriedadesHeader = {}) {
   const [menuMobileAberto, setMenuMobileAberto] = useState(false);
+
+  const localizacao = useLocation();
 
   function alternarMenuMobile() {
     setMenuMobileAberto((estadoAnterior) => !estadoAnterior);
@@ -28,7 +34,16 @@ export function Header() {
     setMenuMobileAberto(false);
   }
 
-  const iconeMenuMobile:string = menuMobileAberto ? "close" : "menu";
+  function verificarLinkAtivo(linkNavegacao: ItemLinkNavegacao): boolean {
+    const ativoPorPropriedade =
+      paginaAtiva === linkNavegacao.rotulo ||
+      paginaAtiva === linkNavegacao.endereco;
+    const ativoPorRota = localizacao.pathname === linkNavegacao.endereco;
+
+    return ativoPorPropriedade || ativoPorRota;
+  }
+
+  const iconeMenuMobile: string = menuMobileAberto ? "close" : "menu";
 
   return (
     <header
@@ -46,15 +61,22 @@ export function Header() {
           />
         </Link>
         <nav className="hidden lg:flex items-center gap-7">
-          {linksDeNavegacao.map((linkNavegacao) => (
-            <Link
-              key={linkNavegacao.rotulo}
-              className="text-sm font-semibold text-white/90 hover:text-street-yellowCustom transition-colors relative py-1"
-              to={linkNavegacao.endereco}
-            >
-              {linkNavegacao.rotulo}
-            </Link>
-          ))}
+          {linksDeNavegacao.map((linkNavegacao) => {
+            const estaAtivo = verificarLinkAtivo(linkNavegacao);
+            const classesLink = estaAtivo
+              ? "text-sm font-bold text-street-yellowCustom border-b-2 border-street-yellowCustom pb-1 transition-colors relative"
+              : "text-sm font-semibold text-white/90 hover:text-street-yellowCustom transition-colors relative py-1";
+
+            return (
+              <Link
+                key={linkNavegacao.rotulo}
+                className={classesLink}
+                to={linkNavegacao.endereco}
+              >
+                {linkNavegacao.rotulo}
+              </Link>
+            );
+          })}
         </nav>
         <div className="flex items-center gap-4">
           <div className="hidden lg:block">
