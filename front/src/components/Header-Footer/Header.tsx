@@ -13,12 +13,12 @@ export interface PropriedadesHeader {
 }
 
 const linksDeNavegacao: readonly ItemLinkNavegacao[] = [
-  { rotulo: "Sobre", endereco: "/sobre" },
+  { rotulo: "Sobre", endereco: "/historia" },
   { rotulo: "Programação", endereco: "/programacao" },
-  { rotulo: "Oficinas", endereco: "/oficinas" },
-  { rotulo: "Estrutura", endereco: "/estrutura" },
+  { rotulo: "Oficinas", endereco: "/oficina" },
+  { rotulo: "Estrutura", endereco: "/espaco" },
   { rotulo: "Notícias", endereco: "/noticias" },
-  { rotulo: "Sugestões", endereco: "/sugestoes" },
+  { rotulo: "Sugestões", endereco: "/contato" },
 ];
 
 export function Header({ paginaAtiva }: PropriedadesHeader = {}) {

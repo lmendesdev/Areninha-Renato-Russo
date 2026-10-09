@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Header } from "../components/Header-Footer/Header";
 import { Footer } from "../components/Header-Footer/Footer";
 import { Adesivos } from "../components/adesivos/Adesivos";
@@ -166,18 +167,18 @@ export function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-                  <a
-                    href="/programacao"
+                  <Link
+                    to="/programacao"
                     className="w-full sm:w-auto rounded-full bg-street-yellowCustom text-brand-darkCustom font-black text-base uppercase tracking-wider px-8 py-4 border-2 border-brand-darkCustom sticker-shadow-md hover-sticker flex items-center justify-center gap-2"
                   >
                     Ver Programação
-                  </a>
-                  <a
-                    href="/oficinas"
+                  </Link>
+                  <Link
+                    to="/oficina"
                     className="w-full sm:w-auto rounded-full bg-energy-blueCustom text-white font-black text-base uppercase tracking-wider px-8 py-4 border-2 border-brand-darkCustom sticker-shadow-md hover-sticker flex items-center justify-center gap-2"
                   >
                     Conhecer Oficinas
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -252,12 +253,12 @@ export function Home() {
                   Não perca o que está rolando na Areninha.
                 </p>
               </div>
-              <a
-                href="/programacao"
+              <Link
+                to="/programacao"
                 className="rounded-full bg-bg-grayCustom text-brand-darkCustom hover:bg-street-yellowCustom font-extrabold text-xs uppercase tracking-wider px-6 py-3 border-2 border-brand-darkCustom sticker-shadow-sm hover-sticker flex items-center gap-2 shrink-0 transition-all"
               >
                 <span>Ver toda agenda</span>
-              </a>
+              </Link>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
               {PROXIMOS_EVENTOS.map((evento) => (

@@ -255,7 +255,7 @@ export function Oficina() {
               <CardChamada
                 titulo="Quer propor uma oficina ou se matricular?"
                 descricao="Nossa secretaria funciona de segunda a quinta das 10h às 21h na Praça Manuel Bandeira no Cocotá. Venha nos visitar!"
-                link="https://wa.me/5521976647013"
+                link="https://api.whatsapp.com/send?phone=5521976647013"
               />
             </div>
           </div>
