@@ -10,6 +10,8 @@ import {
 } from "../components/cardProfissionais/CardProfissionais";
 import lonaHeroSvg from "../assets/historia/lonaHero.svg";
 import lonaCitacaoSvg from "../assets/historia/lonaCitacao.svg";
+import { ErrorBoundary } from "react-error-boundary";
+import { CardErrorBoundary } from "../components/errorBoundary/CardErrorBoundary";
 
 const marcosHistoricos: readonly PropriedadesCardDataHistoria[] = [
   {
@@ -187,8 +189,8 @@ export function Historia() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
               {listaEquipe.map((membro) => (
+              < ErrorBoundary key={membro.nome} fallback={<CardErrorBoundary />}>
                 <CardProfissionais
-                  key={membro.nome}
                   imagem={membro.imagem}
                   altImagem={membro.altImagem}
                   nome={membro.nome}
@@ -197,6 +199,7 @@ export function Historia() {
                   corTag={membro.corTag}
                   setor={membro.setor}
                 />
+              </ErrorBoundary>
               ))}
             </div>
           </div>

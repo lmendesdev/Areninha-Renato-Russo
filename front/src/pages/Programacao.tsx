@@ -6,6 +6,8 @@ import {
   type PropriedadesCardProgramacao,
 } from "../components/cardProgramacao/CardProgramacao";
 import { CardChamada } from "../components/cardChamada/CardChamada";
+import { ErrorBoundary } from "react-error-boundary";
+import { CardErrorBoundary } from "../components/errorBoundary/CardErrorBoundary";
 
 type FiltroDia = "Sábado" | "Domingo" | "Geral";
 
@@ -440,8 +442,8 @@ export function Programacao() {
         <section className="mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
             {eventosFiltrados.map((evento) => (
+            <ErrorBoundary key={evento.titulo} fallback={<CardErrorBoundary />}>
               <CardProgramacao
-                key={evento.titulo}
                 imagem={evento.imagem}
                 altImagem={evento.altImagem}
                 titulo={evento.titulo}
@@ -456,6 +458,7 @@ export function Programacao() {
                 link={evento.link}
                 valor={evento.valor}
               />
+            </ErrorBoundary>
             ))}
           </div>
         </section>

@@ -7,6 +7,8 @@ import {
   CardProgramacao,
   type PropriedadesCardProgramacao,
 } from "../components/cardProgramacao/CardProgramacao";
+import { ErrorBoundary } from "react-error-boundary";
+import { CardErrorBoundary } from "../components/errorBoundary/CardErrorBoundary";
 
 const URL_IMAGEM_VIDEO_INSTITUCIONAL =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuBL3gdu1geTy0ZYOzfXf7x4zJI1Ai94Ui-Ge8XIlM-b-qzp4NGaCVYepAXBD3oJwZNta8zstq5142Q1-VXzWBgzwq3IXJ5T7I2G-h7iHztVHPLbzjbcJRp9dwzjU8tqD-edJLQQoO44kZ21FpJCveb4TsoV8G2M2Anal-RhwnecUgRP9LuZC5Pj09Gu9R5qe22pg7vVVGwvZz6zkAnpcNjaxQhP45oJe84jbirbPviyrOchwvZxCdfP";
@@ -262,8 +264,8 @@ export function Home() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
               {PROXIMOS_EVENTOS.map((evento) => (
+              <ErrorBoundary key={evento.titulo} fallback={<CardErrorBoundary />}>
                 <CardProgramacao
-                  key={evento.titulo}
                   imagem={evento.imagem}
                   altImagem={evento.altImagem}
                   titulo={evento.titulo}
@@ -278,6 +280,7 @@ export function Home() {
                   link={evento.link}
                   valor={evento.valor}
                 />
+              </ErrorBoundary>
               ))}
             </div>
           </div>
