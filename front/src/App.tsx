@@ -1,8 +1,9 @@
-import Error404  from "./pages/Error404";
+import { Rotas } from "./routes/routes";
+
 function App() {
   return (
     <div className="min-h-screen bg-bg-whiteCustom text-brand-darkCustom flex flex-col">
-      <Error404 />
+      <Rotas />
     </div>
   );
 }

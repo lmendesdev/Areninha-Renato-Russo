@@ -59,7 +59,7 @@ export function Contato() {
                 <div className="space-y-4">
                   <a
                     className="flex items-center gap-4 bg-bg-whiteCustom text-brand-darkCustom p-4 rounded-xl border-3 border-brand-darkCustom sticker-shadow-md hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all group"
-                    href="https://wa.me/5521976647013"
+                    href="https://api.whatsapp.com/send?phone=5521976647013"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

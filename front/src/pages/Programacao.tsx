@@ -463,7 +463,7 @@ export function Programacao() {
           <CardChamada
             titulo="QUER APRESENTAR SEU ESPETÁCULO NA ARENINHA?"
             descricao="O edital de pauta e propostas culturais está aberto! Traga sua música, dança, comédia ou teatro para o nosso palco."
-            link="#"
+            link="https://api.whatsapp.com/send?phone=5521976647013"
           />
         </section>
       </main>
