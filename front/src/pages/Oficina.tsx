@@ -10,6 +10,8 @@ import {
   type PropriedadesCardOficina,
 } from "../components/oficina/CardOficina";
 import { CardChamada } from "../components/cardChamada/CardChamada";
+import { ErrorBoundary } from "react-error-boundary";
+import { CardErrorBoundary } from "../components/errorBoundary/CardErrorBoundary";
 
 type FiltroDiaOficina = "Segunda" | "Terça" | "Quarta" | "Quinta" | "Todos";
 
@@ -233,6 +235,7 @@ export function Oficina() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
               {oficinasFiltradas.map((oficina) => (
+              <ErrorBoundary key={oficina.titulo} fallback={<CardErrorBoundary />}>
                 <CardOficina
                   key={oficina.titulo}
                   imagem={oficina.imagem}
@@ -249,6 +252,7 @@ export function Oficina() {
                   link={oficina.link}
                   descricao={oficina.descricao}
                 />
+              </ErrorBoundary>
               ))}
             </div>
             <div className="mt-16">

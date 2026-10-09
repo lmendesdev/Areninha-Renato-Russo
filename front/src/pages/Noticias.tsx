@@ -4,38 +4,25 @@ import { Footer } from "../components/Header-Footer/Footer";
 import {
   CardAvisos,
   type PropriedadesCardAvisos,
-} from "../components/cardAvisos/CardAvisos";
-import { CardAvisosExpandido } from "../components/cardAvisos/CardAvisosExpandido";
+} from "../components/avisos/CardAvisos";
+import { AvisoPrincipal } from "../components/avisos/NoticiaPrincipal";
+import { ErrorBoundary } from "react-error-boundary";
+import { CardErrorBoundary } from "../components/errorBoundary/CardErrorBoundary";
+import { NoticiaPrincipalErrorBoundary } from "../components/errorBoundary/NoticiaPrincipalErrorBoundary";
 
 const quantidadePorCarregamento = 3;
 
-const nomesMeses: readonly string[] = [
-    "Janeiro",
-  "Fevereiro",
-  "Março",
-  "Abril",
-  "Maio",
-  "Junho",
-  "Julho",
-  "Agosto",
-  "Setembro",
-  "Outubro",
-  "Novembro",
-  "Dezembro",
-];
-
 const noticiaPrincipal: PropriedadesCardAvisos = {
   imagem:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuAleIcp1Tr0AHxvQpAY0_TYd7M4aIbZKdiNoTFHpuB6U4sCvJFNSppizqKFPv_-Owy2XBwazaDE3E4DjXgqV2ilrGetYBTaADzXpyMDORCcdRoP87HUVh1C4BR1Wclf4tWKjfiLisgV5SMqGN0vpjyeRzroSv50y_sndoUO9PhpUoc1oUBjDUkBfs3lRimWVwbcQz8er-SW5nIHkIz4pIvdgRvZYGxtCpkH5rK9HfVCOW3u7X15QwRl",
-  altImagem: "Festival de Inverno",
-  dia: 24,
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuC2iQuHGWEEzxA9xzu4uUkHoV37R5bShWKHXgF7s6KVGThPSfQjl4PJvz6ePhCRlsXmsHvWJhtJ8sDw1GEThRGy9PqS4zmpEb3RO_y41Aw5z0WgBBlgUG-PzrDwSfT7j5VS4uBLO47GZVTysgPmLgt65nh6eclkMn3KXgQL1bCJ8DQllgeoPS44qJQwBnpgsijQp34yl8a4gD2z2v8tmnb-e327L2owu0uumO4WER2ELZORlnncdp8e",
+  altImagem: "Oficina de Cerâmica",
+  dia: 20,
   mes: 10,
   ano: 2026,
-  titulo: "Festival de Inverno reúne mais de 5 mil pessoas na Areninha",
+  titulo: "Inscrições abertas para novas turmas de cerâmica e artes visuais",
   descricao:
-    "Três dias de música, teatro e exposições marcaram o encerramento da temporada cultural, consolidando o espaço como o principal polo comunitário e criativo da região.",
+    "As vagas são limitadas. Jovens a partir de 12 anos podem se inscrever presencialmente na secretaria para as oficinas do próximo semestre com materiais inclusos.",
 };
-
 
 const listaNoticias: readonly PropriedadesCardAvisos[] = [
   {
@@ -108,18 +95,7 @@ const listaNoticias: readonly PropriedadesCardAvisos[] = [
   },
 ];
 
-function formatarDia(dia: number): string {
-  if (dia < 10) {
-    return `0${dia}`;
-  }
-
-  return String(dia);
-}
-
 export function Noticias() {
-
-  const [noticiaPrincipalExpandida, setNoticiaPrincipalExpandida] =
-    useState<boolean>(false);
 
   const [noticiasExibidas, setNoticiasExibidas] = useState<
     readonly PropriedadesCardAvisos[]
@@ -137,64 +113,15 @@ export function Noticias() {
 
   const possuiMaisNoticias = noticiasExibidas.length < listaNoticias.length;
 
-  const diaPrincipalFormatado = formatarDia(noticiaPrincipal.dia);
-
-  const nomeMesPrincipal = nomesMeses[noticiaPrincipal.mes - 1];
-
-  const textoAlternativoPrincipal =
-    noticiaPrincipal.altImagem || noticiaPrincipal.titulo;
-
   return (
     <div className="bg-bg-whiteCustom text-brand-darkCustom font-sans antialiased overflow-x-hidden min-h-screen flex flex-col selection:bg-street-yellowCustom selection:text-brand-darkCustom">
       <Header paginaAtiva="Notícias" />
       <main className="grow">
         <section className="w-full bg-bg-whiteCustom relative py-12 md:py-16 px-6 md:px-12 border-b-2 border-brand-darkCustom">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
-              <div className="w-full lg:w-7/12 flex flex-col items-start text-left order-2 lg:order-1">
-                <div className="flex items-center gap-3 mb-5 flex-wrap">
-                  <span className="inline-flex items-center bg-street-yellowCustom text-brand-darkCustom text-xs font-bold px-3 py-1.5 rounded-full border-2 border-brand-darkCustom">
-                    Destaque
-                  </span>
-                </div>
-                <h1 className="text-3xl md:text-5xl font-black text-brand-darkCustom mb-5 tracking-tight leading-[1.15]">
-                  {noticiaPrincipal.titulo}
-                </h1>
-                <p className="text-base md:text-lg text-brand-darkCustom/80 mb-8 max-w-2xl font-medium leading-relaxed">
-                  {noticiaPrincipal.descricao}
-                </p>
-                <div className="flex items-center gap-6 mb-8 text-sm font-semibold text-brand-darkCustom/70">
-                  <span className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-lg text-fest-orangeCustom">
-                      calendar_today
-                    </span>
-                    <span>
-                      {diaPrincipalFormatado} {nomeMesPrincipal},{" "}
-                      {noticiaPrincipal.ano}
-                    </span>
-                  </span>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => setNoticiaPrincipalExpandida(true)}
-                  className="inline-flex items-center gap-3 bg-street-yellowCustom text-brand-darkCustom font-black text-base px-8 py-4 rounded-full uppercase tracking-wider justify-center border-2 border-brand-darkCustom sticker-shadow-lg hover-sticker cursor-pointer"
-                >
-                  Ler Matéria Completa
-                </button>
-              </div>
-              <div className="w-full lg:w-5/12 order-1 lg:order-2">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-energy-blueCustom rounded-3xl translate-x-3 translate-y-3 border-2 border-brand-darkCustom" />
-                  <div className="relative rounded-3xl border-2 border-brand-darkCustom overflow-hidden bg-brand-darkCustom aspect-4/3 group">
-                    <img
-                      alt={textoAlternativoPrincipal}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      src={noticiaPrincipal.imagem}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+        <ErrorBoundary fallback={<NoticiaPrincipalErrorBoundary/>}>
+            <AvisoPrincipal {...noticiaPrincipal} />
+        </ ErrorBoundary>
           </div>
         </section>
         <section className="py-10 px-6 md:px-12 bg-bg-grayCustom border-b-2 border-brand-darkCustom">
@@ -212,8 +139,8 @@ export function Noticias() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
               {noticiasExibidas.map((noticia) => (
+            <ErrorBoundary key={noticia.titulo} fallback={<CardErrorBoundary />}>
                 <CardAvisos
-                  key={noticia.titulo}
                   imagem={noticia.imagem}
                   altImagem={noticia.altImagem}
                   dia={noticia.dia}
@@ -222,6 +149,7 @@ export function Noticias() {
                   titulo={noticia.titulo}
                   descricao={noticia.descricao}
                 />
+            </ErrorBoundary>
               ))}
             </div>
             {possuiMaisNoticias && (
@@ -239,18 +167,6 @@ export function Noticias() {
           </div>
         </section>
       </main>
-      {noticiaPrincipalExpandida && (
-        <CardAvisosExpandido
-          titulo={noticiaPrincipal.titulo}
-          dia={noticiaPrincipal.dia}
-          mes={nomeMesPrincipal}
-          ano={noticiaPrincipal.ano}
-          descricao={noticiaPrincipal.descricao}
-          imagem={noticiaPrincipal.imagem}
-          altImagem={noticiaPrincipal.altImagem}
-          funcaoSair={() => setNoticiaPrincipalExpandida(false)}
-        />
-      )}
       <Footer />
     </div>
   );
