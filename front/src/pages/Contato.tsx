@@ -33,6 +33,10 @@ export function Contato() {
 
   return (
     <div className="bg-bg-grayCustom text-brand-darkCustom font-sans antialiased flex flex-col min-h-screen selection:bg-street-yellowCustom selection:text-brand-darkCustom">
+      <title>Sugestões & Contato - Areninha Cultural Renato Russo</title>
+      <meta name="description" content="Entre em contato com a Areninha Cultural Renato Russo para enviar sugestões, elogios ou tirar dúvidas sobre a programação e atividades do espaço cultural." />
+      <meta name="keywords" content="Areninha Cultural Renato Russo, contato, sugestões, elogios, dúvidas, programação cultural, atividades culturais, Ilha do Governador, Rio de Janeiro" />
+      <meta name="robots" content="index, follow" />
       <Header paginaAtiva="Sugestões" />
       <main className="grow bg-bg-grayCustom py-12 md:py-20 px-4 md:px-10 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">

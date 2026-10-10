@@ -126,8 +126,11 @@ export function Home() {
 
   return (
     <div className="bg-bg-whiteCustom text-brand-darkCustom antialiased flex flex-col min-h-screen selection:bg-street-yellowCustom selection:text-brand-darkCustom">
+      <title>Areninha Cultural Renato Russo</title>
+      <meta name="description" content="A Areninha Cultural Renato Russo é um espaço cultural na Ilha do Governador, Rio de Janeiro, oferecendo programação diversificada de música, teatro, dança, literatura e oficinas gratuitas para a comunidade." />
+      <meta name="keywords" content="Areninha Cultural Renato Russo, Ilha do Governador, Rio de Janeiro, programação cultural, música, teatro, dança, literatura, oficinas gratuitas, espaço cultural" />
+      <meta name="robots" content="index, follow" />
       <Header />
-
       <main className="grow w-full">
         <section
           id="hero-interactive-zone"

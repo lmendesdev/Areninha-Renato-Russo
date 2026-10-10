@@ -115,6 +115,10 @@ export function Noticias() {
 
   return (
     <div className="bg-bg-whiteCustom text-brand-darkCustom font-sans antialiased overflow-x-hidden min-h-screen flex flex-col selection:bg-street-yellowCustom selection:text-brand-darkCustom">
+        <title>Notícias da Areninha Cultural Renato Russo</title>
+        <meta name="description" content="Fique por dentro das últimas notícias e atualizações da Areninha Cultural Renato Russo, incluindo eventos, oficinas, apresentações e novidades sobre a programação cultural na Ilha do Governador." />
+        <meta name="keywords" content="Areninha Cultural Renato Russo, notícias, atualizações, eventos culturais, oficinas, apresentações, programação cultural, Ilha do Governador, Rio de Janeiro" />
+        <meta name="robots" content="index, follow" />
       <Header paginaAtiva="Notícias" />
       <main className="grow">
         <section className="w-full bg-bg-whiteCustom relative py-12 md:py-16 px-6 md:px-12 border-b-2 border-brand-darkCustom">

@@ -218,6 +218,10 @@ export function Programacao() {
 
   return (
     <div className="font-poppins text-brand-darkCustom antialiased flex flex-col min-h-screen m-0 p-0 bg-bg-whiteCustom">
+      <title>Programação Cultural - Areninha Cultural Renato Russo</title>
+      <meta name="description" content="Confira a programação cultural da Areninha Cultural Renato Russo, incluindo shows, espetáculos teatrais, comédias e apresentações musicais aos finais de semana na Ilha do Governador." />
+      <meta name="keywords" content="Areninha Cultural Renato Russo, programação cultural, shows, espetáculos teatrais, comédias, apresentações musicais, finais de semana, Ilha do Governador, Rio de Janeiro" />
+      <meta name="robots" content="index, follow" />
       <div className="bg-street-yellowCustom border-b-2 border-brand-darkCustom text-brand-darkCustom px-4 py-2.5 font-bold text-xs md:text-sm tracking-wide text-center uppercase flex items-center justify-center gap-2">
         <span className="material-symbols-outlined text-lg">campaign</span>
         <span>

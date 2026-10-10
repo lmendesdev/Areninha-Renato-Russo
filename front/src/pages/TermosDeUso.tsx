@@ -5,7 +5,6 @@ export function TermosDeUso() {
   return (
     <div className="bg-bg-whiteCustom text-black font-sans antialiased min-h-screen flex flex-col">
       <Header />
-
       <main className="grow py-12 md:py-20 px-6 md:px-12">
         <article className="max-w-3xl mx-auto space-y-8">
           <header className="border-b border-black/15 pb-6">
@@ -16,7 +15,6 @@ export function TermosDeUso() {
               Última atualização: Outubro de 2026
             </p>
           </header>
-
           <section className="space-y-3">
             <h2 className="text-xl md:text-2xl font-semibold text-black">
               1. Objetivo do Site
@@ -29,7 +27,6 @@ export function TermosDeUso() {
               no Cocotá, Ilha do Governador (Rio de Janeiro/RJ).
             </p>
           </section>
-
           <section className="space-y-3">
             <h2 className="text-xl md:text-2xl font-semibold text-black">
               2. Uso do Conteúdo e Propriedade Intelectual
@@ -44,7 +41,6 @@ export function TermosDeUso() {
               publicações.
             </p>
           </section>
-
           <section className="space-y-3">
             <h2 className="text-xl md:text-2xl font-semibold text-black">
               3. Programação, Horários e Eventos
@@ -57,7 +53,6 @@ export function TermosDeUso() {
               de lotação de cada ambiente da Areninha Cultural Renato Russo.
             </p>
           </section>
-
           <section className="space-y-3">
             <h2 className="text-xl md:text-2xl font-semibold text-black">
               4. Links Externos, Ingressos e Inscrições
@@ -70,7 +65,6 @@ export function TermosDeUso() {
               regras, termos de serviço e responsabilidades.
             </p>
           </section>
-
           <section className="space-y-3">
             <h2 className="text-xl md:text-2xl font-semibold text-black">
               5. Atualizações e Contato Oficial
@@ -91,7 +85,6 @@ export function TermosDeUso() {
           </section>
         </article>
       </main>
-
       <Footer />
     </div>
   );

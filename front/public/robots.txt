@@ -1,0 +1,4 @@
+?User-agent: *
+Allow: /
+
+Sitemap: https://areninharenatorusso.com.br/sitemap.xml
