@@ -76,6 +76,16 @@ const listaEquipe: readonly PropriedadesCardProfissionais[] = [
 export function Historia() {
   return (
     <div className="font-sans antialiased min-h-screen flex flex-col bg-bg-grayCustom text-brand-darkCustom selection:bg-street-yellowCustom selection:text-brand-darkCustom">
+      <title>História da Areninha Cultural Renato Russo</title>
+      <meta
+        name="description"
+        content="Descubra a trajetória da Areninha Cultural Renato Russo, desde sua fundação como Lona Cultural em 2007 até sua reinauguração em 2016 como polo cultural vibrante na Ilha do Governador."
+      />
+      <meta
+        name="keywords"
+        content="Areninha Cultural Renato Russo, história, trajetória, fundação, reinauguração, Ilha do Governador, cultura, arte, teatro, música, literatura"
+      />
+      <meta name="robots" content="index,follow" />
       <Header paginaAtiva="Sobre" />
       <main className="grow">
         <section className="bg-brand-darkCustom text-white pt-16 pb-20 md:pt-20 md:pb-28 border-b-[2.5px] border-brand-darkCustom relative overflow-hidden">

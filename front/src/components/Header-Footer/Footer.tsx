@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import AreninhaCulturalIcon from "../../assets/AreninhaIcon/AreninhaIcon.webp";
+import AreninhaCulturalIcon from "../../assets/Areninha/AreninhaIcon.webp";
 import UsinaSocialIcon from "../../assets/UsinaSocialIcon/usinaSocial.webp";
 import secretariaCulturaIcon from "../../assets/SecretariaCulturaIcon/secretariaCultura.webp";
 import instagramSvg from "../../assets/footer/instagram.svg";

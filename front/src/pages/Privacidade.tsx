@@ -5,7 +5,6 @@ export function Privacidade() {
   return (
     <div className="bg-bg-whiteCustom text-black font-sans antialiased min-h-screen flex flex-col">
       <Header />
-
       <main className="grow py-12 md:py-20 px-6 md:px-12">
         <article className="max-w-3xl mx-auto space-y-8">
           <header className="border-b border-black/15 pb-6">
@@ -16,7 +15,6 @@ export function Privacidade() {
               Última atualização: Outubro de 2026
             </p>
           </header>
-
           <section className="space-y-3">
             <h2 className="text-xl md:text-2xl font-semibold text-black">
               1. Navegação Sem Cadastro
@@ -29,7 +27,6 @@ export function Privacidade() {
               espaço.
             </p>
           </section>
-
           <section className="space-y-3">
             <h2 className="text-xl md:text-2xl font-semibold text-black">
               2. Formulário de Sugestões e Contato
@@ -43,7 +40,6 @@ export function Privacidade() {
               atividades culturais da Areninha.
             </p>
           </section>
-
           <section className="space-y-3">
             <h2 className="text-xl md:text-2xl font-semibold text-black">
               3. Métricas Anônimas de Tráfego
@@ -58,7 +54,6 @@ export function Privacidade() {
               site.
             </p>
           </section>
-
           <section className="space-y-3">
             <h2 className="text-xl md:text-2xl font-semibold text-black">
               4. Compartilhamento de Dados e Serviços de Terceiros
@@ -73,7 +68,6 @@ export function Privacidade() {
               externo.
             </p>
           </section>
-
           <section className="space-y-3">
             <h2 className="text-xl md:text-2xl font-semibold text-black">
               5. Direitos do Titular e Contato (LGPD)
@@ -95,7 +89,6 @@ export function Privacidade() {
           </section>
         </article>
       </main>
-
       <Footer />
     </div>
   );

@@ -172,6 +172,16 @@ export function Oficina() {
 
   return (
     <div className="bg-bg-whiteCustom text-brand-darkCustom font-sans antialiased flex flex-col min-h-screen selection:bg-street-yellowCustom selection:text-brand-darkCustom">
+      <title>Oficinas Regulares - Areninha Cultural Renato Russo</title>
+      <meta
+        name="description"
+        content="Explore as oficinas regulares da Areninha Cultural Renato Russo, oferecendo aulas de dança, música, teatro e expressão artística para todas as idades na Ilha do Governador."
+      />
+      <meta
+        name="keywords"
+        content="Areninha Cultural Renato Russo, oficinas regulares, aulas de dança, aulas de música, aulas de teatro, expressão artística, Ilha do Governador, Rio de Janeiro"
+      />
+      <meta name="robots" content="index, follow" />
       <Header paginaAtiva="Oficinas" />
       <main className="grow w-full">
         <section className="bg-bg-whiteCustom w-full pt-14 pb-12 border-b-2 border-brand-darkCustom relative overflow-hidden">

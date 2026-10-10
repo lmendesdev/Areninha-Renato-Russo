@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { IngressoButton } from "../ingressoButton/IngressoButton";
-import AreninhaLogo from "../../assets/AreninhaIcon/AreninhaIcon.webp";
+import AreninhaLogo from "../../assets/Areninha/AreninhaIcon.webp";
 
 interface ItemLinkNavegacao {
   readonly rotulo: string;

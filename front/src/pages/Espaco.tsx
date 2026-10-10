@@ -52,8 +52,11 @@ export function Espaco() {
 
   return (
     <div className="bg-bg-whiteCustom text-brand-darkCustom font-sans antialiased flex flex-col min-h-screen selection:bg-street-yellowCustom selection:text-brand-darkCustom">
+      <title>Espaço e Estrutura</title>
+      <meta name="description" content="Conheça a infraestrutura completa da Areninha Cultural Renato Russo, incluindo teatro climatizado, salas multiuso, sala de leitura e praça externa integrada ao Parque Poeta Manuel Bandeira." />
+      <meta name="keywords" content="Areninha Cultural Renato Russo, infraestrutura, teatro climatizado, salas multiuso, sala de leitura, praça externa, Parque Poeta Manuel Bandeira, Ilha do Governador, Rio de Janeiro" />
+      <meta name="robots" content="index, follow" />
       <Header paginaAtiva="Estrutura" />
-
       <main className="grow">
         <section className="bg-bg-whiteCustom border-b-2 border-brand-darkCustom py-16 md:py-24 px-6 md:px-12 text-center relative overflow-hidden">
           <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden select-none z-0">
