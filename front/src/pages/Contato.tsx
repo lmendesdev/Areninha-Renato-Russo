@@ -1,33 +1,98 @@
-import { useState, type FormEvent } from "react";
+import { useState } from "react";
+import { useForm, type SubmitHandler } from "react-hook-form";
 import { Header } from "../components/Header-Footer/Header";
 import { Footer } from "../components/Header-Footer/Footer";
 
-const faixaCorreio =
-  "repeating-linear-gradient(-45deg, rgb(21, 128, 61) 0px, rgb(21, 128, 61) 14px, rgb(255, 255, 255) 14px, rgb(255, 255, 255) 22px, rgb(255, 214, 0) 22px, rgb(255, 214, 0) 36px, rgb(255, 255, 255) 36px, rgb(255, 255, 255) 44px)";
+interface FormularioContatoValores {
+  readonly nome: string;
+  readonly email: string;
+  readonly mensagem: string;
+  readonly botcheck: string;
+}
 
-const quantidadeLinhasMensagem = 10;
+const quantidadeLinhasMensagem: number = 10;
 
 export function Contato() {
-  const [nomeRemetente, setNomeRemetente] = useState<string>("");
-  const [emailRemetente, setEmailRemetente] = useState<string>("");
-  const [mensagemCarta, setMensagemCarta] = useState<string>("");
   const [mensagemEnviada, setMensagemEnviada] = useState<boolean>(false);
+  const [mensagemErro, setMensagemErro] = useState<string | null>(null);
 
-  function aoEnviarFormulario(evento: FormEvent<HTMLFormElement>) {
-    evento.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { isSubmitting },
+  } = useForm<FormularioContatoValores>({
+    defaultValues: {
+      nome: "",
+      email: "",
+      mensagem: "",
+      botcheck: "",
+    },
+  });
 
-    const possuiMensagemValida = mensagemCarta.trim().length > 0;
+  const aoEnviarFormulario: SubmitHandler<FormularioContatoValores> = async (
+    dados,
+  ) => {
+    const foiPreenchidoPorBot = dados.botcheck.trim().length > 0;
+    if (foiPreenchidoPorBot) {
+      return;
+    }
+
+    const possuiMensagemValida = dados.mensagem.trim().length > 0;
     if (!possuiMensagemValida) {
       return;
     }
 
-    setMensagemEnviada(true);
-  }
+    const chaveAcesso = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "";
+    if (!chaveAcesso) {
+      setMensagemErro(
+        "Chave de envio não configurada. Entre em contato com o administrador do site.",
+      );
+      return;
+    }
+
+    setMensagemErro(null);
+
+    try {
+      const resposta = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: chaveAcesso,
+          name: dados.nome || "Visitante Anônimo",
+          email: dados.email || "anonimo@anonimo.com",
+          message: dados.mensagem,
+          subject: "Nova Mensagem / Sugestão — Areninha Cultural Renato Russo",
+          from_name: "Areninha Cultural Portal",
+          botcheck: dados.botcheck,
+        }),
+      });
+
+      const resultado = await resposta.json();
+
+      if (resultado.success) {
+        setMensagemEnviada(true);
+        reset();
+        return;
+      }
+
+      setMensagemErro(
+        resultado.message ||
+          "Não foi possível enviar a mensagem no momento. Tente novamente.",
+      );
+    } catch {
+      setMensagemErro(
+        "Ocorreu um erro de conexão ao enviar a mensagem. Verifique sua internet e tente novamente.",
+      );
+    }
+  };
 
   function escreverOutraCarta() {
-    setNomeRemetente("");
-    setEmailRemetente("");
-    setMensagemCarta("");
+    reset();
+    setMensagemErro(null);
     setMensagemEnviada(false);
   }
 
@@ -139,7 +204,10 @@ export function Contato() {
               <div className="bg-[#FFFDF7] border-4 border-brand-darkCustom shadow-[8px_8px_0px_#0A2435] rounded-2xl overflow-hidden relative">
                 <div
                   className="h-3.5 w-full border-b-2 border-brand-darkCustom"
-                  style={{ background: faixaCorreio }}
+                  style={{
+                    background:
+                      "repeating-linear-gradient(-45deg, rgb(21, 128, 61) 0px, rgb(21, 128, 61) 14px, rgb(255, 255, 255) 14px, rgb(255, 255, 255) 22px, rgb(255, 214, 0) 22px, rgb(255, 214, 0) 36px, rgb(255, 255, 255) 36px, rgb(255, 255, 255) 44px)",
+                  }}
                 />
                 <div className="p-6 md:p-8 relative">
                   <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 pb-6 border-b-2 border-dashed border-brand-darkCustom/30 mb-6">
@@ -184,7 +252,18 @@ export function Contato() {
                       </div>
                     </div>
                   </div>
-                  <form className="space-y-6" onSubmit={aoEnviarFormulario}>
+                  <form
+                    className="space-y-6"
+                    onSubmit={handleSubmit(aoEnviarFormulario)}
+                  >
+                    <input
+                      type="text"
+                      className="hidden"
+                      style={{ display: "none" }}
+                      tabIndex={-1}
+                      autoComplete="off"
+                      {...register("botcheck")}
+                    />
                     <div className="bg-[#ECF5FF] border-2 border-brand-darkCustom rounded-xl p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-[2px_2px_0px_#0A2435]">
                       <div className="flex items-center gap-3">
                         <div>
@@ -223,13 +302,9 @@ export function Contato() {
                             <input
                               className="w-full bg-bg-grayCustom border-2 border-brand-darkCustom rounded-lg px-3.5 py-2.5 font-medium text-sm text-brand-darkCustom placeholder-brand-darkCustom/40 focus:bg-bg-whiteCustom focus:outline-none focus:ring-0 focus:border-energy-blueCustom transition-colors"
                               id="name"
-                              name="name"
                               placeholder="Ex: Maria da Silva"
                               type="text"
-                              value={nomeRemetente}
-                              onChange={(evento) =>
-                                setNomeRemetente(evento.target.value)
-                              }
+                              {...register("nome")}
                             />
                           </div>
                         </div>
@@ -247,13 +322,9 @@ export function Contato() {
                             <input
                               className="w-full bg-bg-grayCustom border-2 border-brand-darkCustom rounded-lg px-3.5 py-2.5 font-medium text-sm text-brand-darkCustom placeholder-brand-darkCustom/40 focus:bg-bg-whiteCustom focus:outline-none focus:ring-0 focus:border-energy-blueCustom transition-colors"
                               id="email"
-                              name="email"
                               placeholder="seu.email@exemplo.com"
                               type="email"
-                              value={emailRemetente}
-                              onChange={(evento) =>
-                                setEmailRemetente(evento.target.value)
-                              }
+                              {...register("email")}
                             />
                           </div>
                         </div>
@@ -278,17 +349,24 @@ export function Contato() {
                           aria-required="true"
                           className="w-full p-4 font-medium text-sm text-brand-darkCustom placeholder-brand-darkCustom/40 focus:outline-none focus:ring-0 resize-y border-none"
                           id="message"
-                          name="message"
                           placeholder="Prezada equipe da Areninha Cultural, gostaria de sugerir para a programação..."
                           required
                           rows={quantidadeLinhasMensagem}
-                          value={mensagemCarta}
-                          onChange={(evento) =>
-                            setMensagemCarta(evento.target.value)
-                          }
+                          {...register("mensagem", { required: true })}
                         />
                       </div>
                     </div>
+                    {mensagemErro && (
+                      <div
+                        role="alert"
+                        className="bg-fest-orangeCustom/10 border-2 border-fest-orangeCustom text-brand-darkCustom rounded-xl p-3.5 flex items-center gap-3 text-xs font-bold"
+                      >
+                        <span className="material-symbols-outlined text-fest-orangeCustom text-lg shrink-0">
+                          error
+                        </span>
+                        <span>{mensagemErro}</span>
+                      </div>
+                    )}
                     <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-t-2 border-dashed border-brand-darkCustom/25">
                       <div className="flex items-center gap-2 text-xs font-semibold text-brand-darkCustom/70">
                         <span className="material-symbols-outlined text-base text-energy-blueCustom">
@@ -297,10 +375,20 @@ export function Contato() {
                         <span>Correspondência protegida &amp; protocolada</span>
                       </div>
                       <button
-                        className="bg-fest-orangeCustom hover:bg-street-yellowCustom hover:text-brand-darkCustom text-white font-black text-sm uppercase tracking-wider py-3.5 px-8 rounded-xl border-3 border-brand-darkCustom sticker-shadow-md hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_#0A2435] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-3 group cursor-pointer"
+                        disabled={isSubmitting}
+                        className="bg-fest-orangeCustom hover:bg-street-yellowCustom hover:text-brand-darkCustom text-white font-black text-sm uppercase tracking-wider py-3.5 px-8 rounded-xl border-3 border-brand-darkCustom sticker-shadow-md hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_#0A2435] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-3 group cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                         type="submit"
                       >
-                        <span>POSTAR MENSAGEM</span>
+                        {isSubmitting ? (
+                          <>
+                            <span className="material-symbols-outlined text-base animate-spin">
+                              refresh
+                            </span>
+                            <span>ENVIANDO CARTA...</span>
+                          </>
+                        ) : (
+                          <span>POSTAR MENSAGEM</span>
+                        )}
                       </button>
                     </div>
                   </form>
@@ -337,7 +425,10 @@ export function Contato() {
                 </div>
                 <div
                   className="h-3.5 w-full border-t-2 border-brand-darkCustom"
-                  style={{ background: faixaCorreio }}
+                  style={{
+                    background:
+                      "repeating-linear-gradient(-45deg, rgb(21, 128, 61) 0px, rgb(21, 128, 61) 14px, rgb(255, 255, 255) 14px, rgb(255, 255, 255) 22px, rgb(255, 214, 0) 22px, rgb(255, 214, 0) 36px, rgb(255, 255, 255) 36px, rgb(255, 255, 255) 44px)",
+                  }}
                 />
               </div>
             </div>
