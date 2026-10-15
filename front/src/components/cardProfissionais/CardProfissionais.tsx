@@ -1,4 +1,3 @@
-
 export interface PropriedadesCardProfissionais {
   readonly imagem: string;
   readonly altImagem?: string;
@@ -12,7 +11,6 @@ export interface PropriedadesCardProfissionais {
 export type OpcaoCorTag = "azul" | "laranja" | "amarelo" | "preta";
 
 function obterEstiloDaTag(cor?: string): string {
-
   const corFormatada = cor ? cor.toLowerCase() : "azul";
 
   switch (corFormatada) {
@@ -37,7 +35,6 @@ export function CardProfissionais({
   corTag = "azul",
   setor,
 }: PropriedadesCardProfissionais) {
-
   const textoAlternativo: string = altImagem || nome;
 
   const estiloTag: string = obterEstiloDaTag(corTag);

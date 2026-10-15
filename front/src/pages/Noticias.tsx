@@ -13,22 +13,28 @@ import noticiaPrincipal from "../content/noticiasPage/noticia-principal.json";
 
 const quantidadePorCarregamento = 3;
 
-
 const modulosNoticias = import.meta.glob<PropriedadesCardAvisos>(
   "../content/noticiasPage/noticias/*.json",
-  { eager: true, import: "default" }
+  { eager: true, import: "default" },
 );
 
 const listaNoticias: readonly PropriedadesCardAvisos[] = Object.values(
-  modulosNoticias
+  modulosNoticias,
 ).sort((noticiaA, noticiaB) => {
-  const timestampA = new Date(noticiaA.ano, noticiaA.mes - 1, noticiaA.dia).getTime();
-  const timestampB = new Date(noticiaB.ano, noticiaB.mes - 1, noticiaB.dia).getTime();
+  const timestampA = new Date(
+    noticiaA.ano,
+    noticiaA.mes - 1,
+    noticiaA.dia,
+  ).getTime();
+  const timestampB = new Date(
+    noticiaB.ano,
+    noticiaB.mes - 1,
+    noticiaB.dia,
+  ).getTime();
   return timestampB - timestampA;
 });
 
 export function Noticias() {
-
   const [noticiasExibidas, setNoticiasExibidas] = useState<
     readonly PropriedadesCardAvisos[]
   >(() => listaNoticias.slice(0, quantidadePorCarregamento));
@@ -47,17 +53,23 @@ export function Noticias() {
 
   return (
     <div className="bg-bg-whiteCustom text-brand-darkCustom font-sans antialiased overflow-x-hidden min-h-screen flex flex-col selection:bg-street-yellowCustom selection:text-brand-darkCustom">
-        <title>Notícias da Areninha Cultural Renato Russo</title>
-        <meta name="description" content="Fique por dentro das últimas notícias e atualizações da Areninha Cultural Renato Russo, incluindo eventos, oficinas, apresentações e novidades sobre a programação cultural na Ilha do Governador." />
-        <meta name="keywords" content="Areninha Cultural Renato Russo, notícias, atualizações, eventos culturais, oficinas, apresentações, programação cultural, Ilha do Governador, Rio de Janeiro" />
-        <meta name="robots" content="index, follow" />
+      <title>Notícias da Areninha Cultural Renato Russo</title>
+      <meta
+        name="description"
+        content="Fique por dentro das últimas notícias e atualizações da Areninha Cultural Renato Russo, incluindo eventos, oficinas, apresentações e novidades sobre a programação cultural na Ilha do Governador."
+      />
+      <meta
+        name="keywords"
+        content="Areninha Cultural Renato Russo, notícias, atualizações, eventos culturais, oficinas, apresentações, programação cultural, Ilha do Governador, Rio de Janeiro"
+      />
+      <meta name="robots" content="index, follow" />
       <Header paginaAtiva="Notícias" />
       <main className="grow">
         <section className="w-full bg-bg-whiteCustom relative py-12 md:py-16 px-6 md:px-12 border-b-2 border-brand-darkCustom">
           <div className="max-w-7xl mx-auto">
-        <ErrorBoundary fallback={<NoticiaPrincipalErrorBoundary/>}>
-            <AvisoPrincipal {...noticiaPrincipal} />
-        </ ErrorBoundary>
+            <ErrorBoundary fallback={<NoticiaPrincipalErrorBoundary />}>
+              <AvisoPrincipal {...noticiaPrincipal} />
+            </ErrorBoundary>
           </div>
         </section>
         <section className="py-10 px-6 md:px-12 bg-bg-grayCustom border-b-2 border-brand-darkCustom">
@@ -75,17 +87,20 @@ export function Noticias() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
               {noticiasExibidas.map((noticia) => (
-            <ErrorBoundary key={noticia.titulo} fallback={<CardErrorBoundary />}>
-                <CardAvisos
-                  imagem={noticia.imagem}
-                  altImagem={noticia.altImagem}
-                  dia={noticia.dia}
-                  mes={noticia.mes}
-                  ano={noticia.ano}
-                  titulo={noticia.titulo}
-                  descricao={noticia.descricao}
-                />
-            </ErrorBoundary>
+                <ErrorBoundary
+                  key={noticia.titulo}
+                  fallback={<CardErrorBoundary />}
+                >
+                  <CardAvisos
+                    imagem={noticia.imagem}
+                    altImagem={noticia.altImagem}
+                    dia={noticia.dia}
+                    mes={noticia.mes}
+                    ano={noticia.ano}
+                    titulo={noticia.titulo}
+                    descricao={noticia.descricao}
+                  />
+                </ErrorBoundary>
               ))}
             </div>
             {possuiMaisNoticias && (

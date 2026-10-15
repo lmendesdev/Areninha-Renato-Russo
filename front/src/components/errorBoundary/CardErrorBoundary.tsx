@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 
 export function CardErrorBoundary() {
-    const navegar = useNavigate();
-    const recarregarPagina = ():void => {
-        navegar(0);
-    }
+  const navegar = useNavigate();
+  const recarregarPagina = (): void => {
+    navegar(0);
+  };
   return (
     <article
       role="alert"
@@ -43,7 +43,8 @@ export function CardErrorBoundary() {
           </h3>
 
           <p className="text-sm font-medium text-brand-darkCustom/70 leading-relaxed">
-            Ocorreu um erro inesperado ao exibir as informações deste item. Atualize a página ou tente novamente em instantes.
+            Ocorreu um erro inesperado ao exibir as informações deste item.
+            Atualize a página ou tente novamente em instantes.
           </p>
         </div>
 

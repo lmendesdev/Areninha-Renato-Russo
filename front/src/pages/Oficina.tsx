@@ -24,15 +24,24 @@ const abasDiasSemana: readonly FiltroDiaOficina[] = [
 ];
 
 interface CardTopoJson {
-  readonly ordem:number;
+  readonly ordem: number;
   readonly titulo: string;
   readonly descricao: string;
 }
 
-const modulosCardTopo = import.meta.glob<CardTopoJson>("../content/oficinasPage/cardsTopo/*.json", { eager: true, import: "default"});
-const listaRegrasOficina: readonly PropriedadesBlocoRegras[] = Object.values(modulosCardTopo).sort((cardA, cardB) => cardA.ordem - cardB.ordem);
-const modulosOficinas =  import.meta.glob<PropriedadesCardOficina>("../content/oficinasPage/oficinas/*.json", { eager: true, import: "default"});
-const listaOficinas: readonly PropriedadesCardOficina[] = Object.values(modulosOficinas);
+const modulosCardTopo = import.meta.glob<CardTopoJson>(
+  "../content/oficinasPage/cardsTopo/*.json",
+  { eager: true, import: "default" },
+);
+const listaRegrasOficina: readonly PropriedadesBlocoRegras[] = Object.values(
+  modulosCardTopo,
+).sort((cardA, cardB) => cardA.ordem - cardB.ordem);
+const modulosOficinas = import.meta.glob<PropriedadesCardOficina>(
+  "../content/oficinasPage/oficinas/*.json",
+  { eager: true, import: "default" },
+);
+const listaOficinas: readonly PropriedadesCardOficina[] =
+  Object.values(modulosOficinas);
 
 function obterClassesBotaoFiltro(estaAtivo: boolean): string {
   if (estaAtivo) {
@@ -43,7 +52,6 @@ function obterClassesBotaoFiltro(estaAtivo: boolean): string {
 }
 
 export function Oficina() {
-
   const [filtroDia, setFiltroDia] = useState<FiltroDiaOficina>("Todos");
 
   const oficinasFiltradas = listaOficinas.filter((oficina) => {
@@ -129,24 +137,27 @@ export function Oficina() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
               {oficinasFiltradas.map((oficina) => (
-              <ErrorBoundary key={oficina.titulo} fallback={<CardErrorBoundary />}>
-                <CardOficina
+                <ErrorBoundary
                   key={oficina.titulo}
-                  imagem={oficina.imagem}
-                  altImagem={oficina.altImagem}
-                  titulo={oficina.titulo}
-                  categoria={oficina.categoria}
-                  diaSemana={oficina.diaSemana}
-                  horario={oficina.horario}
-                  professor={oficina.professor}
-                  modalidade={oficina.modalidade}
-                  faixaEtaria={oficina.faixaEtaria}
-                  local={oficina.local}
-                  vagas={oficina.vagas}
-                  link={oficina.link}
-                  descricao={oficina.descricao}
-                />
-              </ErrorBoundary>
+                  fallback={<CardErrorBoundary />}
+                >
+                  <CardOficina
+                    key={oficina.titulo}
+                    imagem={oficina.imagem}
+                    altImagem={oficina.altImagem}
+                    titulo={oficina.titulo}
+                    categoria={oficina.categoria}
+                    diaSemana={oficina.diaSemana}
+                    horario={oficina.horario}
+                    professor={oficina.professor}
+                    modalidade={oficina.modalidade}
+                    faixaEtaria={oficina.faixaEtaria}
+                    local={oficina.local}
+                    vagas={oficina.vagas}
+                    link={oficina.link}
+                    descricao={oficina.descricao}
+                  />
+                </ErrorBoundary>
               ))}
             </div>
             <div className="mt-16">

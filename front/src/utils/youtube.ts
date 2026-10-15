@@ -1,9 +1,6 @@
-const PARAMETROS_AUTOPLAY_PADRAO = "autoplay=1&rel=0";
-const COMPRIMENTO_ID_YOUTUBE = 11;
+const parametrosAutoPlayPadrao = "autoplay=1&rel=0";
+const comprimentoIdYoutube = 11;
 
-/**
- * Converte URLs do YouTube (watch, share, short ou embed) para o formato de embed padrão com autoplay.
- */
 export function formatarUrlEmbedYoutube(url: string): string {
   const urlLimpa = url.trim();
   const estaVazia = urlLimpa.length === 0;
@@ -21,7 +18,7 @@ export function formatarUrlEmbedYoutube(url: string): string {
 
     const contemParametros = urlLimpa.includes("?");
     const separador = contemParametros ? "&" : "?";
-    return `${urlLimpa}${separador}${PARAMETROS_AUTOPLAY_PADRAO}`;
+    return `${urlLimpa}${separador}${parametrosAutoPlayPadrao}`;
   }
 
   const expressaoRegular =
@@ -31,10 +28,10 @@ export function formatarUrlEmbedYoutube(url: string): string {
 
   const idTemTamanhoValido =
     idVideoEncontrado !== null &&
-    idVideoEncontrado.length === COMPRIMENTO_ID_YOUTUBE;
+    idVideoEncontrado.length === comprimentoIdYoutube;
 
   if (idTemTamanhoValido) {
-    return `https://www.youtube.com/embed/${idVideoEncontrado}?${PARAMETROS_AUTOPLAY_PADRAO}`;
+    return `https://www.youtube.com/embed/${idVideoEncontrado}?${parametrosAutoPlayPadrao}`;
   }
 
   return urlLimpa;
