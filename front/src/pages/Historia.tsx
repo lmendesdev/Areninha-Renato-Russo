@@ -114,9 +114,9 @@ export function Historia() {
                 &ldquo;{configuracaoHistoria.citacaoProposito}&rdquo;
               </blockquote>
               <div className="mt-8 pt-6 border-t border-white/20 flex flex-wrap items-center justify-center gap-4 text-xs md:text-sm font-bold uppercase tracking-wider text-slate-300">
-                <span>• Acesso Democrático</span>
-                <span>• Arte Pública</span>
-                <span>• Território Criativo</span>
+                {configuracaoHistoria.tagsCitacao.map((tagCitacao) => (
+                  <span key={tagCitacao}>• {tagCitacao}</span>
+                ))}
               </div>
             </div>
           </div>

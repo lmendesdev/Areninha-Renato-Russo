@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { IngressoButton } from "../ingressoButton/IngressoButton";
 import AreninhaLogo from "../../assets/Areninha/AreninhaIcon.webp";
+import configuracaoGeral from "../../content/configuracoes/geral.json";
 
 interface ItemLinkNavegacao {
   readonly rotulo: string;
@@ -80,7 +81,7 @@ export function Header({ paginaAtiva }: PropriedadesHeader = {}) {
         </nav>
         <div className="flex items-center gap-4">
           <div className="hidden lg:block">
-            <IngressoButton />
+            <IngressoButton destino={configuracaoGeral.linkIngressosGeral} />
           </div>
           <button
             type="button"
@@ -116,7 +117,7 @@ export function Header({ paginaAtiva }: PropriedadesHeader = {}) {
             </div>
           ))}
           <div className="fixed left-0 w-full bottom-0 py-6 px-6 bg-[#071926] border-t-2 border-[#20303C]">
-            <IngressoButton estilo="w-full" />
+            <IngressoButton estilo="w-full" destino={configuracaoGeral.linkIngressosGeral} />
           </div>
         </nav>
       )}
