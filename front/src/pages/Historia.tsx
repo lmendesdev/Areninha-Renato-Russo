@@ -12,66 +12,12 @@ import lonaHeroSvg from "../assets/historia/lonaHero.svg";
 import lonaCitacaoSvg from "../assets/historia/lonaCitacao.svg";
 import { ErrorBoundary } from "react-error-boundary";
 import { CardErrorBoundary } from "../components/errorBoundary/CardErrorBoundary";
+import configuracaoHistoria from "../content/historiaPage/config.json";
 
-const marcosHistoricos: readonly PropriedadesCardDataHistoria[] = [
-  {
-    dataAno: 2007,
-    titulo: "Fundação da Lona Cultural",
-    descricao:
-      "Inauguração como Lona Cultural Renato Russo, prestando tributo inesquecível ao poeta do rock brasileiro que viveu no bairro, abrindo as portas para toda a comunidade insulana.",
-    cor: "azul",
-  },
-  {
-    dataAno: 2016,
-    titulo: "Reinauguração como Areninha",
-    descricao:
-      "Evolução para estrutura definitiva em alvenaria, cobertura com isolamento termoacústico, sala de espetáculos com ar-condicionado central e ambientes de oficinas multidisciplinares.",
-    cor: "amarelo",
-  },
-  {
-    dataAno: "Hoje",
-    titulo: "Polo Cultural Vibrante",
-    descricao:
-      "Consolidação como principal centro cultural público da região, unindo espetáculos teatrais, shows, cursos formativos gratuitos e biblioteca comunitária integrada à praça.",
-    cor: "laranja",
-  },
-];
-
-const listaEquipe: readonly PropriedadesCardProfissionais[] = [
-  {
-    nome: "Mariana Oliveira",
-    setor: "Gestão",
-    tagFuncao: "Administradora",
-    corTag: "azul",
-    descricao:
-      "Coordenação administrativa e planejamento operacional das ações diárias da Areninha.",
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1WfqLv0-D4MAuqxwGr-cCg00V_-hLl8p3t03Hxrs0MmcvJa-Y7U1N0PDRzdxsnYI3cBvzHKGcIXVrMfEiF9EVmUfXIZv3wy5b-n6gQw7FXQuRvIT94u057MawaYH63xscarFsO3X_pJgQjCA2GCxbwb-m4GDw0ZbUudPqpBnK8IGY4KpAOX4vT_FbkyQdJRh6tNch-nMd71NexrMn6PQgHfzRhRMD_kPZeiadzwF3PNYla0e6_j2Lx_1SA",
-    altImagem: "Mariana Oliveira",
-  },
-  {
-    nome: "José Nilton Barbosa Oliveira",
-    setor: "Curadoria",
-    tagFuncao: "Gestor Cultural",
-    corTag: "laranja",
-    descricao:
-      "Articulação institucional, projetos de formação artística e diálogo direto com a comunidade.",
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1XzjOB94DdX5bHV4nGQkAcJzma1S32eFkyxHPHa1krWyZze4v_BdXRQn3hDMhA0FgNridD5pv20vPMubCwVlHFrD9ZZiP3Dlh-VtasVQIWlJvpbx3Kd0V08xnT5C-Gvbk2iYtY1MDgjs662qRsvwn6LZeH7jRSzPfSizcmiC4nHqZR0esaKeT1VihRpDCzQoaF5Dn8BdFKJK41bapDAmPNaPlUQ-wjTGQemQ2C-DkhLLhPsQF_WFGIpQw",
-    altImagem: "José Nilton Barbosa Oliveira",
-  },
-  {
-    nome: "Rômulo Johann",
-    setor: "Produção",
-    tagFuncao: "Coordenador de Eventos",
-    corTag: "preta",
-    descricao:
-      "Produção técnica, logística de espetáculos e suporte operacional às montagens em palco.",
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1Vzg8rYbQzlyLZlBy_4Z6HZpQkRLXQhSolIHtk7DmV-FsvCMzQ-gZ0oElWiv9Wlh5AyYA5_vx6Ioe44CNz3SPgJ5RFqGKJ9O0Cm3AGRSA6PLbA9B2vjqoXOx_644_YrgPgYFA7CqioLggIAFYGWhBLVTk-zjyw9bnlhy3PA-uEqLbMqOOOR0DsW5LSm4rsnmQk6fsm3Bi9Vdht4hSLHusEeyX5I4RR9Wb5ZBsmhd5ybQQlVIE7KAi5XIHw",
-    altImagem: "Rômulo Johann",
-  },
-];
+const modulosMarcosHistoricos = import.meta.glob<PropriedadesCardDataHistoria>("../content/historiaPage/marcos/*.json", { eager: true, import: "default" });
+const marcosHistoricos: readonly PropriedadesCardDataHistoria[] = Object.values(modulosMarcosHistoricos);
+const modulosEquipe = import.meta.glob<PropriedadesCardProfissionais>("../content/historiaPage/funcionarios/*.json", { eager: true, import: "default" });
+const listaEquipe: readonly PropriedadesCardProfissionais[] = Object.values(modulosEquipe).sort((membroA, membroB) => membroA.nome.localeCompare(membroB.nome));
 
 export function Historia() {
   return (
@@ -104,9 +50,7 @@ export function Historia() {
               Nossa História
             </h1>
             <p className="text-lg md:text-xl font-medium text-slate-200 max-w-3xl leading-relaxed">
-              Localizada no Parque Poeta Manuel Bandeira, no Cocotá, a Areninha
-              Cultural Renato Russo é o coração pulsante da arte, convivência e
-              resistência cultural na Ilha do Governador.
+              {configuracaoHistoria.subtituloHero}
             </p>
           </div>
         </section>
@@ -127,20 +71,7 @@ export function Historia() {
                 </span>
               </div>
               <p className="text-base md:text-lg text-brand-darkCustom leading-relaxed font-normal">
-                A{" "}
-                <strong className="font-bold">
-                  Areninha Cultural Renato Russo
-                </strong>{" "}
-                está localizada no Parque Poeta Manuel Bandeira, no Cocotá, na
-                Ilha do Governador. A antiga Lona Cultural foi fundada em
-                setembro de 2007 e recebeu o nome de Renato Russo, em homenagem
-                ao líder da Legião Urbana, que viveu parte de sua infância e
-                juventude na Ilha do Governador. Em setembro de 2016, o espaço
-                foi reinaugurado como Areninha Cultural, passando a contar com
-                estrutura definitiva em alvenaria e cobertura termoacústica. O
-                espaço conta com teatro climatizado, salas destinadas à
-                formação, sala de leitura com foco em literatura infantojuvenil
-                e poesia e área externa integrada ao parque.
+                {configuracaoHistoria.textoMemorial}
               </p>
             </div>
             <div className="space-y-8">
@@ -170,13 +101,7 @@ export function Historia() {
           <div className="max-w-5xl mx-auto px-6 md:px-10 relative z-10 text-center">
             <div className="bg-brand-darkCustom/80 backdrop-blur-sm border-2 border-street-yellowCustom rounded-3xl p-8 md:p-12 shadow-[8px_8px_0px_#FFD600] relative">
               <blockquote className="text-2xl md:text-3xl lg:text-4xl font-extrabold leading-snug tracking-tight text-white">
-                &ldquo;A Areninha Cultural Renato Russo tem como propósito{" "}
-                <span className="text-street-yellowCustom underline decoration-fest-orangeCustom decoration-4">
-                  fortalecer a centralidade cultural
-                </span>{" "}
-                da Ilha do Governador, ampliando o acesso da população à cultura
-                e oferecendo um espaço de qualidade para fruição, formação,
-                criação e convivência.&rdquo;
+                &ldquo;{configuracaoHistoria.citacaoProposito}&rdquo;
               </blockquote>
               <div className="mt-8 pt-6 border-t border-white/20 flex flex-wrap items-center justify-center gap-4 text-xs md:text-sm font-bold uppercase tracking-wider text-slate-300">
                 <span>• Acesso Democrático</span>
@@ -193,8 +118,7 @@ export function Historia() {
                 Nossa Equipe
               </h2>
               <p className="mt-3 text-base md:text-lg font-medium text-brand-darkCustom/70 max-w-2xl mx-auto">
-                Conheça as pessoas que fazem a cultura acontecer todos os dias
-                na Areninha.
+                {configuracaoHistoria.subtituloEquipe}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">

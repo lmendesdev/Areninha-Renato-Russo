@@ -1,5 +1,6 @@
 import { Header } from "../components/Header-Footer/Header";
 import { Footer } from "../components/Header-Footer/Footer";
+import configuracaoGeral from "../content/configuracoes/geral.json";
 
 export function TermosDeUso() {
   return (
@@ -75,10 +76,10 @@ export function TermosDeUso() {
               diretrizes operacionais do espaço cultural. Em caso de dúvidas ou
               solicitações, entre em contato pelo e-mail oficial:{" "}
               <a
-                href="mailto:gestaoculturalareninharrusso@gmail.com"
+                href={`mailto:${configuracaoGeral.email}`}
                 className="underline font-medium"
               >
-                gestaoculturalareninharrusso@gmail.com
+                {configuracaoGeral.email}
               </a>
               .
             </p>

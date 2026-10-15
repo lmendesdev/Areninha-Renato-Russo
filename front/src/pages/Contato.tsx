@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { Header } from "../components/Header-Footer/Header";
 import { Footer } from "../components/Header-Footer/Footer";
+import configuracaoGeral from "../content/configuracoes/geral.json";
+import configuracaoContato from "../content/contatoPage/contato.json";
 
 interface FormularioContatoValores {
   readonly nome: string;
@@ -110,9 +112,7 @@ export function Contato() {
               Sugestões &amp; Contato
             </h1>
             <p className="text-lg md:text-xl font-medium text-brand-darkCustom/80 max-w-2xl">
-              A Areninha Cultural Renato Russo quer ouvir você! Compartilhe
-              elogios, sugestões de atividades ou tire suas dúvidas diretamente
-              conosco.
+              {configuracaoContato.subtitulo}
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -122,13 +122,12 @@ export function Contato() {
                   FALE DIRETO COM A EQUIPE
                 </h2>
                 <p className="text-sm font-medium text-white/90 mb-8">
-                  Atendimento ágil para produtores, frequentadores e alunos das
-                  oficinas da Ilha do Governador.
+                  {configuracaoContato.subtituloAtendimento}
                 </p>
                 <div className="space-y-4">
                   <a
                     className="flex items-center gap-4 bg-bg-whiteCustom text-brand-darkCustom p-4 rounded-xl border-3 border-brand-darkCustom sticker-shadow-md hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all group"
-                    href="https://api.whatsapp.com/send?phone=5521976647013"
+                    href={configuracaoGeral.linkWhatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -142,13 +141,13 @@ export function Contato() {
                         Telefone &amp; WhatsApp
                       </span>
                       <span className="block text-base md:text-lg font-bold truncate text-brand-darkCustom group-hover:text-energy-blueCustom transition-colors">
-                        (21) 97664-7013
+                        {configuracaoGeral.telefone}
                       </span>
                     </div>
                   </a>
                   <a
                     className="flex items-center gap-4 bg-bg-whiteCustom text-brand-darkCustom p-4 rounded-xl border-3 border-brand-darkCustom sticker-shadow-md hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all group"
-                    href="mailto:gestaoculturalareninharrusso@gmail.com"
+                    href={`mailto:${configuracaoGeral.email}`}
                   >
                     <div className="w-12 h-12 rounded-lg bg-fest-orangeCustom flex items-center justify-center border-2 border-brand-darkCustom text-white shrink-0">
                       <span className="material-symbols-outlined text-2xl font-bold">
@@ -160,7 +159,7 @@ export function Contato() {
                         E-mail Oficial
                       </span>
                       <span className="block text-sm md:text-base font-bold truncate text-brand-darkCustom group-hover:text-fest-orangeCustom transition-colors">
-                        gestaoculturalareninharrusso@gmail.com
+                        {configuracaoGeral.email}
                       </span>
                     </div>
                   </a>
@@ -172,10 +171,10 @@ export function Contato() {
                         Horário da Secretaria
                       </h3>
                       <p className="text-xs font-semibold text-white/95 mt-1">
-                        Segunda a quinta-feira: 10h às 21h
+                        {configuracaoGeral.horarioSecretaria1}
                       </p>
                       <p className="text-xs font-semibold text-white/80">
-                        Sábados e domingos conforme programação dos eventos
+                        {configuracaoGeral.horarioSecretaria2}
                       </p>
                     </div>
                   </div>
@@ -191,12 +190,10 @@ export function Contato() {
                   </span>
                 </div>
                 <p className="text-sm font-bold text-brand-darkCustom leading-snug">
-                  Praça Manuel Bandeira, s/nº – Cocotá – Ilha do Governador, Rio
-                  de Janeiro/RJ.
+                  {configuracaoGeral.endereco}
                 </p>
                 <p className="text-xs font-medium text-brand-darkCustom/70 mt-2">
-                  Localizado próximo à Estação das Barcas do Cocotá e ao Parque
-                  Manoel Bandeira.
+                  {configuracaoContato.descricaoEspaco}
                 </p>
               </div>
             </div>
@@ -222,7 +219,7 @@ export function Contato() {
                         Deixe sua Mensagem
                       </h2>
                       <p className="text-xs md:text-sm font-medium text-brand-darkCustom/70 mt-0.5">
-                        Correspondência direta com a gestão do espaço cultural.
+                        {configuracaoContato.textoApresentacaoFormulario}
                       </p>
                     </div>
                     <div className="flex items-center gap-2.5 self-start sm:self-auto shrink-0">
@@ -277,7 +274,7 @@ export function Contato() {
                       </div>
                       <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-bg-whiteCustom border border-brand-darkCustom rounded-lg font-mono text-xs font-bold text-brand-darkCustom">
                         <span className="truncate max-w-55 sm:max-w-none">
-                          gestaoculturalareninharrusso@gmail.com
+                          {configuracaoGeral.email}
                         </span>
                       </div>
                     </div>

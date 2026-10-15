@@ -6,6 +6,8 @@ import instagramSvg from "../../assets/footer/instagram.svg";
 import linktreeSvg from "../../assets/footer/linktree.svg";
 import youtubeSvg from "../../assets/footer/youtube.svg";
 
+import configuracaoGeral from "../../content/configuracoes/geral.json";
+
 interface ItemLinkInstitucional {
   readonly rotulo: string;
   readonly endereco: string;
@@ -26,17 +28,17 @@ const linksInstitucionais: readonly ItemLinkInstitucional[] = [
 const redesSociais: readonly ItemRedeSocial[] = [
   {
     rotulo: "Instagram",
-    endereco: "https://www.instagram.com/areninhaculturalrenatorusso/",
+    endereco: configuracaoGeral.instagram,
     icone: instagramSvg,
   },
   {
     rotulo: "Linktree",
-    endereco: "https://linktr.ee/AreninhaCulturalRenatoRusso",
+    endereco: configuracaoGeral.linktree,
     icone: linktreeSvg,
   },
   {
     rotulo: "YouTube",
-    endereco: "https://www.youtube.com/@AreninhaCulturalRenatoRusso",
+    endereco: configuracaoGeral.youtube,
     icone: youtubeSvg,
   },
 ];
@@ -60,8 +62,7 @@ export function Footer() {
                   location_on
                 </span>
                 <span className="leading-relaxed">
-                  Praça Manuel Bandeira, s/nº – Cocotá – Ilha do Governador, Rio
-                  de Janeiro/RJ.
+                  {configuracaoGeral.endereco}
                 </span>
               </p>
             </div>
@@ -75,17 +76,17 @@ export function Footer() {
                 <span className="material-symbols-outlined text-street-yellowCustom text-lg shrink-0">
                   call
                 </span>
-                (21) 97664-7013
+                {configuracaoGeral.telefone}
               </p>
               <p className="flex items-center gap-3 break-all">
                 <span className="material-symbols-outlined text-street-yellowCustom text-lg shrink-0">
                   mail
                 </span>
-                gestaoculturalareninharrusso@gmail.com
+                {configuracaoGeral.email}
               </p>
               <div className="mt-4 border-t border-white/10 pt-3 space-y-1 text-xs text-white/70">
-                <p>Secretaria: segunda a quinta-feira, das 10h às 21h.</p>
-                <p>Sábados e domingos conforme programação.</p>
+                <p>{configuracaoGeral.horarioSecretaria1}</p>
+                <p>{configuracaoGeral.horarioSecretaria2}</p>
               </div>
             </div>
           </div>

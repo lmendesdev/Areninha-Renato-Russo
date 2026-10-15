@@ -9,120 +9,24 @@ import {
 } from "../components/cardProgramacao/CardProgramacao";
 import { ErrorBoundary } from "react-error-boundary";
 import { CardErrorBoundary } from "../components/errorBoundary/CardErrorBoundary";
+import configuracaoHome from "../content/homePage/home.json";
+import { formatarUrlEmbedYoutube } from "../utils/youtube";
 
-const URL_IMAGEM_VIDEO_INSTITUCIONAL =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuBL3gdu1geTy0ZYOzfXf7x4zJI1Ai94Ui-Ge8XIlM-b-qzp4NGaCVYepAXBD3oJwZNta8zstq5142Q1-VXzWBgzwq3IXJ5T7I2G-h7iHztVHPLbzjbcJRp9dwzjU8tqD-edJLQQoO44kZ21FpJCveb4TsoV8G2M2Anal-RhwnecUgRP9LuZC5Pj09Gu9R5qe22pg7vVVGwvZz6zkAnpcNjaxQhP45oJe84jbirbPviyrOchwvZxCdfP";
+const quantidadeProximosEventos = 3;
 
-const URL_EMBED_VIDEO_YOUTUBE =
-  "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0";
-
-const PROXIMOS_EVENTOS: readonly PropriedadesCardProgramacao[] = [
-  {
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1UbGwsSH-78UDp2FCkVCc4Rt59x6LdVJqYGxzwFIk1QeQhQ6lr4zM8GcGvLC7_4piB8CEC-Hv-q2p8sgMgm-amxqE5Xibk5DVyxBISanWea_xudXmVRhjnZLiUOhGANOoegAgKvoTZBetPY8vZ5nlwPL9lBvdsLYo8NMLetdBJX2n9YgPSSVLCX2arwIo6y8EbykxALKLsARA9_vAiyFUBxQYZpjTrP2jaa-KabeV5NzpkRQLV7IzDmels",
-    altImagem: "Minha Voz, Nosso Samba — Marinho",
-    titulo: "Minha Voz, Nosso Samba — Marinho",
-    tag: "SHOW",
-    dia: 22,
-    mes: 8,
-    ano: 2026,
-    horario: "20h",
-    diaSemana: "Sábado",
-    descricao:
-      "Um espetáculo inesquecível celebrando as raízes do samba com a voz marcante e calorosa de Marinho.",
-    local: "Palco Principal — Areninha Cultural Renato Russo",
-    link: "#",
-    valor: 0,
-  },
-  {
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1UyhOO4g--QU8-7nkKuCQUJEZjA7pSFUcwa8DAQGFGEuooyYKKgwaFlTS9qyvQd_QjthIo29Hs6l8Jh5-YlwrK1qvkvvjWdqMjeD-ZgFeSgGQolAtet5ifbR9ZXT6Qoxi2moAq_jkOiqBpmKtVIe39RzuwQo3lmQhdeVHTgQr8HLf46PwT8dfUOxP2iRMwRSoh-VAgT_0C1en88X9XWVHa2wlW0uMJ4ij18CjxNxJSbfZAaiDPRsgHQGw",
-    altImagem: "Felipe Ferreira — O Novo Show",
-    titulo: "Felipe Ferreira — O Novo Show",
-    tag: "SHOW",
-    dia: 28,
-    mes: 8,
-    ano: 2026,
-    horario: "20h",
-    diaSemana: "Sexta-feira",
-    descricao:
-      "Apresentação inédita trazendo os novos sucessos e clássicos da carreira com arranjos eletrizantes.",
-    local: "Palco Principal — Areninha Cultural Renato Russo",
-    link: "#",
-    valor: 0,
-  },
-  {
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1UWD4dCaxZfyxRJuo2j8WyWxjLarfkAcH-O2PazLsLeiJkUa_SR_yg2fM06qYd8yka0w7kkuNM8_9ghnAf6UokxeDoJAm-naMEsrf3a9S1QYHhPPbOa4PwvY5dZ2SZPwGp8H6eG69IlUDvuTajGpLnbjvOfp7lHmYrQKUoL_7gugClXN0RpvSA7yHizmQO44dt09MpLHmWg1NInBVplav6Q97GPWZCWN3DKA-DmsgadVUEKp_D11uKGAWA",
-    altImagem: "Baia — Solar ao Vivo",
-    titulo: "Baia — Solar ao Vivo",
-    tag: "SHOW",
-    dia: 29,
-    mes: 8,
-    ano: 2026,
-    horario: "20h",
-    diaSemana: "Sábado",
-    descricao:
-      "Energia contagiante e muita música boa no aguardado repertório do aclamado show Solar ao Vivo.",
-    local: "Palco Principal — Areninha Cultural Renato Russo",
-    link: "#",
-    valor: 0,
-  },
-  {
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1W1p3n_V19a5LTdyqw-cBiziibDl2koPlQgdQbVmiiA7-4pTy0Ucvkuj_FC-hyFl0xLokY9j79YM4H2iefBBzcLPGnjahhW1HL2LcOy8WmSzMaRcI46HFLexP91uvp57Z4G4kKBIKiJOCycUrZquVYTt7g_tLC5Dqe3U9TplBP19d18RaArysAMpcbxHNGQetILrm6Tw5NpdoRgnI6U-fT6xcSqajGgG-S1EwJAJiqHHc6ZzSbwq-mt1ho",
-    altImagem: "KD O Show? — Stand Up Daniel Lopes e Kwesny",
-    titulo: "KD O Show? — Stand Up Daniel Lopes e Kwesny",
-    tag: "COMÉDIA",
-    dia: 4,
-    mes: 9,
-    ano: 2026,
-    horario: "20h",
-    diaSemana: "Sexta-feira",
-    descricao:
-      "Noite de muitas risadas e descontração com a química afiada dos comediantes Daniel Lopes e Kwesny.",
-    local: "Palco Principal — Areninha Cultural Renato Russo",
-    link: "#",
-    valor: 0,
-  },
-  {
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1W4vQbdMMOaasv_HBdeiiyBjldZ--SCs7OX0zJCM1YumvGER8ztzT2sOML3QjaSDVP5Hee0GFE7Ugj3nVmxUr9T9WuKe2xma6G19lgJqzLLfAvre3QexlWR0svoPWjGLrZV3P1EuJLPARGO_RbO8uZ2d661RJHs_ENPbAj7Am-c7_I2te6XGgCRMhdQyB_xP02OKlCvj008jcbS2bN-0gGwhCDYbh3y240P-OQSlEBDC1qQWGBRe2I-jQ",
-    altImagem: "Era Uma Vez... Em Movimento",
-    titulo: "Era Uma Vez... Em Movimento",
-    tag: "TEATRO",
-    dia: 5,
-    mes: 9,
-    ano: 2026,
-    horario: "16h",
-    diaSemana: "Sábado",
-    descricao:
-      "Um espetáculo teatral envolvente que mistura contação de histórias lúdicas e vibrante expressão corporal.",
-    local: "Palco Principal — Areninha Cultural Renato Russo",
-    link: "#",
-    valor: 0,
-  },
-  {
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1VX6ozUpDPFFywbhI9fMuqMLfqZBYcM5shNdgiSdy32RQMKHvtyZrchi2PcqJUX9jrxn5AGGRaq7Cg3VD00sJNp7Pe5dVzjMJ9ZglbGp4fFSwkUN18NMjSocjYZ0Evp-efld0upV2v7hDvxZHNcGQmHnPhCOnA7ci5rE97nHZ2jfAmB5YqSVDkSIoFdTFMLqfUlkcz3Ioq-CMoVgx8hUPRpZ3sozKpWqD7RxRTtFnrf4Q9PwfJ2yVAnJ-w",
-    altImagem: "Class Rock — Concerto à Luz de Velas",
-    titulo: "Class Rock — Concerto à Luz de Velas",
-    tag: "CONCERTO",
-    dia: 6,
-    mes: 9,
-    ano: 2026,
-    horario: "19h",
-    diaSemana: "Domingo",
-    descricao:
-      "Clássicos do rock internacional reinterpretados em um ambiente intimista e mágico iluminado por velas.",
-    local: "Palco Principal — Areninha Cultural Renato Russo",
-    link: "#",
-    valor: 0,
-  },
-];
+const modulosProximosEventos = import.meta.glob<PropriedadesCardProgramacao>(
+  "../content/programacaoPage/programacao/*.json",
+  { eager: true, import: "default" }
+);
+const listaEventos: readonly PropriedadesCardProgramacao[] = Object.values(modulosProximosEventos).sort((eventoA, eventoB) => {
+  const timestampA = new Date(eventoA.ano, eventoA.mes - 1, eventoA.dia).getTime();
+  const timestampB = new Date(eventoB.ano, eventoB.mes - 1, eventoB.dia).getTime();
+  return timestampB - timestampA;
+}).slice(0, quantidadeProximosEventos);
 
 export function Home() {
   const [videoAtivo, setVideoAtivo] = useState<boolean>(false);
+  const urlEmbedFinal = formatarUrlEmbedYoutube(configuracaoHome.linkVideoYoutube);
 
   return (
     <div className="bg-bg-whiteCustom text-brand-darkCustom antialiased flex flex-col min-h-screen selection:bg-street-yellowCustom selection:text-brand-darkCustom">
@@ -161,14 +65,10 @@ export function Home() {
                 </h1>
                 <div className="space-y-4 mb-10 max-w-2xl mx-auto">
                   <p className="text-xl sm:text-2xl font-bold text-brand-darkCustom leading-snug">
-                    Cultura, arte, formação e convivência na Ilha do Governador.
+                    {configuracaoHome.subtituloHero}
                   </p>
                   <p className="text-sm sm:text-base font-medium text-brand-darkCustom/80 leading-relaxed">
-                    A Areninha Cultural Renato Russo é um equipamento cultural
-                    da Secretaria Municipal de Cultura do Rio de Janeiro,
-                    localizado no Cocotá, na Ilha do Governador, e co-gerido
-                    pelo Instituto Usina Social. O espaço promove o acesso à
-                    cultura, à formação artística e à convivência...
+                    {configuracaoHome.descricaoHero}
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
@@ -194,14 +94,13 @@ export function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
               <div className="bg-bg-whiteCustom rounded-3xl p-8 sm:p-12 border-2 border-brand-darkCustom sticker-shadow-lg text-center relative overflow-hidden group">
                 <div className="text-6xl sm:text-7xl lg:text-8xl font-black text-fest-orangeCustom tracking-tight leading-none mb-4">
-                  +200
+                  {configuracaoHome.numeroAtividades}
                 </div>
                 <div className="text-base sm:text-lg font-black text-brand-darkCustom uppercase tracking-widest max-w-xs mx-auto">
-                  atividades regulares por mês
+                  {configuracaoHome.tituloAtividades}
                 </div>
                 <p className="text-xs sm:text-sm font-medium text-brand-darkCustom/70 mt-4 max-w-sm mx-auto">
-                  Música, teatro, circo, dança, artesanato e oficinas gratuitas
-                  para toda a comunidade.
+                  {configuracaoHome.descricaoAtividades}
                 </p>
               </div>
               <div className="bg-bg-whiteCustom rounded-3xl p-3 sm:p-4 border-2 border-brand-darkCustom sticker-shadow-lg">
@@ -209,7 +108,7 @@ export function Home() {
                   {videoAtivo ? (
                     <iframe
                       className="w-full h-full"
-                      src={URL_EMBED_VIDEO_YOUTUBE}
+                      src={urlEmbedFinal}
                       title="Vídeo Institucional — Areninha Cultural Renato Russo"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       referrerPolicy="strict-origin-when-cross-origin"
@@ -225,7 +124,7 @@ export function Home() {
                       <img
                         alt="Iluminação de palco da Areninha Cultural"
                         className="w-full h-full object-cover opacity-60 mix-blend-overlay group-hover:scale-105 transition-transform duration-500"
-                        src={URL_IMAGEM_VIDEO_INSTITUCIONAL}
+                        src={configuracaoHome.imagemCapaVideo}
                       />
                       <div className="absolute inset-0 bg-brand-darkCustom/30 flex items-center justify-center">
                         <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-street-yellowCustom border-2 border-brand-darkCustom sticker-shadow-md flex items-center justify-center text-brand-darkCustom group-hover:scale-110 transition-transform duration-200">
@@ -255,7 +154,7 @@ export function Home() {
                   Próximos Eventos
                 </h2>
                 <p className="text-sm md:text-base font-medium text-brand-darkCustom/75 mt-1">
-                  Não perca o que está rolando na Areninha.
+                  {configuracaoHome.subtituloProximosEventos}
                 </p>
               </div>
               <Link
@@ -266,7 +165,7 @@ export function Home() {
               </Link>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-              {PROXIMOS_EVENTOS.map((evento) => (
+              {listaEventos.map((evento) => (
               <ErrorBoundary key={evento.titulo} fallback={<CardErrorBoundary />}>
                 <CardProgramacao
                   imagem={evento.imagem}
