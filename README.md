@@ -1,4 +1,4 @@
-# 🎭 Areninha Cultural Renato Russo — Portal Web Oficial
+# Areninha Cultural Renato Russo — Portal Web Oficial
 
 ![React](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
