@@ -6,15 +6,8 @@ import {
   type PropriedadesCardEspacos,
 } from "../components/cardEspacos/CardEspacos";
 import holofotesHeroSvg from "../assets/espaco/holofotesHero.svg";
-
-const URL_IMAGEM_ARQUITETONICA =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuCrgbxRbWGoE-Mv1tS1Jo2eFxDa2g_enZMDia_y7R9svJMxufhq0xI5PipXxPnePrR0qP4-APNkVSPeiPRZpHSWWchsYireC44T457zHPKw08U3lruXDgz-a3TS9AbKz5Rcd3F3ygjDZSmKA8_3opFs90FIUFbmXxjBLcnP5Go0B7hz6UkUhp40zmajVCA-9vdzwuL1oR9CpPMtq7P5DJSmT9kYMiAQV8fEb_6u6cNnuFho0555ho1n";
-
-const URL_IMAGEM_VIDEO_INSTITUCIONAL =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuBL3gdu1geTy0ZYOzfXf7x4zJI1Ai94Ui-Ge8XIlM-b-qzp4NGaCVYepAXBD3oJwZNta8zstq5142Q1-VXzWBgzwq3IXJ5T7I2G-h7iHztVHPLbzjbcJRp9dwzjU8tqD-edJLQQoO44kZ21FpJCveb4TsoV8G2M2Anal-RhwnecUgRP9LuZC5Pj09Gu9R5qe22pg7vVVGwvZz6zkAnpcNjaxQhP45oJe84jbirbPviyrOchwvZxCdfP";
-
-const URL_EMBED_VIDEO_YOUTUBE =
-  "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0";
+import configuracaoEspaco from "../content/espacoPage/espaco.json";
+import { formatarUrlEmbedYoutube } from "../utils/youtube";
 
 const listaEspacos: readonly PropriedadesCardEspacos[] = [
   {
@@ -47,8 +40,8 @@ const itensInformacoesTecnicas: readonly string[] = [
 ];
 
 export function Espaco() {
-
   const [videoAtivo, setVideoAtivo] = useState<boolean>(false);
+  const urlEmbedFinal = formatarUrlEmbedYoutube(configuracaoEspaco.linkVideoYoutube);
 
   return (
     <div className="bg-bg-whiteCustom text-brand-darkCustom font-sans antialiased flex flex-col min-h-screen selection:bg-street-yellowCustom selection:text-brand-darkCustom">
@@ -81,8 +74,7 @@ export function Espaco() {
               </h1>
             </div>
             <p className="text-base sm:text-lg md:text-xl font-medium text-brand-darkCustom/85 max-w-2xl mx-auto leading-relaxed mt-2">
-              Um polo vibrante de cultura, formação e convivência comunitária no
-              coração da Ilha do Governador.
+              {configuracaoEspaco.subtituloHero}
             </p>
           </div>
         </section>
@@ -90,26 +82,14 @@ export function Espaco() {
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
               <h2 className="font-black text-3xl md:text-4xl text-brand-darkCustom leading-tight uppercase">
-                Infraestrutura completa para a cena artística carioca
+                {configuracaoEspaco.tituloInstitucional}
               </h2>
               <div className="space-y-4 text-base md:text-lg text-brand-darkCustom/90 leading-relaxed font-medium">
                 <p className="bg-bg-whiteCustom p-6 rounded-3xl border-2 border-brand-darkCustom sticker-shadow-lg">
-                  A{" "}
-                  <strong className="font-bold text-brand-darkCustom">
-                    Areninha Cultural Renato Russo
-                  </strong>{" "}
-                  está localizada no Parque Poeta Manuel Bandeira, no Cocotá,
-                  Ilha do Governador. O equipamento possui teatro climatizado
-                  com capacidade para 320 pessoas, três salas multiuso
-                  destinadas à formação, sala de leitura com foco em literatura
-                  infantojuvenil e poesia e uma praça/área externa integrada ao
-                  parque, utilizada para eventos, atividades culturais e feiras
-                  comunitárias.
+                  {configuracaoEspaco.descricaoParagrafo1}
                 </p>
                 <p className="bg-bg-whiteCustom p-6 rounded-3xl border-2 border-brand-darkCustom sticker-shadow-lg">
-                  A programação regular também utiliza diferentes ambientes do
-                  equipamento, incluindo salas de atividades, área externa e
-                  espaço principal da Areninha.
+                  {configuracaoEspaco.descricaoParagrafo2}
                 </p>
               </div>
             </div>
@@ -119,7 +99,7 @@ export function Espaco() {
                   <img
                     alt="Fotografia arquitetônica da Areninha Cultural com praça externa e público"
                     className="w-full h-full object-cover"
-                    src={URL_IMAGEM_ARQUITETONICA}
+                    src={configuracaoEspaco.imagemArquitetonica}
                   />
                 </div>
               </div>
@@ -158,10 +138,7 @@ export function Espaco() {
                     </h3>
                   </div>
                   <p className="text-sm md:text-base text-brand-darkCustom leading-relaxed font-medium">
-                    O equipamento possui teatro climatizado e infraestrutura
-                    técnica de sonorização e iluminação cênica destinada à
-                    realização de espetáculos teatrais, shows musicais,
-                    oficinas, ensaios e intervenções comunitárias.
+                    {configuracaoEspaco.textoInformacoesTecnicas}
                   </p>
                   <div className="rounded-2xl border-2 border-brand-darkCustom p-5 space-y-4 bg-bg-whiteCustom mt-auto">
                     {itensInformacoesTecnicas.map((itemTecnico) => (
@@ -227,7 +204,7 @@ export function Espaco() {
                 {videoAtivo ? (
                   <iframe
                     className="w-full h-full"
-                    src={URL_EMBED_VIDEO_YOUTUBE}
+                    src={urlEmbedFinal}
                     title="Vídeo Institucional — Areninha Cultural Renato Russo"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
@@ -243,7 +220,7 @@ export function Espaco() {
                     <img
                       alt="Iluminação de palco da Areninha Cultural"
                       className="w-full h-full object-cover opacity-60 mix-blend-overlay group-hover:scale-105 transition-transform duration-500"
-                      src={URL_IMAGEM_VIDEO_INSTITUCIONAL}
+                      src={configuracaoEspaco.imagemCapaVideo}
                     />
                     <div className="absolute inset-0 bg-brand-darkCustom/30 flex items-center justify-center">
                       <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-street-yellowCustom border-2 border-brand-darkCustom sticker-shadow-md flex items-center justify-center text-brand-darkCustom group-hover:scale-110 transition-transform duration-200">

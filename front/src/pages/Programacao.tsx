@@ -8,6 +8,7 @@ import {
 import { CardChamada } from "../components/cardChamada/CardChamada";
 import { ErrorBoundary } from "react-error-boundary";
 import { CardErrorBoundary } from "../components/errorBoundary/CardErrorBoundary";
+import configuracaoProgramacao from "../content/programacaoPage/config.json";
 
 type FiltroDia = "Sábado" | "Domingo" | "Geral";
 
@@ -16,6 +17,13 @@ const anguloDomingo = 45;
 const anguloGeral = 180;
 
 const ordemFiltros: readonly FiltroDia[] = ["Sábado", "Domingo", "Geral"];
+
+const modulosProgramacao = import.meta.glob<PropriedadesCardProgramacao>("../content/programacaoPage//programacao/*.json", { eager: true, import: "default" });
+const listaProgramacao = Object.values(modulosProgramacao).sort((eventoA, eventoB) => {
+  const timestampA = new Date(eventoA.ano, eventoA.mes - 1, eventoA.dia).getTime();
+  const timestampB = new Date(eventoB.ano, eventoB.mes - 1, eventoB.dia).getTime();
+  return timestampB - timestampA;
+});
 
 interface OpcaoChaveIndustrial {
   readonly id: FiltroDia;
@@ -42,111 +50,6 @@ const opcoesChaveIndustrial: readonly OpcaoChaveIndustrial[] = [
     rotuloFita: "GERAL",
     codigoCanal: "CH-ALL",
     classeRotacaoFita: "-rotate-1",
-  },
-];
-
-const listaProgramacao: readonly PropriedadesCardProgramacao[] = [
-  {
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1UbGwsSH-78UDp2FCkVCc4Rt59x6LdVJqYGxzwFIk1QeQhQ6lr4zM8GcGvLC7_4piB8CEC-Hv-q2p8sgMgm-amxqE5Xibk5DVyxBISanWea_xudXmVRhjnZLiUOhGANOoegAgKvoTZBetPY8vZ5nlwPL9lBvdsLYo8NMLetdBJX2n9YgPSSVLCX2arwIo6y8EbykxALKLsARA9_vAiyFUBxQYZpjTrP2jaa-KabeV5NzpkRQLV7IzDmels",
-    altImagem: "Minha Voz, Nosso Samba — Marinho",
-    titulo: "Minha Voz, Nosso Samba — Marinho",
-    tag: "SHOW",
-    dia: 22,
-    mes: 8,
-    ano: 2026,
-    horario: "20h",
-    diaSemana: "Sábado",
-    descricao:
-      "Um espetáculo inesquecível celebrando as raízes do samba com a voz marcante e calorosa de Marinho.",
-    local: "Palco Principal — Areninha Cultural Renato Russo",
-    link: "#",
-    valor: 0,
-  },
-  {
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1UyhOO4g--QU8-7nkKuCQUJEZjA7pSFUcwa8DAQGFGEuooyYKKgwaFlTS9qyvQd_QjthIo29Hs6l8Jh5-YlwrK1qvkvvjWdqMjeD-ZgFeSgGQolAtet5ifbR9ZXT6Qoxi2moAq_jkOiqBpmKtVIe39RzuwQo3lmQhdeVHTgQr8HLf46PwT8dfUOxP2iRMwRSoh-VAgT_0C1en88X9XWVHa2wlW0uMJ4ij18CjxNxJSbfZAaiDPRsgHQGw",
-    altImagem: "Felipe Ferreira — O Novo Show",
-    titulo: "Felipe Ferreira — O Novo Show",
-    tag: "SHOW",
-    dia: 28,
-    mes: 8,
-    ano: 2026,
-    horario: "20h",
-    diaSemana: "Sábado",
-    descricao:
-      "Apresentação inédita trazendo os novos sucessos e clássicos da carreira com arranjos eletrizantes.",
-    local: "Palco Principal — Areninha Cultural Renato Russo",
-    link: "#",
-    valor: 0,
-  },
-  {
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1UWD4dCaxZfyxRJuo2j8WyWxjLarfkAcH-O2PazLsLeiJkUa_SR_yg2fM06qYd8yka0w7kkuNM8_9ghnAf6UokxeDoJAm-naMEsrf3a9S1QYHhPPbOa4PwvY5dZ2SZPwGp8H6eG69IlUDvuTajGpLnbjvOfp7lHmYrQKUoL_7gugClXN0RpvSA7yHizmQO44dt09MpLHmWg1NInBVplav6Q97GPWZCWN3DKA-DmsgadVUEKp_D11uKGAWA",
-    altImagem: "Baia — Solar ao Vivo",
-    titulo: "Baia — Solar ao Vivo",
-    tag: "SHOW",
-    dia: 29,
-    mes: 8,
-    ano: 2026,
-    horario: "20h",
-    diaSemana: "Sábado",
-    descricao:
-      "Energia contagiante e muita música boa no aguardado repertório do aclamado show Solar ao Vivo.",
-    local: "Palco Principal — Areninha Cultural Renato Russo",
-    link: "#",
-    valor: 0,
-  },
-  {
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1W1p3n_V19a5LTdyqw-cBiziibDl2koPlQgdQbVmiiA7-4pTy0Ucvkuj_FC-hyFl0xLokY9j79YM4H2iefBBzcLPGnjahhW1HL2LcOy8WmSzMaRcI46HFLexP91uvp57Z4G4kKBIKiJOCycUrZquVYTt7g_tLC5Dqe3U9TplBP19d18RaArysAMpcbxHNGQetILrm6Tw5NpdoRgnI6U-fT6xcSqajGgG-S1EwJAJiqHHc6ZzSbwq-mt1ho",
-    altImagem: "KD O Show? — Stand Up Daniel Lopes e Kwesny",
-    titulo: "KD O Show? — Stand Up Daniel Lopes e Kwesny",
-    tag: "COMÉDIA",
-    dia: 4,
-    mes: 9,
-    ano: 2026,
-    horario: "20h",
-    diaSemana: "Sábado",
-    descricao:
-      "Noite de muitas risadas e descontração com a química afiada dos comediantes Daniel Lopes e Kwesny.",
-    local: "Palco Principal — Areninha Cultural Renato Russo",
-    link: "#",
-    valor: 0,
-  },
-  {
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1W4vQbdMMOaasv_HBdeiiyBjldZ--SCs7OX0zJCM1YumvGER8ztzT2sOML3QjaSDVP5Hee0GFE7Ugj3nVmxUr9T9WuKe2xma6G19lgJqzLLfAvre3QexlWR0svoPWjGLrZV3P1EuJLPARGO_RbO8uZ2d661RJHs_ENPbAj7Am-c7_I2te6XGgCRMhdQyB_xP02OKlCvj008jcbS2bN-0gGwhCDYbh3y240P-OQSlEBDC1qQWGBRe2I-jQ",
-    altImagem: "Era Uma Vez... Em Movimento",
-    titulo: "Era Uma Vez... Em Movimento",
-    tag: "TEATRO",
-    dia: 5,
-    mes: 9,
-    ano: 2026,
-    horario: "16h",
-    diaSemana: "Domingo",
-    descricao:
-      "Um espetáculo teatral envolvente que mistura contação de histórias lúdicas e vibrante expressão corporal.",
-    local: "Palco Principal — Areninha Cultural Renato Russo",
-    link: "#",
-    valor: 0,
-  },
-  {
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1VX6ozUpDPFFywbhI9fMuqMLfqZBYcM5shNdgiSdy32RQMKHvtyZrchi2PcqJUX9jrxn5AGGRaq7Cg3VD00sJNp7Pe5dVzjMJ9ZglbGp4fFSwkUN18NMjSocjYZ0Evp-efld0upV2v7hDvxZHNcGQmHnPhCOnA7ci5rE97nHZ2jfAmB5YqSVDkSIoFdTFMLqfUlkcz3Ioq-CMoVgx8hUPRpZ3sozKpWqD7RxRTtFnrf4Q9PwfJ2yVAnJ-w",
-    altImagem: "Class Rock — Concerto à Luz de Velas",
-    titulo: "Class Rock — Concerto à Luz de Velas",
-    tag: "CONCERTO",
-    dia: 6,
-    mes: 9,
-    ano: 2026,
-    horario: "19h",
-    diaSemana: "Domingo",
-    descricao:
-      "Clássicos do rock internacional reinterpretados em um ambiente intimista e mágico iluminado por velas.",
-    local: "Palco Principal — Areninha Cultural Renato Russo",
-    link: "#",
-    valor: 0,
   },
 ];
 
@@ -225,8 +128,7 @@ export function Programacao() {
       <div className="bg-street-yellowCustom border-b-2 border-brand-darkCustom text-brand-darkCustom px-4 py-2.5 font-bold text-xs md:text-sm tracking-wide text-center uppercase flex items-center justify-center gap-2">
         <span className="material-symbols-outlined text-lg">campaign</span>
         <span>
-          INGRESSOS DISPONÍVEIS NA BILHETERIA E ONLINE! Apresentações aos finais
-          de semana
+          {configuracaoProgramacao.avisoBarraSuperior}
         </span>
         <span className="material-symbols-outlined text-lg hidden sm:inline">
           campaign
@@ -239,8 +141,7 @@ export function Programacao() {
             PROGRAMAÇÃO CULTURAL
           </h1>
           <p className="text-base md:text-lg text-brand-darkCustom/80 max-w-2xl mx-auto font-medium">
-            Confira os shows, espetáculos teatrais e comédias imperdíveis que
-            agitam nosso palco neste fim de semana!
+            {configuracaoProgramacao.subtitulo}
           </p>
         </section>
         <section className="mb-14">

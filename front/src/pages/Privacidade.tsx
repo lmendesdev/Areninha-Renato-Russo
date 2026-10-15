@@ -1,5 +1,6 @@
 import { Header } from "../components/Header-Footer/Header";
 import { Footer } from "../components/Header-Footer/Footer";
+import configuracaoGeral from "../content/configuracoes/geral.json";
 
 export function Privacidade() {
   return (
@@ -79,10 +80,10 @@ export function Privacidade() {
               consulta ou a exclusão dessas informações a qualquer momento,
               entrando em contato pelo e-mail oficial:{" "}
               <a
-                href="mailto:gestaoculturalareninharrusso@gmail.com"
+                href={`mailto:${configuracaoGeral.email}`}
                 className="underline font-medium"
               >
-                gestaoculturalareninharrusso@gmail.com
+                {configuracaoGeral.email}
               </a>
               .
             </p>

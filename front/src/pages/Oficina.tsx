@@ -12,6 +12,7 @@ import {
 import { CardChamada } from "../components/cardChamada/CardChamada";
 import { ErrorBoundary } from "react-error-boundary";
 import { CardErrorBoundary } from "../components/errorBoundary/CardErrorBoundary";
+import configuracaoOficina from "../content/oficinasPage/config.json";
 
 type FiltroDiaOficina = "Segunda" | "Terça" | "Quarta" | "Quinta" | "Todos";
 
@@ -22,131 +23,16 @@ const abasDiasSemana: readonly FiltroDiaOficina[] = [
   "Quinta",
 ];
 
-const listaRegrasOficina: readonly PropriedadesBlocoRegras[] = [
-  {
-    titulo: "Aulas Experimentais",
-    descricao: "Primeira aula gratuita para experimentar o ritmo da turma.",
-  },
-  {
-    titulo: "Inscrições na Secretaria",
-    descricao: "Atendimento de segunda a quinta, das 10h às 21h no balcão.",
-  },
-  {
-    titulo: "Documentos",
-    descricao:
-      "Cópia do RG, Comprovante de Residência e documento do responsável.",
-  },
-  {
-    titulo: "Valores Populares",
-    descricao:
-      "Mensalidades populares acertadas diretamente com o oficineiro.",
-  },
-];
+interface CardTopoJson {
+  readonly ordem:number;
+  readonly titulo: string;
+  readonly descricao: string;
+}
 
-const listaOficinas: readonly PropriedadesCardOficina[] = [
-  {
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1WMgHMQHPGq5d2X6YiU4ALfu2Tv8NvcXjFv8mUSOFxZdYG_Ggc8h34fYexCsqvTgl0o5HYKQ8FuAlUnQGHi_vxCgohR_ihaPRBYJZ5FOuMqg4Sn6rBNPmuOouwAYGmCi3-M2fuXETzV8c5kTmb3PQlM9jmWSqHI5hJEkfR1-m8Z7LK0mDOwhfhFv-oiJ-1UhNHhCe12IL4ath61GOp0_rGFArmQW2iSOYNJXJ9Qzj4bnEyDXF637GH89GQ",
-    altImagem: "Ballet Baby",
-    titulo: "Ballet Baby",
-    categoria: "Dança Clássica",
-    diaSemana: "Segunda",
-    horario: "10h",
-    professor: "Profª Isabelle",
-    modalidade: "Semanal (1h)",
-    faixaEtaria: "3 a 5 anos",
-    local: "Sala Multiuso — Areninha Cultural Renato Russo",
-    vagas: "Inscrições Abertas",
-    link: "https://wa.me/5521976647013",
-    descricao:
-      "Iniciação lúdica ao ballet clássico, trabalhando coordenação motora, musicalidade e expressão corporal para a primeira infância.",
-  },
-  {
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1XrfqGYqQnilB54cmGsZyHQeqCRqGge0bcmYEBqY2j95H_cb2VZpWwQz8vsmy-Y5aEDwEOm7iRHndAdG8rx9AboVU4uUrbn39Ikk_SrSsxBasJsV2rxjSr37csYJkgBMbWt2PfS3LTLUhC_K7LdGswyvwGJprtGM9YKEBNoJNOyOiPsLoZRPt_GfsH2KY98ZJoiaEzJnaxJCXZm0_hSZDEwz56u8FYRtksPfspofgANVqzgabL_eWB_JuM",
-    altImagem: "Ballet Preliminar",
-    titulo: "Ballet Preliminar",
-    categoria: "Dança Clássica",
-    diaSemana: "Segunda",
-    horario: "14h",
-    professor: "Profª Vitória",
-    modalidade: "Semanal (1h)",
-    faixaEtaria: "6 a 9 anos",
-    local: "Sala Multiuso — Areninha Cultural Renato Russo",
-    vagas: "Aula Experimental",
-    link: "https://wa.me/5521976647013",
-    descricao:
-      "Desenvolvimento dos fundamentos técnicos do ballet clássico com foco em postura, ritmo, disciplina e trabalho em grupo.",
-  },
-  {
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1XInn9dUawMGliSbSuZoDmJRffTIomf4uc4RO7M7F7V_jPRIPm1sG2tnDTTbH4IMb4U1aqMXHMsuXixhIVEznD_x_moC2xpS9ohqjUAKuItDxql3NK6V5E_2AHDbTfLX8BZZmpSf1_qNFOnJOdWUSEXP9ToeR5RiJ2earERGQufyAmWnXDd5e0jprGAebuVZlwVV98ltUxelYk3J0Wb4TMWLwOowDawRDtOKgG216x6IHUlSP57-xkjL2I",
-    altImagem: "Ballet Iniciante +14",
-    titulo: "Ballet Iniciante +14",
-    categoria: "Dança / Jovens",
-    diaSemana: "Segunda",
-    horario: "17h",
-    professor: "Profª Isabelle",
-    modalidade: "Semanal (1h30)",
-    faixaEtaria: "14+ anos",
-    local: "Sala Multiuso — Areninha Cultural Renato Russo",
-    vagas: "Últimas Vagas",
-    link: "https://wa.me/5521976647013",
-    descricao:
-      "Turma voltada para jovens e adultos iniciantes que desejam aprender a técnica do ballet clássico, alongamento e consciência corporal.",
-  },
-  {
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1WJubP_CG79J3Cdl948_p6jx0Iuqfb4ZegiEUHisOPqB1goSqlCxK_Zf_jps44uvl5K5AO8vi_jZi4RYGUWvj5rJpJEL-BMZKKucHBcX00MxAIxCY1mqgdWYR4ey-UiNQhYSz5EoSBzBLrN6Nl6VBz012xsVDPiItgvHuEtVxfUV6i--G6_y2KQdLN7tqj08TM7SdTa3_E4yVjSt4m-c40VrqQmhb8N2FdovUHIx73ZYtd3gnJam3-V-A",
-    altImagem: "Violão e Práticas Musicais",
-    titulo: "Violão & Práticas",
-    categoria: "Música Instrumental",
-    diaSemana: "Segunda",
-    horario: "15h",
-    professor: "Prof. Marcos",
-    modalidade: "Semanal (1h)",
-    faixaEtaria: "Livre",
-    local: "Sala de Música — Areninha Cultural Renato Russo",
-    vagas: "Musicalização",
-    link: "https://wa.me/5521976647013",
-    descricao:
-      "Aulas práticas de violão popular, acordes, batidas, percepção rítmica e repertório coletivo da música brasileira.",
-  },
-  {
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1VNxo8OCzjBImPZDszdEYsSlUItflsAJlXZycKB4c_bKdWRHzrQwELmZKWO0lbuNgMpDwoayAPD67DYFHSXQdP3PxAuZI3Kug-TbjaQpyFM97KXUbbhfuKzFCdN2wM9avJtSIjhg5C-D7h2l7IEvUP02EZ_DjQsXmKD4RLsFgZ-yIU7bVUNBge22BcDSPtYFU6Fqu7bQ7WPYojGRi94OOwxwc5LZSOeKg0QcrI0RwTn1gpyuSjMc2lL7r4",
-    altImagem: "Teatro Infantil",
-    titulo: "Teatro Infantil",
-    categoria: "Expressão Corporal",
-    diaSemana: "Segunda",
-    horario: "16h",
-    professor: "Profª Paloma",
-    modalidade: "Semanal (1h30)",
-    faixaEtaria: "6 a 12 anos",
-    local: "Palco Principal — Areninha Cultural Renato Russo",
-    vagas: "Artes Cênicas",
-    link: "https://wa.me/5521976647013",
-    descricao:
-      "Jogos teatrais, improvisação, desinibição, expressão vocal e criação coletiva de cenas para crianças.",
-  },
-  {
-    imagem:
-      "https://lh3.googleusercontent.com/aida/AEtjO1X2wXp3GrDquXsxpO8xh7uz3oPN82fdRNQR4KrwKDIZvGg6tayDdIJlNGL0GK0TVlg05fT94bU8n_eTIctUQgLeSByDYNNx6FyGvUmy7yxg4xtIGH7XyT5zi5ddsCzq7tXbYidgDKdZqJoermxFXf3HZy03aGgfgcdkKZ1Ri4mnTDGbRTnquGaxkpa1QCXAb3HOp4_62p2eIqydzKfhZy9omkENAqMZOV_OE9yfXsDJlQS3emv2pXZicy0",
-    altImagem: "Danças Urbanas & Ritmos",
-    titulo: "Danças Urbanas",
-    categoria: "Street & Ritmos",
-    diaSemana: "Segunda",
-    horario: "19h",
-    professor: "Prof. Carlos André",
-    modalidade: "Semanal (1h)",
-    faixaEtaria: "Geral",
-    local: "Sala Multiuso — Areninha Cultural Renato Russo",
-    vagas: "Sucesso de Público",
-    link: "https://wa.me/5521976647013",
-    descricao:
-      "Coreografias dinâmicas de hip-hop, street dance, charme e ritmos urbanos com muita energia e integração.",
-  },
-];
+const modulosCardTopo = import.meta.glob<CardTopoJson>("../content/oficinasPage/cardsTopo/*.json", { eager: true, import: "default"});
+const listaRegrasOficina: readonly PropriedadesBlocoRegras[] = Object.values(modulosCardTopo).sort((cardA, cardB) => cardA.ordem - cardB.ordem);
+const modulosOficinas =  import.meta.glob<PropriedadesCardOficina>("../content/oficinasPage/oficinas/*.json", { eager: true, import: "default"});
+const listaOficinas: readonly PropriedadesCardOficina[] = Object.values(modulosOficinas);
 
 function obterClassesBotaoFiltro(estaAtivo: boolean): string {
   if (estaAtivo) {
@@ -158,7 +44,7 @@ function obterClassesBotaoFiltro(estaAtivo: boolean): string {
 
 export function Oficina() {
 
-  const [filtroDia, setFiltroDia] = useState<FiltroDiaOficina>("Segunda");
+  const [filtroDia, setFiltroDia] = useState<FiltroDiaOficina>("Todos");
 
   const oficinasFiltradas = listaOficinas.filter((oficina) => {
     const exibirTodas = filtroDia === "Todos";
@@ -193,9 +79,7 @@ export function Oficina() {
                     Oficinas Regulares
                   </h1>
                   <p className="text-base md:text-lg font-medium text-brand-darkCustom/80 mt-4 max-w-2xl leading-relaxed">
-                    Formação cultural, movimento e expressão artística para
-                    todas as idades na Ilha do Governador. Faça parte dos nossos
-                    núcleos ativos.
+                    {configuracaoOficina.subtitulo}
                   </p>
                 </div>
               </div>
