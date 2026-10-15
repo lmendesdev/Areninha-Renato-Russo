@@ -10,6 +10,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import { CardErrorBoundary } from "../components/errorBoundary/CardErrorBoundary";
 import { NoticiaPrincipalErrorBoundary } from "../components/errorBoundary/NoticiaPrincipalErrorBoundary";
 import noticiaPrincipal from "../content/noticiasPage/noticia-principal.json";
+import configuracaoNoticias from "../content/noticiasPage/config.json";
 
 const quantidadePorCarregamento = 3;
 
@@ -79,6 +80,9 @@ export function Noticias() {
                 <h2 className="text-3xl md:text-5xl font-black text-brand-darkCustom tracking-tight whitespace-nowrap">
                   Últimas Atualizações
                 </h2>
+                <p className="text-base md:text-lg font-medium text-brand-darkCustom/80 mt-2 max-w-2xl leading-relaxed">
+                  {configuracaoNoticias.subtitulo}
+                </p>
               </div>
             </div>
           </div>

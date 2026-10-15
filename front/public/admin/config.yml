@@ -352,6 +352,12 @@ collections:
               name: "youtube",
               widget: "string",
             }
+          - {
+              label: "Link Geral de Ingressos (Botão do Topo)",
+              name: "linkIngressosGeral",
+              widget: "string",
+              default: "https://www.sympla.com.br",
+            }
 
   - name: "paginas"
     label: "Subtítulos e Textos das Páginas"
@@ -361,6 +367,12 @@ collections:
         file: "front/src/content/homePage/home.json"
         format: "json"
         fields:
+          - {
+              label: "Badge em Destaque do Topo (Hero)",
+              name: "badgeHero",
+              widget: "string",
+              default: "Ilha do Governador • Rio de Janeiro",
+            }
           - {
               label: "Subtítulo de Destaque (Hero)",
               name: "subtituloHero",
@@ -447,6 +459,22 @@ collections:
               name: "imagemCapaVideo",
               widget: "image",
             }
+          - {
+              label: "Capacidade — Teatro Principal",
+              name: "capacidadeTeatro",
+              widget: "string",
+              default: "320 pessoas",
+            }
+          - {
+              label: "Capacidade — Outros Ambientes",
+              name: "capacidadeOutrosAmbientes",
+              widget: "string",
+              default: "A confirmar",
+            }
+          - label: "Informações Técnicas (Tópicos)"
+            name: "itensTecnicos"
+            widget: "list"
+            field: { label: "Item Técnico", name: "item", widget: "string" }
 
       - label: "Oficinas"
         name: "oficinas"
@@ -457,6 +485,23 @@ collections:
               label: "Subtítulo do Cabeçalho",
               name: "subtitulo",
               widget: "text",
+            }
+          - {
+              label: "Título do Banner de Chamada / Matrícula",
+              name: "tituloChamada",
+              widget: "string",
+              default: "Quer propor uma oficina ou se matricular?",
+            }
+          - {
+              label: "Descrição do Banner de Chamada / Matrícula",
+              name: "descricaoChamada",
+              widget: "text",
+            }
+          - {
+              label: "Link do Banner de Chamada (opcional - padrão WhatsApp)",
+              name: "linkChamada",
+              widget: "string",
+              required: false,
             }
 
       - label: "Programação"
@@ -473,6 +518,23 @@ collections:
               label: "Texto da Faixa Superior de Avisos",
               name: "avisoBarraSuperior",
               widget: "string",
+            }
+          - {
+              label: "Título do Banner de Chamada / Edital",
+              name: "tituloChamada",
+              widget: "string",
+              default: "QUER APRESENTAR SEU ESPETÁCULO NA ARENINHA?",
+            }
+          - {
+              label: "Descrição do Banner de Chamada / Edital",
+              name: "descricaoChamada",
+              widget: "text",
+            }
+          - {
+              label: "Link do Banner de Chamada (opcional - padrão WhatsApp)",
+              name: "linkChamada",
+              widget: "string",
+              required: false,
             }
 
       - label: "Nossa História & Equipe"
@@ -499,6 +561,21 @@ collections:
               label: "Subtítulo da Seção 'Nossa Equipe'",
               name: "subtituloEquipe",
               widget: "string",
+            }
+          - label: "Palavras-chave da Citação (Tags de Destaque)"
+            name: "tagsCitacao"
+            widget: "list"
+            field: { label: "Tag / Conceito", name: "tag", widget: "string" }
+
+      - label: "Notícias (Configurações Gerais)"
+        name: "noticias"
+        file: "front/src/content/noticiasPage/config.json"
+        format: "json"
+        fields:
+          - {
+              label: "Subtítulo da Seção 'Últimas Atualizações'",
+              name: "subtitulo",
+              widget: "text",
             }
 
       - label: "Contato & Sugestões"
