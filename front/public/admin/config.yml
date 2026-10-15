@@ -31,10 +31,20 @@ collections:
         fields:
           - { label: "Título da Notícia", name: "titulo", widget: "string" }
           - { label: "Dia", name: "dia", widget: "number", value_type: "int" }
-          - { label: "Mês (1 a 12)", name: "mes", widget: "number", value_type: "int" }
+          - {
+              label: "Mês (1 a 12)",
+              name: "mes",
+              widget: "number",
+              value_type: "int",
+            }
           - { label: "Ano", name: "ano", widget: "number", value_type: "int" }
           - { label: "Imagem (Cloudinary)", name: "imagem", widget: "image" }
-          - { label: "Texto alternativo da imagem", name: "altImagem", widget: "string", required: false }
+          - {
+              label: "Texto alternativo da imagem",
+              name: "altImagem",
+              widget: "string",
+              required: false,
+            }
           - { label: "Descrição Resumida", name: "descricao", widget: "text" }
 
   - name: "noticias"
@@ -48,10 +58,20 @@ collections:
     fields:
       - { label: "Título da Notícia", name: "titulo", widget: "string" }
       - { label: "Dia", name: "dia", widget: "number", value_type: "int" }
-      - { label: "Mês (1 a 12)", name: "mes", widget: "number", value_type: "int" }
+      - {
+          label: "Mês (1 a 12)",
+          name: "mes",
+          widget: "number",
+          value_type: "int",
+        }
       - { label: "Ano", name: "ano", widget: "number", value_type: "int" }
       - { label: "Imagem (Cloudinary)", name: "imagem", widget: "image" }
-      - { label: "Texto alternativo da imagem", name: "altImagem", widget: "string", required: false }
+      - {
+          label: "Texto alternativo da imagem",
+          name: "altImagem",
+          widget: "string",
+          required: false,
+        }
       - { label: "Descrição Resumida", name: "descricao", widget: "text" }
 
   - name: "programacao"
@@ -63,27 +83,67 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     summary: "{{titulo}} — {{diaSemana}}, {{horario}} [{{tag}}]"
     fields:
-      - { label: "Título do Show / Espetáculo", name: "titulo", widget: "string" }
+      - {
+          label: "Título do Show / Espetáculo",
+          name: "titulo",
+          widget: "string",
+        }
       - label: "Categoria / Tag"
         name: "tag"
         widget: "select"
-        options: ["SHOW", "TEATRO", "COMÉDIA", "CONCERTO", "INFANTIL", "FESTIVAL"]
+        options:
+          ["SHOW", "TEATRO", "COMÉDIA", "CONCERTO", "INFANTIL", "FESTIVAL"]
         default: "SHOW"
       - { label: "Dia", name: "dia", widget: "number", value_type: "int" }
-      - { label: "Mês (1 a 12)", name: "mes", widget: "number", value_type: "int" }
+      - {
+          label: "Mês (1 a 12)",
+          name: "mes",
+          widget: "number",
+          value_type: "int",
+        }
       - { label: "Ano", name: "ano", widget: "number", value_type: "int" }
-      - { label: "Horário", name: "horario", widget: "string", hint: "Ex: 20h ou 16h30" }
+      - {
+          label: "Horário",
+          name: "horario",
+          widget: "string",
+          hint: "Ex: 20h ou 16h30",
+        }
       - label: "Dia da Semana"
         name: "diaSemana"
         widget: "select"
         options: ["Sábado", "Domingo", "Sexta-feira"]
         default: "Sábado"
-      - { label: "Imagem de Divulgação (Cloudinary)", name: "imagem", widget: "image" }
-      - { label: "Texto alternativo da imagem", name: "altImagem", widget: "string", required: false }
+      - {
+          label: "Imagem de Divulgação (Cloudinary)",
+          name: "imagem",
+          widget: "image",
+        }
+      - {
+          label: "Texto alternativo da imagem",
+          name: "altImagem",
+          widget: "string",
+          required: false,
+        }
       - { label: "Descrição do Evento", name: "descricao", widget: "text" }
-      - { label: "Local", name: "local", widget: "string", default: "Palco Principal — Areninha Cultural Renato Russo" }
-      - { label: "Link de Ingressos / Informações", name: "link", widget: "string", default: "#" }
-      - { label: "Valor do Ingresso (R$)", name: "valor", widget: "number", value_type: "float", default: 0 }
+      - {
+          label: "Local",
+          name: "local",
+          widget: "string",
+          default: "Palco Principal — Areninha Cultural Renato Russo",
+        }
+      - {
+          label: "Link de Ingressos / Informações",
+          name: "link",
+          widget: "string",
+          default: "#",
+        }
+      - {
+          label: "Valor do Ingresso (R$)",
+          name: "valor",
+          widget: "number",
+          value_type: "float",
+          default: 0,
+        }
 
   - name: "oficinasCardsTopo"
     label: "Oficinas — Cards Informativos do Topo"
@@ -94,7 +154,12 @@ collections:
     slug: "{{ordem}}-{{slug}}"
     summary: "#{{ordem}} — {{titulo}}"
     fields:
-      - { label: "Ordem de Exibição (1, 2, 3...)", name: "ordem", widget: "number", value_type: "int" }
+      - {
+          label: "Ordem de Exibição (1, 2, 3...)",
+          name: "ordem",
+          widget: "number",
+          value_type: "int",
+        }
       - { label: "Título do Card", name: "titulo", widget: "string" }
       - { label: "Instruções / Descrição", name: "descricao", widget: "text" }
 
@@ -109,21 +174,70 @@ collections:
     summary: "{{titulo}} ({{diaSemana}} às {{horario}})"
     fields:
       - { label: "Nome da Oficina", name: "titulo", widget: "string" }
-      - { label: "Categoria", name: "categoria", widget: "string", hint: "Ex: Dança Clássica, Música Instrumental, etc." }
+      - {
+          label: "Categoria",
+          name: "categoria",
+          widget: "string",
+          hint: "Ex: Dança Clássica, Música Instrumental, etc.",
+        }
       - label: "Dia da Semana"
         name: "diaSemana"
         widget: "select"
         options: ["Segunda", "Terça", "Quarta", "Quinta"]
         default: "Segunda"
-      - { label: "Horário", name: "horario", widget: "string", hint: "Ex: 10h ou 14h30" }
-      - { label: "Professor(a)", name: "professor", widget: "string", hint: "Ex: Profª Isabelle" }
-      - { label: "Modalidade", name: "modalidade", widget: "string", default: "Semanal (1h)" }
-      - { label: "Faixa Etária", name: "faixaEtaria", widget: "string", hint: "Ex: 3 a 5 anos, Livre, 14+ anos" }
-      - { label: "Local / Sala", name: "local", widget: "string", default: "Sala Multiuso — Areninha Cultural Renato Russo" }
-      - { label: "Status das Vagas", name: "vagas", widget: "string", default: "Inscrições Abertas" }
-      - { label: "Link de Inscrição (WhatsApp)", name: "link", widget: "string", default: "https://wa.me/5521976647013" }
-      - { label: "Foto da Oficina (Cloudinary)", name: "imagem", widget: "image" }
-      - { label: "Texto alternativo da foto", name: "altImagem", widget: "string", required: false }
+      - {
+          label: "Horário",
+          name: "horario",
+          widget: "string",
+          hint: "Ex: 10h ou 14h30",
+        }
+      - {
+          label: "Professor(a)",
+          name: "professor",
+          widget: "string",
+          hint: "Ex: Profª Isabelle",
+        }
+      - {
+          label: "Modalidade",
+          name: "modalidade",
+          widget: "string",
+          default: "Semanal (1h)",
+        }
+      - {
+          label: "Faixa Etária",
+          name: "faixaEtaria",
+          widget: "string",
+          hint: "Ex: 3 a 5 anos, Livre, 14+ anos",
+        }
+      - {
+          label: "Local / Sala",
+          name: "local",
+          widget: "string",
+          default: "Sala Multiuso — Areninha Cultural Renato Russo",
+        }
+      - {
+          label: "Status das Vagas",
+          name: "vagas",
+          widget: "string",
+          default: "Inscrições Abertas",
+        }
+      - {
+          label: "Link de Inscrição (WhatsApp)",
+          name: "link",
+          widget: "string",
+          default: "https://wa.me/5521976647013",
+        }
+      - {
+          label: "Foto da Oficina (Cloudinary)",
+          name: "imagem",
+          widget: "image",
+        }
+      - {
+          label: "Texto alternativo da foto",
+          name: "altImagem",
+          widget: "string",
+          required: false,
+        }
       - { label: "Descrição da Oficina", name: "descricao", widget: "text" }
 
   - name: "historiaMarcos"
@@ -135,8 +249,18 @@ collections:
     slug: "{{ordem}}-{{slug}}"
     summary: "#{{ordem}} [{{dataAno}}] — {{titulo}}"
     fields:
-      - { label: "Ordem de Exibição", name: "ordem", widget: "number", value_type: "int" }
-      - { label: "Ano / Data em Destaque", name: "dataAno", widget: "string", hint: "Ex: 2007, 2016 ou Hoje" }
+      - {
+          label: "Ordem de Exibição",
+          name: "ordem",
+          widget: "number",
+          value_type: "int",
+        }
+      - {
+          label: "Ano / Data em Destaque",
+          name: "dataAno",
+          widget: "string",
+          hint: "Ex: 2007, 2016 ou Hoje",
+        }
       - { label: "Título do Marco", name: "titulo", widget: "string" }
       - { label: "Descrição Histórica", name: "descricao", widget: "text" }
       - label: "Cor do Card"
@@ -154,17 +278,41 @@ collections:
     slug: "{{ordem}}-{{slug}}"
     summary: "#{{ordem}} — {{nome}} ({{tagFuncao}})"
     fields:
-      - { label: "Ordem de Exibição", name: "ordem", widget: "number", value_type: "int" }
+      - {
+          label: "Ordem de Exibição",
+          name: "ordem",
+          widget: "number",
+          value_type: "int",
+        }
       - { label: "Nome Completo", name: "nome", widget: "string" }
-      - { label: "Setor", name: "setor", widget: "string", hint: "Ex: Gestão, Curadoria, Produção" }
-      - { label: "Cargo / Função", name: "tagFuncao", widget: "string", hint: "Ex: Administradora, Gestor Cultural" }
+      - {
+          label: "Setor",
+          name: "setor",
+          widget: "string",
+          hint: "Ex: Gestão, Curadoria, Produção",
+        }
+      - {
+          label: "Cargo / Função",
+          name: "tagFuncao",
+          widget: "string",
+          hint: "Ex: Administradora, Gestor Cultural",
+        }
       - label: "Cor da Tag"
         name: "corTag"
         widget: "select"
         options: ["azul", "laranja", "amarelo", "preta"]
         default: "azul"
-      - { label: "Foto do Profissional (Cloudinary)", name: "imagem", widget: "image" }
-      - { label: "Texto alternativo da foto", name: "altImagem", widget: "string", required: false }
+      - {
+          label: "Foto do Profissional (Cloudinary)",
+          name: "imagem",
+          widget: "image",
+        }
+      - {
+          label: "Texto alternativo da foto",
+          name: "altImagem",
+          widget: "string",
+          required: false,
+        }
       - { label: "Descrição / Mini-Bio", name: "descricao", widget: "text" }
 
   - name: "configuracoes"
@@ -175,15 +323,35 @@ collections:
         file: "front/src/content/configuracoes/geral.json"
         format: "json"
         fields:
-          - { label: "Telefone de Exibição", name: "telefone", widget: "string" }
-          - { label: "Link do WhatsApp", name: "linkWhatsapp", widget: "string" }
+          - {
+              label: "Telefone de Exibição",
+              name: "telefone",
+              widget: "string",
+            }
+          - {
+              label: "Link do WhatsApp",
+              name: "linkWhatsapp",
+              widget: "string",
+            }
           - { label: "E-mail Oficial", name: "email", widget: "string" }
           - { label: "Endereço Completo", name: "endereco", widget: "string" }
-          - { label: "Horário da Secretaria (Linha 1)", name: "horarioSecretaria1", widget: "string" }
-          - { label: "Horário da Secretaria (Linha 2)", name: "horarioSecretaria2", widget: "string" }
+          - {
+              label: "Horário da Secretaria (Linha 1)",
+              name: "horarioSecretaria1",
+              widget: "string",
+            }
+          - {
+              label: "Horário da Secretaria (Linha 2)",
+              name: "horarioSecretaria2",
+              widget: "string",
+            }
           - { label: "Link do Instagram", name: "instagram", widget: "string" }
           - { label: "Link do Linktree", name: "linktree", widget: "string" }
-          - { label: "Link do Canal no YouTube", name: "youtube", widget: "string" }
+          - {
+              label: "Link do Canal no YouTube",
+              name: "youtube",
+              widget: "string",
+            }
 
   - name: "paginas"
     label: "Subtítulos e Textos das Páginas"
@@ -193,60 +361,168 @@ collections:
         file: "front/src/content/homePage/home.json"
         format: "json"
         fields:
-          - { label: "Subtítulo de Destaque (Hero)", name: "subtituloHero", widget: "string" }
-          - { label: "Descrição Detalhada (Hero)", name: "descricaoHero", widget: "text" }
-          - { label: "Número do Card de Estatística (Ex: +200)", name: "numeroAtividades", widget: "string" }
-          - { label: "Título da Estatística", name: "tituloAtividades", widget: "string" }
-          - { label: "Descrição da Estatística", name: "descricaoAtividades", widget: "text" }
-          - { label: "Link do Vídeo do YouTube", name: "linkVideoYoutube", widget: "string" }
-          - { label: "Imagem de Capa do Vídeo", name: "imagemCapaVideo", widget: "image" }
-          - { label: "Subtítulo da Seção 'Próximos Eventos'", name: "subtituloProximosEventos", widget: "string" }
+          - {
+              label: "Subtítulo de Destaque (Hero)",
+              name: "subtituloHero",
+              widget: "string",
+            }
+          - {
+              label: "Descrição Detalhada (Hero)",
+              name: "descricaoHero",
+              widget: "text",
+            }
+          - {
+              label: "Número do Card de Estatística (Ex: +200)",
+              name: "numeroAtividades",
+              widget: "string",
+            }
+          - {
+              label: "Título da Estatística",
+              name: "tituloAtividades",
+              widget: "string",
+            }
+          - {
+              label: "Descrição da Estatística",
+              name: "descricaoAtividades",
+              widget: "text",
+            }
+          - {
+              label: "Link do Vídeo do YouTube",
+              name: "linkVideoYoutube",
+              widget: "string",
+            }
+          - {
+              label: "Imagem de Capa do Vídeo",
+              name: "imagemCapaVideo",
+              widget: "image",
+            }
+          - {
+              label: "Subtítulo da Seção 'Próximos Eventos'",
+              name: "subtituloProximosEventos",
+              widget: "string",
+            }
 
       - label: "Espaço e Estrutura"
         name: "espaco"
         file: "front/src/content/espacoPage/espaco.json"
         format: "json"
         fields:
-          - { label: "Subtítulo do Topo", name: "subtituloHero", widget: "string" }
-          - { label: "Título Institucional de Infraestrutura", name: "tituloInstitucional", widget: "string" }
-          - { label: "Descrição Institucional — Parágrafo 1", name: "descricaoParagrafo1", widget: "text" }
-          - { label: "Descrição Institucional — Parágrafo 2", name: "descricaoParagrafo2", widget: "text" }
-          - { label: "Foto Arquitetônica Principal", name: "imagemArquitetonica", widget: "image" }
-          - { label: "Texto de Informações Técnicas", name: "textoInformacoesTecnicas", widget: "text" }
-          - { label: "Link do Vídeo do YouTube", name: "linkVideoYoutube", widget: "string" }
-          - { label: "Imagem de Capa do Vídeo", name: "imagemCapaVideo", widget: "image" }
+          - {
+              label: "Subtítulo do Topo",
+              name: "subtituloHero",
+              widget: "string",
+            }
+          - {
+              label: "Título Institucional de Infraestrutura",
+              name: "tituloInstitucional",
+              widget: "string",
+            }
+          - {
+              label: "Descrição Institucional — Parágrafo 1",
+              name: "descricaoParagrafo1",
+              widget: "text",
+            }
+          - {
+              label: "Descrição Institucional — Parágrafo 2",
+              name: "descricaoParagrafo2",
+              widget: "text",
+            }
+          - {
+              label: "Foto Arquitetônica Principal",
+              name: "imagemArquitetonica",
+              widget: "image",
+            }
+          - {
+              label: "Texto de Informações Técnicas",
+              name: "textoInformacoesTecnicas",
+              widget: "text",
+            }
+          - {
+              label: "Link do Vídeo do YouTube",
+              name: "linkVideoYoutube",
+              widget: "string",
+            }
+          - {
+              label: "Imagem de Capa do Vídeo",
+              name: "imagemCapaVideo",
+              widget: "image",
+            }
 
       - label: "Oficinas"
         name: "oficinas"
         file: "front/src/content/oficinasPage/config.json"
         format: "json"
         fields:
-          - { label: "Subtítulo do Cabeçalho", name: "subtitulo", widget: "text" }
+          - {
+              label: "Subtítulo do Cabeçalho",
+              name: "subtitulo",
+              widget: "text",
+            }
 
       - label: "Programação"
         name: "programacao"
         file: "front/src/content/programacaoPage/config.json"
         format: "json"
         fields:
-          - { label: "Subtítulo do Cabeçalho", name: "subtitulo", widget: "text" }
-          - { label: "Texto da Faixa Superior de Avisos", name: "avisoBarraSuperior", widget: "string" }
+          - {
+              label: "Subtítulo do Cabeçalho",
+              name: "subtitulo",
+              widget: "text",
+            }
+          - {
+              label: "Texto da Faixa Superior de Avisos",
+              name: "avisoBarraSuperior",
+              widget: "string",
+            }
 
       - label: "Nossa História & Equipe"
         name: "historia"
         file: "front/src/content/historiaPage/config.json"
         format: "json"
         fields:
-          - { label: "Subtítulo do Topo (Nossa História)", name: "subtituloHero", widget: "text" }
-          - { label: "Texto do Memorial & Trajetória", name: "textoMemorial", widget: "text" }
-          - { label: "Frase de Propósito / Citação", name: "citacaoProposito", widget: "text" }
-          - { label: "Subtítulo da Seção 'Nossa Equipe'", name: "subtituloEquipe", widget: "string" }
+          - {
+              label: "Subtítulo do Topo (Nossa História)",
+              name: "subtituloHero",
+              widget: "text",
+            }
+          - {
+              label: "Texto do Memorial & Trajetória",
+              name: "textoMemorial",
+              widget: "text",
+            }
+          - {
+              label: "Frase de Propósito / Citação",
+              name: "citacaoProposito",
+              widget: "text",
+            }
+          - {
+              label: "Subtítulo da Seção 'Nossa Equipe'",
+              name: "subtituloEquipe",
+              widget: "string",
+            }
 
       - label: "Contato & Sugestões"
         name: "contato"
         file: "front/src/content/contatoPage/contato.json"
         format: "json"
         fields:
-          - { label: "Subtítulo Principal da Página", name: "subtitulo", widget: "text" }
-          - { label: "Subtítulo do Card de Atendimento Direto", name: "subtituloAtendimento", widget: "string" }
-          - { label: "Texto de Apresentação do Formulário", name: "textoApresentacaoFormulario", widget: "string" }
-          - { label: "Descrição / Referência do Espaço", name: "descricaoEspaco", widget: "string" }
+          - {
+              label: "Subtítulo Principal da Página",
+              name: "subtitulo",
+              widget: "text",
+            }
+          - {
+              label: "Subtítulo do Card de Atendimento Direto",
+              name: "subtituloAtendimento",
+              widget: "string",
+            }
+          - {
+              label: "Texto de Apresentação do Formulário",
+              name: "textoApresentacaoFormulario",
+              widget: "string",
+            }
+          - {
+              label: "Descrição / Referência do Espaço",
+              name: "descricaoEspaco",
+              widget: "string",
+            }

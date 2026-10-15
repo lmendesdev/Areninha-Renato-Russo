@@ -16,23 +16,43 @@ const quantidadeProximosEventos = 3;
 
 const modulosProximosEventos = import.meta.glob<PropriedadesCardProgramacao>(
   "../content/programacaoPage/programacao/*.json",
-  { eager: true, import: "default" }
+  { eager: true, import: "default" },
 );
-const listaEventos: readonly PropriedadesCardProgramacao[] = Object.values(modulosProximosEventos).sort((eventoA, eventoB) => {
-  const timestampA = new Date(eventoA.ano, eventoA.mes - 1, eventoA.dia).getTime();
-  const timestampB = new Date(eventoB.ano, eventoB.mes - 1, eventoB.dia).getTime();
-  return timestampB - timestampA;
-}).slice(0, quantidadeProximosEventos);
+const listaEventos: readonly PropriedadesCardProgramacao[] = Object.values(
+  modulosProximosEventos,
+)
+  .sort((eventoA, eventoB) => {
+    const timestampA = new Date(
+      eventoA.ano,
+      eventoA.mes - 1,
+      eventoA.dia,
+    ).getTime();
+    const timestampB = new Date(
+      eventoB.ano,
+      eventoB.mes - 1,
+      eventoB.dia,
+    ).getTime();
+    return timestampB - timestampA;
+  })
+  .slice(0, quantidadeProximosEventos);
 
 export function Home() {
   const [videoAtivo, setVideoAtivo] = useState<boolean>(false);
-  const urlEmbedFinal = formatarUrlEmbedYoutube(configuracaoHome.linkVideoYoutube);
+  const urlEmbedFinal = formatarUrlEmbedYoutube(
+    configuracaoHome.linkVideoYoutube,
+  );
 
   return (
     <div className="bg-bg-whiteCustom text-brand-darkCustom antialiased flex flex-col min-h-screen selection:bg-street-yellowCustom selection:text-brand-darkCustom">
       <title>Areninha Cultural Renato Russo</title>
-      <meta name="description" content="A Areninha Cultural Renato Russo é um espaço cultural na Ilha do Governador, Rio de Janeiro, oferecendo programação diversificada de música, teatro, dança, literatura e oficinas gratuitas para a comunidade." />
-      <meta name="keywords" content="Areninha Cultural Renato Russo, Ilha do Governador, Rio de Janeiro, programação cultural, música, teatro, dança, literatura, oficinas gratuitas, espaço cultural" />
+      <meta
+        name="description"
+        content="A Areninha Cultural Renato Russo é um espaço cultural na Ilha do Governador, Rio de Janeiro, oferecendo programação diversificada de música, teatro, dança, literatura e oficinas gratuitas para a comunidade."
+      />
+      <meta
+        name="keywords"
+        content="Areninha Cultural Renato Russo, Ilha do Governador, Rio de Janeiro, programação cultural, música, teatro, dança, literatura, oficinas gratuitas, espaço cultural"
+      />
       <meta name="robots" content="index, follow" />
       <Header />
       <main className="grow w-full">
@@ -166,23 +186,26 @@ export function Home() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
               {listaEventos.map((evento) => (
-              <ErrorBoundary key={evento.titulo} fallback={<CardErrorBoundary />}>
-                <CardProgramacao
-                  imagem={evento.imagem}
-                  altImagem={evento.altImagem}
-                  titulo={evento.titulo}
-                  tag={evento.tag}
-                  dia={evento.dia}
-                  mes={evento.mes}
-                  ano={evento.ano}
-                  horario={evento.horario}
-                  diaSemana={evento.diaSemana}
-                  descricao={evento.descricao}
-                  local={evento.local}
-                  link={evento.link}
-                  valor={evento.valor}
-                />
-              </ErrorBoundary>
+                <ErrorBoundary
+                  key={evento.titulo}
+                  fallback={<CardErrorBoundary />}
+                >
+                  <CardProgramacao
+                    imagem={evento.imagem}
+                    altImagem={evento.altImagem}
+                    titulo={evento.titulo}
+                    tag={evento.tag}
+                    dia={evento.dia}
+                    mes={evento.mes}
+                    ano={evento.ano}
+                    horario={evento.horario}
+                    diaSemana={evento.diaSemana}
+                    descricao={evento.descricao}
+                    local={evento.local}
+                    link={evento.link}
+                    valor={evento.valor}
+                  />
+                </ErrorBoundary>
               ))}
             </div>
           </div>

@@ -14,10 +14,20 @@ import { ErrorBoundary } from "react-error-boundary";
 import { CardErrorBoundary } from "../components/errorBoundary/CardErrorBoundary";
 import configuracaoHistoria from "../content/historiaPage/config.json";
 
-const modulosMarcosHistoricos = import.meta.glob<PropriedadesCardDataHistoria>("../content/historiaPage/marcos/*.json", { eager: true, import: "default" });
-const marcosHistoricos: readonly PropriedadesCardDataHistoria[] = Object.values(modulosMarcosHistoricos);
-const modulosEquipe = import.meta.glob<PropriedadesCardProfissionais>("../content/historiaPage/funcionarios/*.json", { eager: true, import: "default" });
-const listaEquipe: readonly PropriedadesCardProfissionais[] = Object.values(modulosEquipe).sort((membroA, membroB) => membroA.nome.localeCompare(membroB.nome));
+const modulosMarcosHistoricos = import.meta.glob<PropriedadesCardDataHistoria>(
+  "../content/historiaPage/marcos/*.json",
+  { eager: true, import: "default" },
+);
+const marcosHistoricos: readonly PropriedadesCardDataHistoria[] = Object.values(
+  modulosMarcosHistoricos,
+);
+const modulosEquipe = import.meta.glob<PropriedadesCardProfissionais>(
+  "../content/historiaPage/funcionarios/*.json",
+  { eager: true, import: "default" },
+);
+const listaEquipe: readonly PropriedadesCardProfissionais[] = Object.values(
+  modulosEquipe,
+).sort((membroA, membroB) => membroA.nome.localeCompare(membroB.nome));
 
 export function Historia() {
   return (
@@ -123,17 +133,20 @@ export function Historia() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
               {listaEquipe.map((membro) => (
-              < ErrorBoundary key={membro.nome} fallback={<CardErrorBoundary />}>
-                <CardProfissionais
-                  imagem={membro.imagem}
-                  altImagem={membro.altImagem}
-                  nome={membro.nome}
-                  tagFuncao={membro.tagFuncao}
-                  descricao={membro.descricao}
-                  corTag={membro.corTag}
-                  setor={membro.setor}
-                />
-              </ErrorBoundary>
+                <ErrorBoundary
+                  key={membro.nome}
+                  fallback={<CardErrorBoundary />}
+                >
+                  <CardProfissionais
+                    imagem={membro.imagem}
+                    altImagem={membro.altImagem}
+                    nome={membro.nome}
+                    tagFuncao={membro.tagFuncao}
+                    descricao={membro.descricao}
+                    corTag={membro.corTag}
+                    setor={membro.setor}
+                  />
+                </ErrorBoundary>
               ))}
             </div>
           </div>

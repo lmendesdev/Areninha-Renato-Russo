@@ -86,18 +86,18 @@ export function CardAvisos({
           </div>
         </div>
       </article>
-        {expandido && (
-          <CardAvisosExpandido
-            titulo={titulo}
-            dia={dia}
-            mes={nomeDoMes}
-            ano={ano}
-            descricao={descricao}
-            imagem={imagem}
-            altImagem={altImagem}
-            funcaoSair={() => setExpandido(false)}
-          />
-        )}
+      {expandido && (
+        <CardAvisosExpandido
+          titulo={titulo}
+          dia={dia}
+          mes={nomeDoMes}
+          ano={ano}
+          descricao={descricao}
+          imagem={imagem}
+          altImagem={altImagem}
+          funcaoSair={() => setExpandido(false)}
+        />
+      )}
     </>
   );
 }

@@ -18,12 +18,25 @@ const anguloGeral = 180;
 
 const ordemFiltros: readonly FiltroDia[] = ["Sábado", "Domingo", "Geral"];
 
-const modulosProgramacao = import.meta.glob<PropriedadesCardProgramacao>("../content/programacaoPage//programacao/*.json", { eager: true, import: "default" });
-const listaProgramacao = Object.values(modulosProgramacao).sort((eventoA, eventoB) => {
-  const timestampA = new Date(eventoA.ano, eventoA.mes - 1, eventoA.dia).getTime();
-  const timestampB = new Date(eventoB.ano, eventoB.mes - 1, eventoB.dia).getTime();
-  return timestampB - timestampA;
-});
+const modulosProgramacao = import.meta.glob<PropriedadesCardProgramacao>(
+  "../content/programacaoPage//programacao/*.json",
+  { eager: true, import: "default" },
+);
+const listaProgramacao = Object.values(modulosProgramacao).sort(
+  (eventoA, eventoB) => {
+    const timestampA = new Date(
+      eventoA.ano,
+      eventoA.mes - 1,
+      eventoA.dia,
+    ).getTime();
+    const timestampB = new Date(
+      eventoB.ano,
+      eventoB.mes - 1,
+      eventoB.dia,
+    ).getTime();
+    return timestampB - timestampA;
+  },
+);
 
 interface OpcaoChaveIndustrial {
   readonly id: FiltroDia;
@@ -93,7 +106,6 @@ function obterNomeCanal(filtro: FiltroDia): string {
 }
 
 export function Programacao() {
-    
   const [filtroAtivo, setFiltroAtivo] = useState<FiltroDia>("Sábado");
 
   function selecionarFiltro(novoFiltro: FiltroDia) {
@@ -116,20 +128,24 @@ export function Programacao() {
   const angulo = obterAngulo(filtroAtivo);
 
   const nomeCanalAtivo = obterNomeCanal(filtroAtivo);
-  
+
   const textoTotalAtracoes = `${eventosFiltrados.length} ATRAÇÕES`;
 
   return (
     <div className="font-poppins text-brand-darkCustom antialiased flex flex-col min-h-screen m-0 p-0 bg-bg-whiteCustom">
       <title>Programação Cultural - Areninha Cultural Renato Russo</title>
-      <meta name="description" content="Confira a programação cultural da Areninha Cultural Renato Russo, incluindo shows, espetáculos teatrais, comédias e apresentações musicais aos finais de semana na Ilha do Governador." />
-      <meta name="keywords" content="Areninha Cultural Renato Russo, programação cultural, shows, espetáculos teatrais, comédias, apresentações musicais, finais de semana, Ilha do Governador, Rio de Janeiro" />
+      <meta
+        name="description"
+        content="Confira a programação cultural da Areninha Cultural Renato Russo, incluindo shows, espetáculos teatrais, comédias e apresentações musicais aos finais de semana na Ilha do Governador."
+      />
+      <meta
+        name="keywords"
+        content="Areninha Cultural Renato Russo, programação cultural, shows, espetáculos teatrais, comédias, apresentações musicais, finais de semana, Ilha do Governador, Rio de Janeiro"
+      />
       <meta name="robots" content="index, follow" />
       <div className="bg-street-yellowCustom border-b-2 border-brand-darkCustom text-brand-darkCustom px-4 py-2.5 font-bold text-xs md:text-sm tracking-wide text-center uppercase flex items-center justify-center gap-2">
         <span className="material-symbols-outlined text-lg">campaign</span>
-        <span>
-          {configuracaoProgramacao.avisoBarraSuperior}
-        </span>
+        <span>{configuracaoProgramacao.avisoBarraSuperior}</span>
         <span className="material-symbols-outlined text-lg hidden sm:inline">
           campaign
         </span>
@@ -347,23 +363,26 @@ export function Programacao() {
         <section className="mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
             {eventosFiltrados.map((evento) => (
-            <ErrorBoundary key={evento.titulo} fallback={<CardErrorBoundary />}>
-              <CardProgramacao
-                imagem={evento.imagem}
-                altImagem={evento.altImagem}
-                titulo={evento.titulo}
-                tag={evento.tag}
-                dia={evento.dia}
-                mes={evento.mes}
-                ano={evento.ano}
-                horario={evento.horario}
-                diaSemana={evento.diaSemana}
-                descricao={evento.descricao}
-                local={evento.local}
-                link={evento.link}
-                valor={evento.valor}
-              />
-            </ErrorBoundary>
+              <ErrorBoundary
+                key={evento.titulo}
+                fallback={<CardErrorBoundary />}
+              >
+                <CardProgramacao
+                  imagem={evento.imagem}
+                  altImagem={evento.altImagem}
+                  titulo={evento.titulo}
+                  tag={evento.tag}
+                  dia={evento.dia}
+                  mes={evento.mes}
+                  ano={evento.ano}
+                  horario={evento.horario}
+                  diaSemana={evento.diaSemana}
+                  descricao={evento.descricao}
+                  local={evento.local}
+                  link={evento.link}
+                  valor={evento.valor}
+                />
+              </ErrorBoundary>
             ))}
           </div>
         </section>
