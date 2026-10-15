@@ -2,7 +2,7 @@ backend:
   name: github
   repo: lmendesdev/Areninha-Renato-Russo
   branch: main
-  base_url: https://areninha-renato-russo-git-main-areninha-cultural-renato-russo.vercel.app
+  base_url: https://areninha-renato-russo.vercel.app
   auth_endpoint: api/auth
 
 # Habilita o desenvolvimento local com npx decap-server
