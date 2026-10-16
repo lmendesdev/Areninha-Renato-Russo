@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: lmendesdev/Areninha-Renato-Russo
+  repo: AreninhaCulturalRenatoRusso/areninha-renato-russo
   branch: main
   base_url: https://areninha-renato-russo.vercel.app
   auth_endpoint: api/auth
