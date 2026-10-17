@@ -30,7 +30,6 @@ export function IngressoButton({
         className={`absolute -right-2 top-1/2 -translate-y-1/2 w-3.5 h-3.5 
       ${corFuros || "bg-brand-darkCustom"} rounded-full pointer-events-none`}
       />
-      <img src={ingressoIcon} alt="Ingresso" className="w-10 h-10" />
       <img
         src={ingressoIcon}
         alt="Ingresso"
