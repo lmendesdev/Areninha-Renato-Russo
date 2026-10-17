@@ -84,7 +84,7 @@ export function CardProgramacaoExpandido({
         <div className="w-full md:w-7/12 p-6 sm:p-8 md:p-10 flex flex-col justify-between bg-white">
           <div>
             <div className="flex flex-wrap items-center gap-2.5 mb-4">
-              <span className="inline-flex items-center px-3 py-1 rounded-full bg-fest-orangeCustom text-white font-extrabold text-xs tracking-wider uppercase border-2 border-brand-darkCustom shadow-[2px_2px_0px_#0A2435]">
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-fest-orangeCustom text-white font-extrabold text-xs border-2 border-brand-darkCustom shadow-[2px_2px_0px_#0A2435]">
                 {tag}
               </span>
             </div>
@@ -96,7 +96,7 @@ export function CardProgramacaoExpandido({
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
               <div className="bg-bg-grayCustom border-2 border-brand-darkCustom rounded-xl p-3 shadow-[3px_3px_0px_#0A2435] flex flex-col justify-center">
-                <span className="text-fest-orangeCustom font-bold text-xs uppercase mb-1">
+                <span className="text-fest-orangeCustom font-bold text-xs mb-1">
                   Data
                 </span>
                 <p className="font-extrabold text-sm text-brand-darkCustom">
@@ -107,7 +107,7 @@ export function CardProgramacaoExpandido({
                 </p>
               </div>
               <div className="bg-bg-grayCustom border-2 border-brand-darkCustom rounded-xl p-3 shadow-[3px_3px_0px_#0A2435] flex flex-col justify-center">
-                <span className="text-energy-blueCustom font-bold text-xs uppercase mb-1">
+                <span className="text-energy-blueCustom font-bold text-xs mb-1">
                   Local
                 </span>
                 <p className="font-extrabold text-sm text-brand-darkCustom">
@@ -115,7 +115,7 @@ export function CardProgramacaoExpandido({
                 </p>
               </div>
               <div className="bg-bg-grayCustom border-2 border-brand-darkCustom rounded-xl p-3 shadow-[3px_3px_0px_#0A2435] flex flex-col justify-center">
-                <span className="text-brand-darkCustom font-bold text-xs uppercase mb-1">
+                <span className="text-brand-darkCustom font-bold text-xs mb-1">
                   Ingresso
                 </span>
                 <p className="font-extrabold text-sm text-brand-darkCustom">
@@ -133,7 +133,7 @@ export function CardProgramacaoExpandido({
             <button
               type="button"
               onClick={aoFechar}
-              className="w-full sm:w-auto px-6 py-3 font-bold text-xs uppercase tracking-widest text-brand-darkCustom hover:bg-bg-grayCustom rounded-full border-2 border-brand-darkCustom transition-all duration-200 cursor-pointer"
+              className="w-full sm:w-auto px-6 py-3 font-bold text-xs text-brand-darkCustom hover:bg-bg-grayCustom rounded-full border-2 border-brand-darkCustom transition-all duration-200 cursor-pointer"
             >
               Fechar
             </button>

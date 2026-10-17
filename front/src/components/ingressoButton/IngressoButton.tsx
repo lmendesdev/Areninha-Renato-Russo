@@ -19,7 +19,7 @@ export function IngressoButton({
       target="_blank"
       rel="noopener noreferrer"
       className={`relative inline-flex items-center justify-center gap-2.5 bg-street-yellowCustom 
-      text-brand-darkCustom font-extrabold text-xs md:text-sm tracking-wide uppercase px-7 py-2.5 
+      text-brand-darkCustom font-extrabold text-xs md:text-sm tracking-wide px-7 py-2.5 
       rounded-sm hover:brightness-95 transition-all shadow-sm group select-none overflow-hidden cursor-pointer ${estilo}`}
     >
       <span
@@ -31,6 +31,15 @@ export function IngressoButton({
       ${corFuros || "bg-brand-darkCustom"} rounded-full pointer-events-none`}
       />
       <img src={ingressoIcon} alt="Ingresso" className="w-10 h-10" />
+      <img
+        src={ingressoIcon}
+        alt="Ingresso"
+        className="w-10 h-10"
+        width={40}
+        height={40}
+        loading="lazy"
+        decoding="async"
+      />
       <span className="leading-none tracking-wider">Garantir Ingresso</span>
     </a>
   );

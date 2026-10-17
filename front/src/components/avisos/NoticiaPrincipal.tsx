@@ -80,7 +80,7 @@ export function AvisoPrincipal({
           <button
             type="button"
             onClick={() => setNoticiaPrincipalExpandida(true)}
-            className="inline-flex items-center gap-3 bg-street-yellowCustom text-brand-darkCustom font-black text-base px-8 py-4 rounded-full uppercase tracking-wider justify-center border-2 border-brand-darkCustom sticker-shadow-lg hover-sticker cursor-pointer"
+            className="inline-flex items-center gap-3 bg-street-yellowCustom text-brand-darkCustom font-black text-base px-8 py-4 rounded-full justify-center border-2 border-brand-darkCustom sticker-shadow-lg hover-sticker cursor-pointer"
           >
             Ler Matéria Completa
           </button>

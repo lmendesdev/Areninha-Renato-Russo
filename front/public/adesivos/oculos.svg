@@ -1,0 +1,25 @@
+<svg width="200" height="136" viewBox="0 0 200 136" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="2" width="196" height="132" rx="16" fill="#FFFFFF" stroke="#0A2435" stroke-width="4"/>
+  <circle cx="18" cy="18" r="4" fill="#FF5A1F"/>
+  <text x="28" y="22" fill="#0A2435" font-family="Poppins, sans-serif" font-weight="800" font-size="10" letter-spacing="0.08em">ÍCONE ROCK</text>
+  
+  <g transform="translate(10, 22)">
+    <path d="M78 30 Q 90 24 102 30" stroke="#0A2435" stroke-linecap="round" stroke-width="7"/>
+    <path d="M80 30 Q 90 25 100 30" stroke="#FFD600" stroke-linecap="round" stroke-width="2.5"/>
+    <path d="M6 28 L 22 25" stroke="#0A2435" stroke-linecap="round" stroke-width="6"/>
+    <path d="M174 28 L 158 25" stroke="#0A2435" stroke-linecap="round" stroke-width="6"/>
+    
+    <rect x="16" y="16" width="66" height="44" rx="12" fill="#0A2435" stroke="#FFFFFF" stroke-width="3"/>
+    <path d="M25 23 L 54 23 L 37 55 L 25 55 Z" fill="#3B82F6" opacity="0.85"/>
+    <path d="M58 23 L 70 23 L 53 55 L 41 55 Z" fill="#FFD600" opacity="0.9"/>
+    <circle cx="32" cy="30" r="2.5" fill="#FFFFFF"/>
+    
+    <rect x="98" y="16" width="66" height="44" rx="12" fill="#0A2435" stroke="#FFFFFF" stroke-width="3"/>
+    <path d="M107 23 L 136 23 L 119 55 L 107 55 Z" fill="#3B82F6" opacity="0.85"/>
+    <path d="M140 23 L 152 23 L 135 55 L 123 55 Z" fill="#FFD600" opacity="0.9"/>
+    <circle cx="114" cy="30" r="2.5" fill="#FFFFFF"/>
+  </g>
+
+  <rect x="12" y="98" width="176" height="24" rx="5" fill="#FFD600" stroke="#0A2435" stroke-width="2"/>
+  <text x="100" y="114" text-anchor="middle" fill="#0A2435" font-family="Poppins, sans-serif" font-weight="900" font-size="11" letter-spacing="0.12em">TEMPO PERDIDO</text>
+</svg>

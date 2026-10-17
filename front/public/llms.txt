@@ -1,0 +1,13 @@
+# Areninha Cultural Renato Russo
+
+> Equipamento cultural público na Ilha do Governador, Rio de Janeiro, gerido em cogestão com o Instituto Usina Social e a Secretaria Municipal de Cultura. Oferece programação cultural diversificada, teatro, shows, oficinas gratuitas e eventos comunitários.
+
+## Páginas Principais
+
+- [Página Inicial](https://areninharenatorusso.com.br/): Destaques, apresentação do espaço e chamada para eventos.
+- [Programação Cultural](https://areninharenatorusso.com.br/programacao): Agenda de shows, peças de teatro, concertos e eventos culturais com datas, horários e links de ingressos.
+- [Oficinas Gratuitas](https://areninharenatorusso.com.br/oficina): Lista de oficinas regulares para crianças, jovens e adultos, horários, professores e links de inscrição via WhatsApp.
+- [Notícias e Avisos](https://areninharenatorusso.com.br/noticias): Últimas novidades, editais, comunicados e matérias sobre a Areninha.
+- [Estrutura e Espaço](https://areninharenatorusso.com.br/espaco): Infraestrutura, capacidade do teatro, especificações técnicas e galeria do espaço.
+- [História e Equipe](https://areninharenatorusso.com.br/historia): Linha do tempo da Areninha Renato Russo e equipe gestora.
+- [Contato e Sugestões](https://areninharenatorusso.com.br/contato): Informações de contato, endereço, horários de atendimento da secretaria e formulário de sugestões.

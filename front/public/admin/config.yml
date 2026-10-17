@@ -317,6 +317,87 @@ collections:
         }
       - { label: "Descrição / Mini-Bio", name: "descricao", widget: "text" }
 
+  - name: "adesivos"
+    label: "Adesivos — Lambe-lambes (Home)"
+    label_singular: "Adesivo"
+    folder: "front/src/content/homePage/adesivos"
+    create: true
+    delete: true
+    format: "json"
+    slug: "{{ordem}}-{{slug}}"
+    summary: "#{{ordem}} — {{textoAlternativo}}"
+    fields:
+      - {
+          label: "Ordem de Exibição",
+          name: "ordem",
+          widget: "number",
+          value_type: "int",
+        }
+      - {
+          label: "Identificador Único (ID)",
+          name: "id",
+          widget: "string",
+          hint: "Ex: sticker-sunglasses, sticker-barcas",
+        }
+      - {
+          label: "Imagem / SVG do Adesivo",
+          name: "imagem",
+          widget: "image",
+          hint: "Selecione ou faça upload do SVG/imagem do adesivo",
+        }
+      - {
+          label: "Texto Alternativo (Acessibilidade)",
+          name: "textoAlternativo",
+          widget: "string",
+        }
+      - {
+          label: "Classes de Largura (Tailwind)",
+          name: "classeLargura",
+          widget: "string",
+          default: "w-36 md:w-44",
+          hint: "Ex: w-36 sm:w-40 md:w-48, w-28 md:w-32, w-40 md:w-48, w-48 md:w-60",
+        }
+      - {
+          label: "Rotação Inicial (Graus)",
+          name: "rotacaoInicial",
+          widget: "number",
+          value_type: "int",
+          default: 0,
+          hint: "Ex: -11, 7, -14, 13 (use valores negativos para inclinar à esquerda)",
+        }
+      - label: "Posição Inicial na Capa"
+        name: "posicaoInicial"
+        widget: "object"
+        fields:
+          - {
+              label: "Distância do Topo (Top)",
+              name: "top",
+              widget: "string",
+              required: false,
+              hint: "Ex: 10% (deixe em branco se for usar 'Base')",
+            }
+          - {
+              label: "Distância da Esquerda (Left)",
+              name: "left",
+              widget: "string",
+              required: false,
+              hint: "Ex: 3% (deixe em branco se for usar 'Direita')",
+            }
+          - {
+              label: "Distância da Direita (Right)",
+              name: "right",
+              widget: "string",
+              required: false,
+              hint: "Ex: 4% (deixe em branco se for usar 'Esquerda')",
+            }
+          - {
+              label: "Distância da Base (Bottom)",
+              name: "bottom",
+              widget: "string",
+              required: false,
+              hint: "Ex: 20% (deixe em branco se for usar 'Topo')",
+            }
+
   - name: "configuracoes"
     label: "Configurações Gerais (Contato, Rodapé e Redes)"
     files:

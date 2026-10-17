@@ -1,0 +1,12 @@
+{
+  "ordem": 1,
+  "id": "sticker-sunglasses",
+  "imagem": "/adesivos/oculos.svg",
+  "textoAlternativo": "Adesivo Óculos Tempo Perdido",
+  "classeLargura": "w-36 sm:w-40 md:w-48",
+  "rotacaoInicial": -11,
+  "posicaoInicial": {
+    "top": "10%",
+    "left": "3%"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "ordem": 6,
+  "id": "sticker-patch",
+  "imagem": "/adesivos/patch.svg",
+  "textoAlternativo": "Adesivo Há Tempos Quase Sem Querer",
+  "classeLargura": "w-48 md:w-60",
+  "rotacaoInicial": -5,
+  "posicaoInicial": {
+    "top": "80%",
+    "right": "20%"
+  }
+}

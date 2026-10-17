@@ -34,7 +34,7 @@ export function CardAvisosExpandido({
               decoding="async"
             />
           </div>
-          <div className="mt-4 hidden md:flex items-center justify-between text-xs text-brand-darkCustom/80 font-bold uppercase tracking-wider pt-2 border-t-2 border-brand-darkCustom/15">
+          <div className="mt-4 hidden md:flex items-center justify-between text-xs text-brand-darkCustom/80 font-bold pt-2 border-t-2 border-brand-darkCustom/15">
             <span className="flex items-center gap-1.5">
               <span className="material-symbols-outlined text-sm text-energy-blueCustom">
                 hub
@@ -48,7 +48,7 @@ export function CardAvisosExpandido({
         </div>
         <div className="w-full md:w-1/2 p-6 sm:p-8 md:p-9 flex flex-col justify-between overflow-y-auto bg-white">
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-darkCustom/75 uppercase tracking-wide">
+            <div className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-darkCustom/75">
               <span className="material-symbols-outlined text-[17px] text-energy-blueCustom">
                 calendar_today
               </span>
@@ -68,7 +68,7 @@ export function CardAvisosExpandido({
             <button
               type="button"
               onClick={funcaoSair}
-              className="w-full sm:w-auto px-8 py-3 font-bold text-xs uppercase tracking-widest text-brand-darkCustom hover:bg-bg-grayCustom rounded-full border-2 border-brand-darkCustom transition-all duration-200 cursor-pointer"
+              className="w-full sm:w-auto px-8 py-3 font-bold text-xs text-brand-darkCustom hover:bg-bg-grayCustom rounded-full border-2 border-brand-darkCustom transition-all duration-200 cursor-pointer"
             >
               Fechar
             </button>

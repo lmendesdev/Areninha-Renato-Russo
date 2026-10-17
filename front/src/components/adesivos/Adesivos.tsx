@@ -85,8 +85,6 @@ export function Adesivos({ children }: PropriedadesAdesivos) {
     {},
   );
 
-  const [idsMovidos, setIdsMovidos] = useState<readonly string[]>([]);
-
   const [chaveReset, setChaveReset] = useState<number>(0);
 
   function definirReferenciaLimite(elemento: HTMLDivElement | null) {
@@ -108,30 +106,13 @@ export function Adesivos({ children }: PropriedadesAdesivos) {
       ...estadoAnterior,
       [id]: proximoZIndex,
     }));
-
-    setIdsMovidos((listaAnterior) => {
-      const jaFoiMovido = listaAnterior.includes(id);
-      if (jaFoiMovido) {
-        return listaAnterior;
-      }
-      return [...listaAnterior, id];
-    });
   }
 
   function resetarAdesivos() {
     setChaveReset((valorAnterior) => valorAnterior + 1);
-    setIdsMovidos([]);
     setZIndicesPorId({});
     setTopoZIndex(zIndexTopoInicial);
   }
-
-  const totalColados = listaAdesivos.length;
-  const totalMovidos = idsMovidos.length;
-  const temAdesivosMovidos = totalMovidos > 0;
-
-  const textoContador = temAdesivosMovidos
-    ? `${totalColados} colados (${totalMovidos} movidos)`
-    : `${totalColados} colados`;
 
   return (
     <div
@@ -142,14 +123,11 @@ export function Adesivos({ children }: PropriedadesAdesivos) {
         <span className="text-brand-darkCustom/80 hidden sm:inline font-semibold">
           Arraste os lambe-lambes!
         </span>
-        <span className="font-extrabold bg-brand-darkCustom text-white px-2.5 py-0.5 rounded-full text-[11px] tracking-wide">
-          {textoContador}
-        </span>
         <button
           type="button"
           onClick={resetarAdesivos}
           title="Resetar todos os adesivos para suas posições de colagem"
-          className="ml-1 bg-street-yellowCustom hover:bg-street-yellowCustom/80 active:translate-y-0.5 text-brand-darkCustom border border-brand-darkCustom font-black text-[11px] uppercase tracking-wider px-2 py-0.5 rounded-full transition-all cursor-pointer flex items-center gap-1"
+          className="ml-1 bg-street-yellowCustom hover:bg-street-yellowCustom/80 active:translate-y-0.5 text-brand-darkCustom border border-brand-darkCustom font-black text-[11px] px-2 py-0.5 rounded-full transition-all cursor-pointer flex items-center gap-1"
         >
           <span className="material-symbols-outlined text-[13px] leading-none">
             restart_alt

@@ -114,7 +114,7 @@ export function Contato() {
       <main className="grow bg-bg-grayCustom py-12 md:py-20 px-4 md:px-10 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-12 md:mb-16">
-            <h1 className="text-4xl md:text-6xl font-black text-brand-darkCustom tracking-tight mb-4 uppercase">
+            <h1 className="text-4xl md:text-6xl font-black text-brand-darkCustom tracking-tight mb-4">
               Sugestões &amp; Contato
             </h1>
             <p className="text-lg md:text-xl font-medium text-brand-darkCustom/80 max-w-2xl">
@@ -125,7 +125,7 @@ export function Contato() {
             <div className="lg:col-span-5 space-y-6">
               <div className="bg-energy-blueCustom text-white border-4 border-brand-darkCustom sticker-shadow-lg rounded-2xl p-7 md:p-8 relative overflow-hidden">
                 <h2 className="text-2xl md:text-3xl font-black tracking-tight text-white mb-2 leading-snug">
-                  FALE DIRETO COM A EQUIPE
+                  Fale direto com a equipe
                 </h2>
                 <p className="text-sm font-medium text-white/90 mb-8">
                   {configuracaoContato.subtituloAtendimento}
@@ -143,7 +143,7 @@ export function Contato() {
                       </span>
                     </div>
                     <div className="min-w-0">
-                      <span className="block text-[11px] font-extrabold uppercase tracking-widest text-brand-darkCustom/60">
+                      <span className="block text-[11px] font-extrabold text-brand-darkCustom/60">
                         Telefone &amp; WhatsApp
                       </span>
                       <span className="block text-base md:text-lg font-bold truncate text-brand-darkCustom group-hover:text-energy-blueCustom transition-colors">
@@ -161,7 +161,7 @@ export function Contato() {
                       </span>
                     </div>
                     <div className="min-w-0">
-                      <span className="block text-[11px] font-extrabold uppercase tracking-widest text-brand-darkCustom/60">
+                      <span className="block text-[11px] font-extrabold text-brand-darkCustom/60">
                         E-mail Oficial
                       </span>
                       <span className="block text-sm md:text-base font-bold truncate text-brand-darkCustom group-hover:text-fest-orangeCustom transition-colors">
@@ -173,7 +173,7 @@ export function Contato() {
                 <div className="mt-6 pt-6 border-t-2 border-brand-darkCustom/20 text-white">
                   <div className="flex items-start gap-3">
                     <div>
-                      <h3 className="text-sm font-extrabold uppercase tracking-wider text-street-yellowCustom">
+                      <h3 className="text-sm font-extrabold text-street-yellowCustom">
                         Horário da Secretaria
                       </h3>
                       <p className="text-xs font-semibold text-white/95 mt-1">
@@ -188,7 +188,7 @@ export function Contato() {
               </div>
               <div className="bg-bg-whiteCustom border-4 border-brand-darkCustom sticker-shadow-lg rounded-2xl p-6 relative">
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="text-xs font-black uppercase tracking-wider text-brand-darkCustom flex items-center gap-1.5">
+                  <span className="text-xs font-black text-brand-darkCustom flex items-center gap-1.5">
                     Nosso Espaço
                   </span>
                   <span className="bg-street-yellowCustom text-brand-darkCustom text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-brand-darkCustom">
@@ -215,13 +215,13 @@ export function Contato() {
                 <div className="p-6 md:p-8 relative">
                   <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 pb-6 border-b-2 border-dashed border-brand-darkCustom/30 mb-6">
                     <div>
-                      <div className="inline-flex items-center gap-2 bg-[#15803D] text-white px-3 py-1 rounded border-2 border-brand-darkCustom shadow-[2px_2px_0px_#0A2435] mb-2 font-black text-[11px] uppercase tracking-wider">
+                      <div className="inline-flex items-center gap-2 bg-[#15803D] text-white px-3 py-1 rounded border-2 border-brand-darkCustom shadow-[2px_2px_0px_#0A2435] mb-2 font-black text-[11px]">
                         <span className="material-symbols-outlined text-sm font-bold">
                           flight_takeoff
                         </span>
-                        <span>VIA CORREIO CULTURAL // ILHA DO GOVERNADOR</span>
+                        <span>Via Correio Cultural // Ilha do Governador</span>
                       </div>
-                      <h2 className="text-2xl md:text-3xl font-black uppercase text-brand-darkCustom tracking-tight flex items-center gap-2">
+                      <h2 className="text-2xl md:text-3xl font-black text-brand-darkCustom tracking-tight flex items-center gap-2">
                         Deixe sua Mensagem
                       </h2>
                       <p className="text-xs md:text-sm font-medium text-brand-darkCustom/70 mt-0.5">
@@ -230,19 +230,19 @@ export function Contato() {
                     </div>
                     <div className="flex items-center gap-2.5 self-start sm:self-auto shrink-0">
                       <div className="w-16 h-16 rounded-full border-2 border-dashed border-[#15803D] text-[#15803D] flex flex-col items-center justify-center -rotate-8 p-1 select-none pointer-events-none opacity-90">
-                        <span className="text-[8px] font-black tracking-tighter uppercase leading-none text-center">
-                          CORREIO
+                        <span className="text-[8px] font-black tracking-tighter leading-none text-center">
+                          Correio
                         </span>
-                        <span className="text-[10px] font-black tracking-widest my-0.5 leading-none">
-                          RIO-RJ
+                        <span className="text-[10px] font-black tracking-wider my-0.5 leading-none">
+                          Rio - RJ
                         </span>
                         <span className="text-[7px] font-bold tracking-tighter leading-none text-center">
-                          COCOTÁ
+                          Cocotá
                         </span>
                       </div>
                       <div className="w-16 h-20 bg-street-yellowCustom border-2 border-dashed border-brand-darkCustom sticker-shadow-sm rounded-sm flex flex-col items-center justify-between p-1.5 rotate-4 select-none">
-                        <div className="text-[7px] font-black uppercase text-brand-darkCustom tracking-wider text-center leading-none">
-                          SELO PARTICIPATIVO
+                        <div className="text-[7px] font-black text-brand-darkCustom tracking-wider text-center leading-none">
+                          Selo Participativo
                         </div>
                         <div className="w-7 h-7 rounded bg-brand-darkCustom text-street-yellowCustom flex items-center justify-center">
                           <span className="material-symbols-outlined text-lg">
@@ -270,7 +270,7 @@ export function Contato() {
                     <div className="bg-[#ECF5FF] border-2 border-brand-darkCustom rounded-xl p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-[2px_2px_0px_#0A2435]">
                       <div className="flex items-center gap-3">
                         <div>
-                          <span className="block text-[10px] font-black uppercase tracking-widest text-brand-darkCustom/60">
+                          <span className="block text-[10px] font-black text-brand-darkCustom/60">
                             Destinatário Oficial
                           </span>
                           <span className="block text-xs md:text-sm font-extrabold text-brand-darkCustom">
@@ -286,14 +286,14 @@ export function Contato() {
                     </div>
                     <div className="bg-bg-whiteCustom/90 border-2 border-brand-darkCustom rounded-xl p-4 shadow-[2px_2px_0px_#0A2435]">
                       <div className="flex items-center gap-2 pb-2.5 mb-3 border-b border-brand-darkCustom/15">
-                        <span className="text-xs font-black uppercase tracking-wider text-brand-darkCustom">
+                        <span className="text-xs font-black text-brand-darkCustom">
                           Remetente (Seus Dados)
                         </span>
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                           <label
-                            className="block text-[11px] font-black uppercase tracking-wider text-brand-darkCustom mb-1.5"
+                            className="block text-[11px] font-black text-brand-darkCustom mb-1.5"
                             htmlFor="name"
                           >
                             Nome Completo{" "}
@@ -313,7 +313,7 @@ export function Contato() {
                         </div>
                         <div>
                           <label
-                            className="block text-[11px] font-black uppercase tracking-wider text-brand-darkCustom mb-1.5"
+                            className="block text-[11px] font-black text-brand-darkCustom mb-1.5"
                             htmlFor="email"
                           >
                             E-mail para Resposta{" "}
@@ -337,13 +337,13 @@ export function Contato() {
                       <div className="flex justify-between items-center pb-2.5 mb-2 border-b border-brand-darkCustom/15">
                         <div className="flex items-center gap-2">
                           <label
-                            className="text-xs font-black uppercase tracking-wider text-brand-darkCustom"
+                            className="text-xs font-black text-brand-darkCustom"
                             htmlFor="message"
                           >
                             Corpo da Mensagem / Carta
                           </label>
                         </div>
-                        <span className="text-[10px] font-bold uppercase tracking-wide text-brand-darkCustom/50 bg-bg-grayCustom px-2 py-0.5 rounded border border-brand-darkCustom/20">
+                        <span className="text-[10px] font-bold text-brand-darkCustom/50 bg-bg-grayCustom px-2 py-0.5 rounded border border-brand-darkCustom/20">
                           Campo obrigatório
                         </span>
                       </div>
@@ -379,7 +379,7 @@ export function Contato() {
                       </div>
                       <button
                         disabled={isSubmitting}
-                        className="bg-fest-orangeCustom hover:bg-street-yellowCustom hover:text-brand-darkCustom text-white font-black text-sm uppercase tracking-wider py-3.5 px-8 rounded-xl border-3 border-brand-darkCustom sticker-shadow-md hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_#0A2435] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-3 group cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                        className="bg-fest-orangeCustom hover:bg-street-yellowCustom hover:text-brand-darkCustom text-white font-black text-sm py-3.5 px-8 rounded-xl border-3 border-brand-darkCustom sticker-shadow-md hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_#0A2435] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-3 group cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                         type="submit"
                       >
                         {isSubmitting ? (
@@ -387,10 +387,10 @@ export function Contato() {
                             <span className="material-symbols-outlined text-base animate-spin">
                               refresh
                             </span>
-                            <span>ENVIANDO CARTA...</span>
+                            <span>Enviando carta...</span>
                           </>
                         ) : (
-                          <span>POSTAR MENSAGEM</span>
+                          <span>Postar mensagem</span>
                         )}
                       </button>
                     </div>
@@ -402,10 +402,10 @@ export function Contato() {
                           outgoing_mail
                         </span>
                       </div>
-                      <div className="inline-block bg-energy-blueCustom text-white font-black text-xs uppercase tracking-wider px-3 py-1 rounded border-2 border-brand-darkCustom shadow-[2px_2px_0px_#0A2435] mb-3">
+                      <div className="inline-block bg-energy-blueCustom text-white font-black text-xs px-3 py-1 rounded border-2 border-brand-darkCustom shadow-[2px_2px_0px_#0A2435] mb-3">
                         Correspondência Enviada!
                       </div>
-                      <h3 className="text-2xl md:text-3xl font-black uppercase text-brand-darkCustom mb-3">
+                      <h3 className="text-2xl md:text-3xl font-black text-brand-darkCustom mb-3">
                         Mensagem Postada com Sucesso!
                       </h3>
                       <p className="text-sm md:text-base font-medium text-brand-darkCustom/80 max-w-md mx-auto mb-8">
@@ -416,7 +416,7 @@ export function Contato() {
                       <button
                         type="button"
                         onClick={escreverOutraCarta}
-                        className="bg-energy-blueCustom hover:bg-brand-darkCustom text-white font-extrabold text-xs uppercase tracking-wider py-3 px-6 rounded-full border-2 border-brand-darkCustom sticker-shadow-sm transition-all flex items-center gap-2 cursor-pointer"
+                        className="bg-energy-blueCustom hover:bg-brand-darkCustom text-white font-extrabold text-xs py-3 px-6 rounded-full border-2 border-brand-darkCustom sticker-shadow-sm transition-all flex items-center gap-2 cursor-pointer"
                       >
                         <span className="material-symbols-outlined text-base">
                           drafts
