@@ -38,7 +38,7 @@ export function CardDataHistoria({
           {dataAno}
         </div>
         <div>
-          <h3 className="text-xl md:text-2xl font-black text-brand-darkCustom uppercase tracking-tight">
+          <h3 className="text-xl md:text-2xl font-black text-brand-darkCustom tracking-tight">
             {titulo}
           </h3>
           <p className="text-sm md:text-base text-brand-darkCustom/80 font-normal mt-1 max-w-2xl leading-relaxed">

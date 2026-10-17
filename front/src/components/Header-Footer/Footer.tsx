@@ -53,6 +53,10 @@ export function Footer() {
               <img
                 alt="Logo Areninha Cultural"
                 className="h-16 w-auto object-contain hover:scale-105 transition-transform"
+                width={64}
+                height={64}
+                loading="lazy"
+                decoding="async"
                 src={AreninhaCulturalIcon}
               />
             </Link>
@@ -68,8 +72,8 @@ export function Footer() {
             </div>
           </div>
           <div className="md:col-span-4 space-y-3">
-            <h4 className="text-xs font-black uppercase tracking-widest text-street-yellowCustom">
-              Contato E Horários
+            <h4 className="text-sm font-bold text-street-yellowCustom">
+              Contato e Horários
             </h4>
             <div className="text-sm font-medium text-white/80 space-y-2.5">
               <p className="flex items-center gap-3">
@@ -91,7 +95,7 @@ export function Footer() {
             </div>
           </div>
           <div className="md:col-span-2 space-y-3">
-            <h4 className="text-xs font-black uppercase tracking-widest text-street-yellowCustom">
+            <h4 className="text-sm font-bold text-street-yellowCustom">
               Institucional
             </h4>
             <nav className="flex flex-col space-y-2 text-sm font-medium text-white/80">
@@ -107,7 +111,7 @@ export function Footer() {
             </nav>
           </div>
           <div className="md:col-span-2 space-y-3">
-            <h4 className="text-xs font-black uppercase tracking-widest text-street-yellowCustom">
+            <h4 className="text-sm font-bold text-street-yellowCustom">
               Siga-nos
             </h4>
             <div className="flex flex-col space-y-2.5 text-sm font-medium">
@@ -127,6 +131,10 @@ export function Footer() {
                       src={redeSocial.icone}
                       alt={redeSocial.rotulo}
                       className="w-4 h-4 object-contain group-hover:brightness-0 transition-all"
+                      width={16}
+                      height={16}
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <span>{redeSocial.rotulo}</span>
@@ -149,16 +157,28 @@ export function Footer() {
               <img
                 alt="Logo do Instituto Usina Social"
                 className="h-[10vh] md:h-[8vh] w-auto object-contain"
+                width={842}
+                height={595}
+                loading="lazy"
+                decoding="async"
                 src={UsinaSocialIcon}
               />
               <img
                 alt="Logo da Areninha Cultural Renato Russo"
                 className="h-[10vh] md:h-[8vh] w-auto object-contain"
+                width={56}
+                height={56}
+                loading="lazy"
+                decoding="async"
                 src={AreninhaCulturalIcon}
               />
               <img
                 alt="Logo da Secretaria Municipal de Cultura do Rio de Janeiro"
                 className="h-[10vh] md:h-[8vh] w-auto object-contain"
+                width={251}
+                height={78}
+                loading="lazy"
+                decoding="async"
                 src={secretariaCulturaIcon}
               />
             </div>

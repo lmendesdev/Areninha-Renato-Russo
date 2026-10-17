@@ -1,0 +1,19 @@
+<svg width="148" height="148" viewBox="0 0 148 148" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="2" width="144" height="144" rx="16" fill="#FFFFFF" stroke="#0A2435" stroke-width="3.5"/>
+  
+  <circle cx="74" cy="74" r="60" fill="#FF5A1F" fill-opacity="0.1"/>
+  <circle cx="74" cy="74" r="60" stroke="#FF5A1F" stroke-width="2.5" stroke-dasharray="5 4"/>
+  <circle cx="74" cy="74" r="52" stroke="#FF5A1F" stroke-width="1.5"/>
+
+  <!-- Ícone de envelope / correio -->
+  <rect x="64" y="34" width="20" height="14" rx="2" stroke="#FF5A1F" stroke-width="2" fill="none"/>
+  <path d="M64 36 L74 43 L84 36" stroke="#FF5A1F" stroke-width="2" fill="none"/>
+
+  <text x="74" y="62" text-anchor="middle" fill="#0A2435" font-family="Poppins, sans-serif" font-weight="900" font-size="7.5" letter-spacing="0.05em">PRAÇA MANUEL</text>
+  <text x="74" y="72" text-anchor="middle" fill="#0A2435" font-family="Poppins, sans-serif" font-weight="900" font-size="7.5" letter-spacing="0.05em">BANDEIRA</text>
+
+  <line x1="48" y1="79" x2="100" y2="79" stroke="#FF5A1F" stroke-width="2"/>
+
+  <text x="74" y="93" text-anchor="middle" fill="#FF5A1F" font-family="Poppins, sans-serif" font-weight="900" font-size="10" letter-spacing="0.04em">COCOTÁ</text>
+  <text x="74" y="106" text-anchor="middle" fill="#0A2435" fill-opacity="0.75" font-family="Poppins, sans-serif" font-weight="700" font-size="7" letter-spacing="0.08em">ILHA DO GOV • RJ</text>
+</svg>

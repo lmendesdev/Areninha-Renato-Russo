@@ -1,0 +1,12 @@
+{
+  "ordem": 3,
+  "id": "sticker-k7",
+  "imagem": "/adesivos/fita-k7.svg",
+  "textoAlternativo": "Adesivo Fita K7 Mixtape Cocotá",
+  "classeLargura": "w-40 md:w-48",
+  "rotacaoInicial": 9,
+  "posicaoInicial": {
+    "top": "66%",
+    "left": "3%"
+  }
+}

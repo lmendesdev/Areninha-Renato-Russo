@@ -58,6 +58,8 @@ export function CardProgramacao({
             alt={textoAlt}
             className="w-full h-full object-cover"
             src={imagem}
+            width={384}
+            height={192}
             loading="lazy"
             decoding="async"
           />
@@ -73,7 +75,7 @@ export function CardProgramacao({
         <div className="pt-4 flex flex-col grow justify-between">
           <div>
             <div className="flex items-center gap-2 flex-wrap mb-3">
-              <span className="bg-fest-orangeCustom text-white text-xs font-bold px-3 py-0.5 rounded-full uppercase tracking-wider">
+              <span className="bg-fest-orangeCustom text-white text-xs font-bold px-3 py-0.5 rounded-full">
                 {tag}
               </span>
               <span className="bg-street-yellowCustom text-brand-darkCustom border border-brand-darkCustom text-xs font-bold px-3 py-0.5 rounded-full">
@@ -94,7 +96,7 @@ export function CardProgramacao({
               onClick={() => {
                 setExpandido(true);
               }}
-              className="w-full rounded-full py-2.5 px-4 border-2 border-brand-darkCustom bg-energy-blueCustom text-white font-extrabold text-xs uppercase tracking-wider hover:brightness-110 shadow-sm transition-all cursor-pointer"
+              className="w-full rounded-full py-2.5 px-4 border-2 border-brand-darkCustom bg-energy-blueCustom text-white font-extrabold text-xs hover:brightness-110 shadow-sm transition-all cursor-pointer"
             >
               Sobre o evento
             </button>

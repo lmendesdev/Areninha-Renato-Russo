@@ -83,6 +83,7 @@ export default async function handler(
     );
 
     const tokenData = (await gitHubTokenResponse.json()) as RespostaTokenGitHub;
+
     const accessToken = tokenData.access_token;
 
     if (!accessToken) {

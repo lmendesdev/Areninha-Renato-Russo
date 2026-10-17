@@ -143,7 +143,7 @@ export function Programacao() {
         content="Areninha Cultural Renato Russo, programação cultural, shows, espetáculos teatrais, comédias, apresentações musicais, finais de semana, Ilha do Governador, Rio de Janeiro"
       />
       <meta name="robots" content="index, follow" />
-      <div className="bg-street-yellowCustom border-b-2 border-brand-darkCustom text-brand-darkCustom px-4 py-2.5 font-bold text-xs md:text-sm tracking-wide text-center uppercase flex items-center justify-center gap-2">
+      <div className="bg-street-yellowCustom border-b-2 border-brand-darkCustom text-brand-darkCustom px-4 py-2.5 font-bold text-xs md:text-sm tracking-wide text-center flex items-center justify-center gap-2">
         <span className="material-symbols-outlined text-lg">campaign</span>
         <span>{configuracaoProgramacao.avisoBarraSuperior}</span>
         <span className="material-symbols-outlined text-lg hidden sm:inline">
@@ -153,8 +153,8 @@ export function Programacao() {
       <Header paginaAtiva="Programação" />
       <main className="grow w-full max-w-7xl mx-auto px-6 md:px-10 pb-20 pt-8">
         <section className="py-10 md:py-14 text-center">
-          <h1 className="text-4xl md:text-6xl font-black text-brand-darkCustom tracking-tight mb-4 uppercase">
-            PROGRAMAÇÃO CULTURAL
+          <h1 className="text-4xl md:text-6xl font-black text-brand-darkCustom tracking-tight mb-4">
+            Programação Cultural
           </h1>
           <p className="text-base md:text-lg text-brand-darkCustom/80 max-w-2xl mx-auto font-medium">
             {configuracaoProgramacao.subtitulo}
@@ -177,8 +177,8 @@ export function Programacao() {
             <div className="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-neutral-700/80 mb-6">
               <div className="flex items-center gap-3">
                 <div className="w-2.5 h-2.5 rounded-full bg-red-500 led-red-active animate-pulse" />
-                <div className="font-mono-tech uppercase tracking-wider text-xs text-neutral-300">
-                  MESA PRINCIPAL DE PAUTA // MOD. ARENA-RIO-82
+                <div className="font-mono-tech tracking-wider text-xs text-neutral-300">
+                  Mesa Principal de Pauta // Mod. Arena-Rio-82
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -193,8 +193,8 @@ export function Programacao() {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
               <div className="lg:col-span-4 bg-black/40 rounded-2xl p-4 border border-neutral-700/70 flex flex-col items-center justify-center relative">
-                <div className="font-mono-tech text-[11px] text-neutral-400 tracking-widest uppercase mb-2">
-                  SELETOR DE DIA // DIAL ROTATIVO
+                <div className="font-mono-tech text-[11px] text-neutral-400 tracking-wider mb-2">
+                  Seletor de Dia // Dial Rotativo
                 </div>
                 <div className="relative w-36 h-36 flex items-center justify-center my-2">
                   <div className="absolute inset-0 rounded-full border border-dashed border-neutral-600/70 pointer-events-none" />
@@ -250,11 +250,11 @@ export function Programacao() {
               </div>
               <div className="lg:col-span-5 bg-neutral-900/80 rounded-2xl p-3 sm:p-5 border border-neutral-700/80 flex flex-col justify-between">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono-tech text-xs tracking-wider uppercase text-neutral-400">
-                    CHAVE PRINCIPAL
+                  <span className="font-mono-tech text-xs tracking-wider text-neutral-400">
+                    Chave Principal
                   </span>
                   <span className="text-[10px] font-mono-tech bg-fest-orangeCustom/20 text-fest-orangeCustom px-2 py-0.5 rounded border border-fest-orangeCustom/40 font-bold">
-                    FILTRO ATIVO
+                    Filtro Ativo
                   </span>
                 </div>
 
@@ -311,8 +311,8 @@ export function Programacao() {
               <div className="lg:col-span-3 bg-black/40 rounded-2xl p-4 border border-neutral-700/70 flex flex-col justify-between h-full">
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="font-mono-tech text-[11px] text-neutral-400 uppercase">
-                      VU METER // SINAL
+                    <span className="font-mono-tech text-[11px] text-neutral-400">
+                      VU Meter // Sinal
                     </span>
                     <span className="font-mono-tech text-[10px] text-street-yellowCustom font-bold">
                       +3 dB
@@ -345,8 +345,8 @@ export function Programacao() {
                 </div>
                 <div className="mt-3 p-2.5 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-between">
                   <div>
-                    <div className="text-[10px] font-mono-tech text-neutral-400 uppercase">
-                      EVENTOS NO CANAL
+                    <div className="text-[10px] font-mono-tech text-neutral-400">
+                      Eventos no Canal
                     </div>
                     <div className="font-mono-tech text-sm font-black text-street-yellowCustom">
                       {textoTotalAtracoes}

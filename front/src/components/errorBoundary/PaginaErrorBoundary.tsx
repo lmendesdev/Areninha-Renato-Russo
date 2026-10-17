@@ -32,10 +32,10 @@ export function PaginaErrorBoundary() {
               warning
             </span>
           </div>
-          <span className="bg-street-yellowCustom text-brand-darkCustom font-black text-xs uppercase px-3.5 py-1 rounded-full border-2 border-brand-darkCustom shadow-[2px_2px_0px_#0A2435] mb-4">
+          <span className="bg-street-yellowCustom text-brand-darkCustom font-black text-xs px-3.5 py-1 rounded-full border-2 border-brand-darkCustom shadow-[2px_2px_0px_#0A2435] mb-4">
             Erro inesperado
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-brand-darkCustom mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-brand-darkCustom mb-4">
             Algo deu errado por aqui
           </h1>
           <p className="text-sm sm:text-base md:text-lg font-medium text-brand-darkCustom/75 max-w-lg mx-auto leading-relaxed mb-8">
@@ -45,7 +45,7 @@ export function PaginaErrorBoundary() {
           <button
             type="button"
             onClick={recarregarPagina}
-            className="inline-flex items-center gap-3 bg-street-yellowCustom hover:bg-fest-orangeCustom text-brand-darkCustom hover:text-white font-black text-sm md:text-base px-8 py-4 rounded-full uppercase tracking-wider justify-center border-2 border-brand-darkCustom sticker-shadow-md hover-sticker transition-colors cursor-pointer"
+            className="inline-flex items-center gap-3 bg-street-yellowCustom hover:bg-fest-orangeCustom text-brand-darkCustom hover:text-white font-black text-sm md:text-base px-8 py-4 rounded-full justify-center border-2 border-brand-darkCustom sticker-shadow-md hover-sticker transition-colors cursor-pointer"
           >
             <span
               className="material-symbols-outlined text-xl"
@@ -60,7 +60,7 @@ export function PaginaErrorBoundary() {
           type="button"
           onClick={voltarPaginaAnterior}
           aria-label="Voltar para a página anterior"
-          className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-20 inline-flex items-center gap-2.5 bg-street-yellowCustom hover:bg-fest-orangeCustom text-brand-darkCustom hover:text-white font-black text-xs md:text-sm uppercase tracking-wider px-5 py-3.5 rounded-full border-2 border-brand-darkCustom sticker-shadow-md hover-sticker transition-colors cursor-pointer"
+          className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-20 inline-flex items-center gap-2.5 bg-street-yellowCustom hover:bg-fest-orangeCustom text-brand-darkCustom hover:text-white font-black text-xs md:text-sm px-5 py-3.5 rounded-full border-2 border-brand-darkCustom sticker-shadow-md hover-sticker transition-colors cursor-pointer"
         >
           <span className="material-symbols-outlined text-xl leading-none">
             arrow_back

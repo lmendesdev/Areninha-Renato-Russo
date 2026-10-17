@@ -13,7 +13,7 @@ export function CardErrorBoundary() {
     >
       <div className="relative w-full aspect-video border-b-2 border-brand-darkCustom bg-bg-creamCustom flex flex-col items-center justify-center p-6 shrink-0 overflow-hidden">
         <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-          <span className="bg-street-yellowCustom text-brand-darkCustom font-black text-xs uppercase px-3 py-1 rounded-full border-2 border-brand-darkCustom shadow-[2px_2px_0px_#0A2435]">
+          <span className="bg-street-yellowCustom text-brand-darkCustom font-black text-xs px-3 py-1 rounded-full border-2 border-brand-darkCustom shadow-[2px_2px_0px_#0A2435]">
             Erro de exibição
           </span>
         </div>
@@ -28,7 +28,7 @@ export function CardErrorBoundary() {
       </div>
       <div className="p-6 md:p-7 flex flex-col flex-1 justify-between">
         <div>
-          <div className="flex items-center gap-2 mb-3 text-xs font-bold text-fest-orangeCustom uppercase tracking-wide">
+          <div className="flex items-center gap-2 mb-3 text-xs font-bold text-fest-orangeCustom">
             <span
               className="material-symbols-outlined text-sm"
               aria-hidden="true"
@@ -52,7 +52,7 @@ export function CardErrorBoundary() {
           <button
             type="button"
             onClick={recarregarPagina}
-            className="w-full py-2.5 px-4 bg-street-yellowCustom hover:bg-fest-orangeCustom text-brand-darkCustom hover:text-white font-black text-xs uppercase tracking-wider rounded-xl border-2 border-brand-darkCustom sticker-shadow-sm transition-colors flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full py-2.5 px-4 bg-street-yellowCustom hover:bg-fest-orangeCustom text-brand-darkCustom hover:text-white font-black text-xs rounded-xl border-2 border-brand-darkCustom sticker-shadow-sm transition-colors flex items-center justify-center gap-2 cursor-pointer"
           >
             <span
               className="material-symbols-outlined text-base"
@@ -62,7 +62,7 @@ export function CardErrorBoundary() {
             </span>
             <span>Tentar novamente</span>
           </button>
-          <div className="inline-flex items-center justify-center gap-2 text-xs font-black text-brand-darkCustom/60 uppercase tracking-wider">
+          <div className="inline-flex items-center justify-center gap-2 text-xs font-black text-brand-darkCustom/60">
             <span
               className="material-symbols-outlined text-base text-fest-orangeCustom"
               aria-hidden="true"
