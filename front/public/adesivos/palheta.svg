@@ -1,0 +1,17 @@
+<svg width="140" height="132" viewBox="0 0 140 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <polygon
+    points="4,18 70,3 136,18 118,114 70,129 22,114"
+    fill="#3B82F6"
+    stroke="#0A2435"
+    stroke-width="4"
+    stroke-linejoin="round"
+  />
+  
+  <text x="70" y="38" text-anchor="middle" fill="#FFD600" font-family="Poppins, sans-serif" font-weight="900" font-size="11.5" letter-spacing="0.06em">⚡ ROCK 80</text>
+  <text x="70" y="58" text-anchor="middle" fill="#FFFFFF" font-family="Poppins, sans-serif" font-weight="900" font-size="14" letter-spacing="0.04em">LEGIÃO</text>
+  
+  <line x1="50" y1="67" x2="90" y2="67" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2"/>
+  
+  <text x="70" y="82" text-anchor="middle" fill="#FFD600" font-family="Poppins, sans-serif" font-weight="800" font-size="8.5" letter-spacing="0.1em">1982 — 1996</text>
+  <text x="70" y="96" text-anchor="middle" fill="#FFFFFF" fill-opacity="0.85" font-family="Poppins, sans-serif" font-weight="700" font-size="7.5" letter-spacing="0.06em">BRASÍLIA • RIO</text>
+</svg>

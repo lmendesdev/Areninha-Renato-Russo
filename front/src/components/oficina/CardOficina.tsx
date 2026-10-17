@@ -52,21 +52,21 @@ export function CardOficina({
             loading="lazy"
             decoding="async"
           />
-          <span className="absolute bottom-3 right-3 bg-street-yellowCustom text-brand-darkCustom text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full border-2 border-brand-darkCustom">
+          <span className="absolute bottom-3 right-3 bg-street-yellowCustom text-brand-darkCustom text-[11px] font-black px-3 py-1 rounded-full border-2 border-brand-darkCustom">
             {faixaEtaria}
           </span>
         </div>
         <div className="p-6 flex flex-col grow justify-between">
           <div>
             <div className="flex items-center gap-2 mb-2 flex-wrap">
-              <span className="bg-bg-grayCustom text-brand-darkCustom border border-brand-darkCustom text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full">
+              <span className="bg-bg-grayCustom text-brand-darkCustom border border-brand-darkCustom text-[10px] font-black px-2.5 py-0.5 rounded-full">
                 {categoria}
               </span>
-              <span className="bg-energy-blueCustom/10 text-energy-blueCustom border border-energy-blueCustom text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full">
+              <span className="bg-energy-blueCustom/10 text-energy-blueCustom border border-energy-blueCustom text-[10px] font-black px-2.5 py-0.5 rounded-full">
                 {diaSemana} • {horario}
               </span>
             </div>
-            <h3 className="text-2xl font-black text-brand-darkCustom uppercase tracking-tight leading-tight mb-1">
+            <h3 className="text-2xl font-black text-brand-darkCustom tracking-tight leading-tight mb-1">
               {titulo}
             </h3>
             <p className="text-sm font-semibold text-brand-darkCustom/70 flex items-center gap-1.5 mb-6">
@@ -78,17 +78,17 @@ export function CardOficina({
           </div>
           <div className="mt-auto pt-4 border-t-2 border-dashed border-brand-darkCustom/20 flex items-center justify-between gap-3">
             <div className="flex flex-col">
-              <span className="text-[10px] uppercase font-bold text-brand-darkCustom/60">
+              <span className="text-[10px] font-bold text-brand-darkCustom/60">
                 Modalidade
               </span>
-              <span className="text-xs font-black uppercase text-brand-darkCustom">
+              <span className="text-xs font-black text-brand-darkCustom">
                 {modalidade}
               </span>
             </div>
             <button
               type="button"
               onClick={aoClicarSobre}
-              className="px-6 py-2.5 rounded-full bg-brand-darkCustom text-street-yellowCustom hover:bg-street-yellowCustom hover:text-brand-darkCustom border-2 border-brand-darkCustom text-xs font-black uppercase tracking-wider transition-colors duration-150 cursor-pointer shadow-sm"
+              className="px-6 py-2.5 rounded-full bg-brand-darkCustom text-street-yellowCustom hover:bg-street-yellowCustom hover:text-brand-darkCustom border-2 border-brand-darkCustom text-xs font-black transition-colors duration-150 cursor-pointer shadow-sm"
             >
               Sobre
             </button>

@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { IngressoButton } from "../ingressoButton/IngressoButton";
 import AreninhaLogo from "../../assets/Areninha/AreninhaIcon.webp";
 import configuracaoGeral from "../../content/configuracoes/geral.json";
+
+const ESTILO_OVERFLOW_TRAVADO = "hidden";
+const LARGURA_BREAKPOINT_DESKTOP_PX = 1024;
 
 interface ItemLinkNavegacao {
   readonly rotulo: string;
@@ -35,6 +38,34 @@ export function Header({ paginaAtiva }: PropriedadesHeader = {}) {
     setMenuMobileAberto(false);
   }
 
+  useEffect(() => {
+    if (!menuMobileAberto) {
+      return;
+    }
+
+    const valorOriginalOverflow = document.body.style.overflow;
+    document.body.style.overflow = ESTILO_OVERFLOW_TRAVADO;
+
+    function fecharAoRedimensionarParaDesktop() {
+      const estaNoTamanhoDesktop =
+        window.innerWidth >= LARGURA_BREAKPOINT_DESKTOP_PX;
+      if (estaNoTamanhoDesktop) {
+        setMenuMobileAberto(false);
+      }
+    }
+
+    window.addEventListener("resize", fecharAoRedimensionarParaDesktop);
+
+    return () => {
+      document.body.style.overflow = valorOriginalOverflow;
+      window.removeEventListener("resize", fecharAoRedimensionarParaDesktop);
+    };
+  }, [menuMobileAberto]);
+
+  useEffect(() => {
+    setMenuMobileAberto(false);
+  }, [localizacao.pathname]);
+
   function verificarLinkAtivo(linkNavegacao: ItemLinkNavegacao): boolean {
     const ativoPorPropriedade =
       paginaAtiva === linkNavegacao.rotulo ||
@@ -56,6 +87,8 @@ export function Header({ paginaAtiva }: PropriedadesHeader = {}) {
           <img
             alt="Logo Areninha Cultural"
             className="h-14 w-auto object-contain transition-transform group-hover:scale-105"
+            width={56}
+            height={56}
             fetchPriority="high"
             decoding="async"
             src={AreninhaLogo}
@@ -96,28 +129,28 @@ export function Header({ paginaAtiva }: PropriedadesHeader = {}) {
         </div>
       </div>
       {menuMobileAberto && (
-        <nav
-          className={`fixed left-0 right-0 top-24 bottom-0 ${menuMobileAberto ? "translate-x-0" : "-translate-x-full"} 
-        lg:hidden border-t border-white/10 bg-brand-darkCustom px-4 pt-4 pb-28 space-y-3 transition-transform duration-1000`}
-        >
-          {linksDeNavegacao.map((linkNavegacao) => (
-            <div
-              className="flex flex-row spacebetween items-center justify-start bg-[rgba(255,255,255,0.05)] rounded-2xl
-             border-[1rem] border-[rgba(0,0,0,0.00)]"
-            >
-              <Link
+        <nav className="fixed left-0 right-0 top-24 bottom-0 lg:hidden border-t border-white/10 bg-brand-darkCustom backdrops-blur-md flex flex-col justify-between w-60">
+          <div className="flex-1 overflow-y-auto overscroll-contain px-4 pt-4 pb-6 space-y-3">
+            {linksDeNavegacao.map((linkNavegacao) => (
+              <div
                 key={linkNavegacao.rotulo}
-                className="block text-[1.875rem] font-black text-white hover:text-street-yellowCustom 
-                transition-colors py-1)] uppercase"
-                to={linkNavegacao.endereco}
-                onClick={fecharMenuMobile}
+                className="flex flex-row items-center justify-start w-50 bg-[rgba(255,255,255,0.05)] rounded-2xl border-8 border-[rgba(0,0,0,0.00)]"
               >
-                {linkNavegacao.rotulo}
-              </Link>
-            </div>
-          ))}
-          <div className="fixed left-0 w-full bottom-0 py-6 px-6 bg-[#071926] border-t-2 border-[#20303C]">
-            <IngressoButton estilo="w-full" destino={configuracaoGeral.linkIngressosGeral} />
+                <Link
+                  className="block text-[1.5rem] font-extrabold text-white hover:text-street-yellowCustom transition-colors py-1"
+                  to={linkNavegacao.endereco}
+                  onClick={fecharMenuMobile}
+                >
+                  {linkNavegacao.rotulo}
+                </Link>
+              </div>
+            ))}
+          </div>
+          <div className="w-full py-6 px-6 bg-[#071926] border-t-2 border-[#20303C] shrink-0">
+            <IngressoButton
+              estilo="w-fit"
+              destino={configuracaoGeral.linkIngressosGeral}
+            />
           </div>
         </nav>
       )}

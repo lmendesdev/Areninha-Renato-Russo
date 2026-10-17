@@ -70,15 +70,15 @@ export function Espaco() {
           </div>
           <div className="max-w-5xl mx-auto text-center relative z-20">
             <div className="flex justify-center mb-6">
-              <div className="inline-flex items-center gap-2 bg-street-yellowCustom border-2 border-brand-darkCustom px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider sticker-shadow-md ring-4 ring-street-yellowCustom/20">
+              <div className="inline-flex items-center gap-2 bg-street-yellowCustom border-2 border-brand-darkCustom px-4 py-1.5 rounded-full text-xs font-black sticker-shadow-md ring-4 ring-street-yellowCustom/20">
                 <span className="w-2 h-2 rounded-full bg-fest-orangeCustom shrink-0" />
-                <span>PARQUE POETA MANUEL BANDEIRA • COCOTÁ</span>
+                <span>Parque Poeta Manuel Bandeira • Cocotá</span>
               </div>
             </div>
             <div className="relative inline-block max-w-4xl mx-auto mb-6">
               <div className="absolute -inset-4 bg-street-yellowCustom/30 blur-2xl rounded-full -z-10 pointer-events-none" />
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-brand-darkCustom tracking-tight uppercase leading-none inline-flex flex-wrap items-center justify-center gap-3 md:gap-4">
-                ESPAÇO E ESTRUTURA
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-brand-darkCustom tracking-tight leading-none inline-flex flex-wrap items-center justify-center gap-3 md:gap-4">
+                Espaço e Estrutura
               </h1>
             </div>
             <p className="text-base sm:text-lg md:text-xl font-medium text-brand-darkCustom/85 max-w-2xl mx-auto leading-relaxed mt-2">
@@ -89,7 +89,7 @@ export function Espaco() {
         <section className="bg-bg-grayCustom border-b-2 border-brand-darkCustom py-16 md:py-24 px-6 md:px-12">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <h2 className="font-black text-3xl md:text-4xl text-brand-darkCustom leading-tight uppercase">
+              <h2 className="font-black text-3xl md:text-4xl text-brand-darkCustom leading-tight">
                 {configuracaoEspaco.tituloInstitucional}
               </h2>
               <div className="space-y-4 text-base md:text-lg text-brand-darkCustom/90 leading-relaxed font-medium">
@@ -117,7 +117,7 @@ export function Espaco() {
         <section className="bg-[#F6F9FF] px-6 md:px-12 py-8 md:py-12">
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-6">
-              <h2 className="font-black text-3xl md:text-4xl text-brand-darkCustom tracking-tight uppercase">
+              <h2 className="font-black text-3xl md:text-4xl text-brand-darkCustom tracking-tight">
                 Espaços de Criação e Encontro
               </h2>
             </div>
@@ -141,8 +141,8 @@ export function Espaco() {
                 <div className="h-2.5 w-full bg-street-yellowCustom" />
                 <div className="p-6 md:p-8 flex flex-col gap-6 grow">
                   <div className="flex items-center gap-3">
-                    <h3 className="font-black text-xl md:text-2xl text-brand-darkCustom tracking-tight uppercase">
-                      INFORMAÇÕES TÉCNICAS
+                    <h3 className="font-black text-xl md:text-2xl text-brand-darkCustom tracking-tight">
+                      Informações Técnicas
                     </h3>
                   </div>
                   <p className="text-sm md:text-base text-brand-darkCustom leading-relaxed font-medium">
@@ -169,8 +169,8 @@ export function Espaco() {
                 <div className="h-2.5 w-full bg-fest-orangeCustom" />
                 <div className="p-6 md:p-8 flex flex-col gap-6 grow">
                   <div className="flex items-center gap-3">
-                    <h3 className="font-black text-xl md:text-2xl text-brand-darkCustom tracking-tight uppercase">
-                      CAPACIDADE
+                    <h3 className="font-black text-xl md:text-2xl text-brand-darkCustom tracking-tight">
+                      Capacidade
                     </h3>
                   </div>
                   <div className="flex flex-col md:flex-row items-center justify-between rounded-2xl border-2 border-brand-darkCustom p-4 bg-bg-whiteCustom">

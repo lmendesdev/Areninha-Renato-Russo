@@ -10,18 +10,21 @@ export default function handler(
 
   if (!clientId) {
     response.status(500).json({
-      error: "Variável GITHUB_CLIENT_ID não configurada nas variáveis da Vercel.",
+      error:
+        "Variável GITHUB_CLIENT_ID não configurada nas variáveis da Vercel.",
     });
     return;
   }
 
   const cabecalhoHost = request.headers["x-forwarded-host"];
+
   const host =
     typeof cabecalhoHost === "string"
       ? cabecalhoHost
       : (request.headers.host ?? "localhost");
 
   const cabecalhoProto = request.headers["x-forwarded-proto"];
+
   const protocolo =
     typeof cabecalhoProto === "string" ? cabecalhoProto : "https";
 
@@ -29,6 +32,7 @@ export default function handler(
     process.env.REDIRECT_URI ?? `${protocolo}://${host}/api/callback`;
 
   const authorizationUrl = new URL("https://github.com/login/oauth/authorize");
+
   authorizationUrl.searchParams.set("client_id", clientId);
   authorizationUrl.searchParams.set("redirect_uri", redirectUri);
   authorizationUrl.searchParams.set("scope", "repo,user");

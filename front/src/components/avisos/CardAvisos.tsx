@@ -58,7 +58,7 @@ export function CardAvisos({
           />
         </div>
         <div className="p-6 md:p-7 flex flex-col flex-1">
-          <div className="flex items-center gap-2 mb-3 text-xs font-bold text-brand-darkCustom/60 uppercase tracking-wide">
+          <div className="flex items-center gap-2 mb-3 text-xs font-bold text-brand-darkCustom/60">
             <span className="material-symbols-outlined text-sm text-energy-blueCustom">
               calendar_month
             </span>
@@ -76,7 +76,7 @@ export function CardAvisos({
             <button
               type="button"
               onClick={aoClicarSobre}
-              className="inline-flex items-center gap-2 text-sm font-black text-brand-darkCustom group-hover:text-energy-blueCustom transition-colors uppercase tracking-wider cursor-pointer"
+              className="inline-flex items-center gap-2 text-sm font-black text-brand-darkCustom group-hover:text-energy-blueCustom transition-colors cursor-pointer"
             >
               <span>Ler matéria</span>
               <span className="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">

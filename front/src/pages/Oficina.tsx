@@ -45,10 +45,10 @@ const listaOficinas: readonly PropriedadesCardOficina[] =
 
 function obterClassesBotaoFiltro(estaAtivo: boolean): string {
   if (estaAtivo) {
-    return "px-6 py-2 rounded-full font-black text-xs md:text-sm uppercase tracking-wider bg-street-yellowCustom text-brand-darkCustom border-2 border-brand-darkCustom shadow-sm cursor-pointer";
+    return "px-6 py-2 rounded-full font-black text-xs md:text-sm bg-street-yellowCustom text-brand-darkCustom border-2 border-brand-darkCustom shadow-sm cursor-pointer";
   }
 
-  return "px-6 py-2 rounded-full font-bold text-xs md:text-sm uppercase tracking-wider text-brand-darkCustom hover:bg-bg-whiteCustom transition-colors duration-150 cursor-pointer";
+  return "px-6 py-2 rounded-full font-bold text-xs md:text-sm text-brand-darkCustom hover:bg-bg-whiteCustom transition-colors duration-150 cursor-pointer";
 }
 
 export function Oficina() {
@@ -83,7 +83,7 @@ export function Oficina() {
             <div className="flex flex-col items-start gap-4">
               <div className="flex flex-col md:flex-row md:items-end justify-between w-full gap-6 mt-2">
                 <div>
-                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-brand-darkCustom tracking-tight uppercase leading-[0.95]">
+                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-brand-darkCustom tracking-tight leading-[0.95]">
                     Oficinas Regulares
                   </h1>
                   <p className="text-base md:text-lg font-medium text-brand-darkCustom/80 mt-4 max-w-2xl leading-relaxed">

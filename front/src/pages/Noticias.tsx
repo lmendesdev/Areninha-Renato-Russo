@@ -112,7 +112,7 @@ export function Noticias() {
                 <button
                   type="button"
                   onClick={carregarMaisNoticias}
-                  className="inline-flex items-center gap-3 bg-bg-whiteCustom text-brand-darkCustom font-black text-sm uppercase tracking-wider px-8 py-4 rounded-full border-2 border-brand-darkCustom sticker-shadow-lg hover:bg-street-yellowCustom hover-sticker cursor-pointer"
+                  className="inline-flex items-center gap-3 bg-bg-whiteCustom text-brand-darkCustom font-black text-sm px-8 py-4 rounded-full border-2 border-brand-darkCustom sticker-shadow-lg hover:bg-street-yellowCustom hover-sticker cursor-pointer"
                 >
                   <span className="material-symbols-outlined">refresh</span>
                   <span>Carregar mais notícias</span>

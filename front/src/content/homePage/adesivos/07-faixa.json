@@ -1,0 +1,12 @@
+{
+  "ordem": 7,
+  "id": "sticker-tape",
+  "imagem": "/adesivos/faixa.svg",
+  "textoAlternativo": "Adesivo Faixa Cultura Viva",
+  "classeLargura": "w-44 md:w-56",
+  "rotacaoInicial": -7,
+  "posicaoInicial": {
+    "top": "72%",
+    "right": "5%"
+  }
+}

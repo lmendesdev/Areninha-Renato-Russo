@@ -40,7 +40,7 @@ export function CardEspacos({
             {tag}
           </span>
         </div>
-        <h3 className="font-black text-xl md:text-2xl text-brand-darkCustom tracking-tight uppercase">
+        <h3 className="font-black text-xl md:text-2xl text-brand-darkCustom tracking-tight">
           {titulo}
         </h3>
         <p className="text-sm md:text-base text-brand-darkCustom/90 leading-relaxed font-medium">

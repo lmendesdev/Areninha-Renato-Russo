@@ -51,7 +51,7 @@ export function CardProfissionais({
         />
         {setor && (
           <div className="absolute top-4 right-4">
-            <span className="bg-street-yellowCustom text-brand-darkCustom font-black text-xs uppercase px-3 py-1 rounded-full border-2 border-brand-darkCustom shadow-[2px_2px_0px_#0A2435]">
+            <span className="bg-street-yellowCustom text-brand-darkCustom font-black text-xs px-3 py-1 rounded-full border-2 border-brand-darkCustom shadow-[2px_2px_0px_#0A2435]">
               {setor}
             </span>
           </div>
@@ -60,7 +60,7 @@ export function CardProfissionais({
       <div className="p-6 md:p-8 flex-1 flex flex-col justify-between">
         <div>
           <span
-            className={`inline-block text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-md border shadow-[1px_1px_0px_#0A2435] mb-3 ${estiloTag}`}
+            className={`inline-block text-[11px] font-black px-3 py-1 rounded-md border shadow-[1px_1px_0px_#0A2435] mb-3 ${estiloTag}`}
           >
             {tagFuncao}
           </span>

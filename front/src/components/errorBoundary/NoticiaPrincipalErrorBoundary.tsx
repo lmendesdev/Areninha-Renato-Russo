@@ -15,7 +15,7 @@ export function NoticiaPrincipalErrorBoundary() {
     >
       <div className="w-full lg:w-7/12 flex flex-col items-start text-left order-2 lg:order-1">
         <div className="flex items-center gap-3 mb-5 flex-wrap">
-          <span className="inline-flex items-center bg-street-yellowCustom text-brand-darkCustom text-xs font-black uppercase px-3 py-1.5 rounded-full border-2 border-brand-darkCustom shadow-[2px_2px_0px_#0A2435]">
+          <span className="inline-flex items-center bg-street-yellowCustom text-brand-darkCustom text-xs font-black px-3 py-1.5 rounded-full border-2 border-brand-darkCustom shadow-[2px_2px_0px_#0A2435]">
             Erro de exibição
           </span>
         </div>
@@ -27,7 +27,7 @@ export function NoticiaPrincipalErrorBoundary() {
           página para tentar novamente ou confira as demais atualizações logo
           abaixo.
         </p>
-        <div className="flex items-center gap-6 mb-8 text-sm font-bold text-fest-orangeCustom uppercase tracking-wide">
+        <div className="flex items-center gap-6 mb-8 text-sm font-bold text-fest-orangeCustom">
           <span className="flex items-center gap-2">
             <span
               className="material-symbols-outlined text-lg"
@@ -41,7 +41,7 @@ export function NoticiaPrincipalErrorBoundary() {
         <button
           type="button"
           onClick={recarregarPagina}
-          className="inline-flex items-center gap-3 bg-street-yellowCustom hover:bg-fest-orangeCustom text-brand-darkCustom hover:text-white font-black text-base px-8 py-4 rounded-full uppercase tracking-wider justify-center border-2 border-brand-darkCustom sticker-shadow-lg hover-sticker transition-colors cursor-pointer"
+          className="inline-flex items-center gap-3 bg-street-yellowCustom hover:bg-fest-orangeCustom text-brand-darkCustom hover:text-white font-black text-base px-8 py-4 rounded-full justify-center border-2 border-brand-darkCustom sticker-shadow-lg hover-sticker transition-colors cursor-pointer"
         >
           <span
             className="material-symbols-outlined text-xl"
@@ -64,7 +64,7 @@ export function NoticiaPrincipalErrorBoundary() {
                 warning
               </span>
             </div>
-            <span className="text-xs font-black uppercase tracking-wider text-brand-darkCustom/70">
+            <span className="text-xs font-black text-brand-darkCustom/70">
               Falha ao carregar imagem e conteúdo
             </span>
           </div>

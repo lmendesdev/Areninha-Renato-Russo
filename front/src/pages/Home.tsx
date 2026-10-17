@@ -74,12 +74,12 @@ export function Home() {
             <div className="max-w-7xl mx-auto px-4 md:px-10 py-16 md:py-24">
               <div className="max-w-4xl mx-auto text-center">
                 <div className="inline-block mb-6 transform -rotate-2">
-                  <span className="bg-street-yellowCustom text-brand-darkCustom font-black text-xs md:text-sm uppercase tracking-wider px-5 py-2 rounded-full border-2 border-brand-darkCustom sticker-shadow-sm inline-flex items-center gap-2">
+                  <span className="bg-street-yellowCustom text-brand-darkCustom font-black text-xs md:text-sm px-5 py-2 rounded-full border-2 border-brand-darkCustom sticker-shadow-sm inline-flex items-center gap-2">
                     <span className="inline-block w-2.5 h-2.5 rounded-full bg-fest-orangeCustom animate-pulse" />
                     Ilha do Governador • Rio de Janeiro
                   </span>
                 </div>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-brand-darkCustom uppercase tracking-tight leading-[1.05] mb-6">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-brand-darkCustom tracking-tight leading-[1.05] mb-6">
                   Areninha Cultural <br />
                   <span>Renato Russo</span>
                 </h1>
@@ -94,13 +94,13 @@ export function Home() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
                   <Link
                     to="/programacao"
-                    className="w-full sm:w-auto rounded-full bg-street-yellowCustom text-brand-darkCustom font-black text-base uppercase tracking-wider px-8 py-4 border-2 border-brand-darkCustom sticker-shadow-md hover-sticker flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto rounded-full bg-street-yellowCustom text-brand-darkCustom font-black text-base px-8 py-4 border-2 border-brand-darkCustom sticker-shadow-md hover-sticker flex items-center justify-center gap-2"
                   >
                     Ver Programação
                   </Link>
                   <Link
                     to="/oficina"
-                    className="w-full sm:w-auto rounded-full bg-energy-blueCustom text-white font-black text-base uppercase tracking-wider px-8 py-4 border-2 border-brand-darkCustom sticker-shadow-md hover-sticker flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto rounded-full bg-energy-blueCustom text-white font-black text-base px-8 py-4 border-2 border-brand-darkCustom sticker-shadow-md hover-sticker flex items-center justify-center gap-2"
                   >
                     Conhecer Oficinas
                   </Link>
@@ -116,7 +116,7 @@ export function Home() {
                 <div className="text-6xl sm:text-7xl lg:text-8xl font-black text-fest-orangeCustom tracking-tight leading-none mb-4">
                   {configuracaoHome.numeroAtividades}
                 </div>
-                <div className="text-base sm:text-lg font-black text-brand-darkCustom uppercase tracking-widest max-w-xs mx-auto">
+                <div className="text-base sm:text-lg font-black text-brand-darkCustom max-w-xs mx-auto">
                   {configuracaoHome.tituloAtividades}
                 </div>
                 <p className="text-xs sm:text-sm font-medium text-brand-darkCustom/70 mt-4 max-w-sm mx-auto">
@@ -145,6 +145,10 @@ export function Home() {
                         alt="Iluminação de palco da Areninha Cultural"
                         className="w-full h-full object-cover opacity-60 mix-blend-overlay group-hover:scale-105 transition-transform duration-500"
                         src={configuracaoHome.imagemCapaVideo}
+                        width={640}
+                        height={360}
+                        loading="lazy"
+                        decoding="async"
                       />
                       <div className="absolute inset-0 bg-brand-darkCustom/30 flex items-center justify-center">
                         <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-street-yellowCustom border-2 border-brand-darkCustom sticker-shadow-md flex items-center justify-center text-brand-darkCustom group-hover:scale-110 transition-transform duration-200">
@@ -170,7 +174,7 @@ export function Home() {
           <div className="max-w-7xl mx-auto px-4 md:px-10">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6 border-b border-brand-darkCustom/10 pb-6">
               <div className="flex flex-col items-start gap-2">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand-darkCustom uppercase tracking-tight leading-none mt-1">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand-darkCustom tracking-tight leading-none mt-1">
                   Próximos Eventos
                 </h2>
                 <p className="text-sm md:text-base font-medium text-brand-darkCustom/75 mt-1">
@@ -179,7 +183,7 @@ export function Home() {
               </div>
               <Link
                 to="/programacao"
-                className="rounded-full bg-bg-grayCustom text-brand-darkCustom hover:bg-street-yellowCustom font-extrabold text-xs uppercase tracking-wider px-6 py-3 border-2 border-brand-darkCustom sticker-shadow-sm hover-sticker flex items-center gap-2 shrink-0 transition-all"
+                className="rounded-full bg-bg-grayCustom text-brand-darkCustom hover:bg-street-yellowCustom font-extrabold text-xs px-6 py-3 border-2 border-brand-darkCustom sticker-shadow-sm hover-sticker flex items-center gap-2 shrink-0 transition-all"
               >
                 <span>Ver toda agenda</span>
               </Link>

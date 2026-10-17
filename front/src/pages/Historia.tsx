@@ -56,7 +56,7 @@ export function Historia() {
           <div className="absolute -right-16 -top-16 w-80 h-80 bg-energy-blueCustom/20 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -left-16 -bottom-16 w-80 h-80 bg-street-yellowCustom/15 rounded-full blur-3xl pointer-events-none" />
           <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-none mb-6">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-6">
               Nossa História
             </h1>
             <p className="text-lg md:text-xl font-medium text-slate-200 max-w-3xl leading-relaxed">
@@ -76,7 +76,7 @@ export function Historia() {
           <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
             <div className="bg-bg-whiteCustom border-2 border-brand-darkCustom rounded-3xl p-8 md:p-10 sticker-shadow-lg mb-14">
               <div className="flex items-center gap-3 mb-4">
-                <span className="font-black text-xs uppercase tracking-widest text-brand-darkCustom/60">
+                <span className="font-black text-xs text-brand-darkCustom/60">
                   Memorial &amp; Trajetória
                 </span>
               </div>
@@ -113,7 +113,7 @@ export function Historia() {
               <blockquote className="text-2xl md:text-3xl lg:text-4xl font-extrabold leading-snug tracking-tight text-white">
                 &ldquo;{configuracaoHistoria.citacaoProposito}&rdquo;
               </blockquote>
-              <div className="mt-8 pt-6 border-t border-white/20 flex flex-wrap items-center justify-center gap-4 text-xs md:text-sm font-bold uppercase tracking-wider text-slate-300">
+              <div className="mt-8 pt-6 border-t border-white/20 flex flex-wrap items-center justify-center gap-4 text-xs md:text-sm font-bold text-slate-300">
                 {configuracaoHistoria.tagsCitacao.map((tagCitacao) => (
                   <span key={tagCitacao}>• {tagCitacao}</span>
                 ))}
@@ -124,7 +124,7 @@ export function Historia() {
         <section className="py-16 md:py-24 bg-bg-grayCustom relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
             <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-brand-darkCustom">
+              <h2 className="text-3xl md:text-5xl font-black tracking-tight text-brand-darkCustom">
                 Nossa Equipe
               </h2>
               <p className="mt-3 text-base md:text-lg font-medium text-brand-darkCustom/70 max-w-2xl mx-auto">
