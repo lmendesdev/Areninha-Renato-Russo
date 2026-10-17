@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { IngressoButton } from "../ingressoButton/IngressoButton";
 import AreninhaLogo from "../../assets/Areninha/AreninhaIcon.webp";
@@ -6,6 +6,7 @@ import configuracaoGeral from "../../content/configuracoes/geral.json";
 
 const ESTILO_OVERFLOW_TRAVADO = "hidden";
 const LARGURA_BREAKPOINT_DESKTOP_PX = 1024;
+const ALTURA_PADRAO_HEADER_PX = 100;
 
 interface ItemLinkNavegacao {
   readonly rotulo: string;
@@ -27,10 +28,24 @@ const linksDeNavegacao: readonly ItemLinkNavegacao[] = [
 
 export function Header({ paginaAtiva }: PropriedadesHeader = {}) {
   const [menuMobileAberto, setMenuMobileAberto] = useState(false);
+  const [topoMenuMobilePx, setTopoMenuMobilePx] = useState(
+    ALTURA_PADRAO_HEADER_PX,
+  );
 
+  const referenciaHeader = useRef<HTMLElement | null>(null);
   const localizacao = useLocation();
 
+  function atualizarPosicaoTopoMenu() {
+    if (!referenciaHeader.current) {
+      return;
+    }
+
+    const retanguloHeader = referenciaHeader.current.getBoundingClientRect();
+    setTopoMenuMobilePx(Math.round(retanguloHeader.bottom));
+  }
+
   function alternarMenuMobile() {
+    atualizarPosicaoTopoMenu();
     setMenuMobileAberto((estadoAnterior) => !estadoAnterior);
   }
 
@@ -43,22 +58,27 @@ export function Header({ paginaAtiva }: PropriedadesHeader = {}) {
       return;
     }
 
+    atualizarPosicaoTopoMenu();
+
     const valorOriginalOverflow = document.body.style.overflow;
     document.body.style.overflow = ESTILO_OVERFLOW_TRAVADO;
 
-    function fecharAoRedimensionarParaDesktop() {
+    function aoRedimensionarJanela() {
       const estaNoTamanhoDesktop =
         window.innerWidth >= LARGURA_BREAKPOINT_DESKTOP_PX;
       if (estaNoTamanhoDesktop) {
         setMenuMobileAberto(false);
+        return;
       }
+
+      atualizarPosicaoTopoMenu();
     }
 
-    window.addEventListener("resize", fecharAoRedimensionarParaDesktop);
+    window.addEventListener("resize", aoRedimensionarJanela);
 
     return () => {
       document.body.style.overflow = valorOriginalOverflow;
-      window.removeEventListener("resize", fecharAoRedimensionarParaDesktop);
+      window.removeEventListener("resize", aoRedimensionarJanela);
     };
   }, [menuMobileAberto]);
 
@@ -79,6 +99,7 @@ export function Header({ paginaAtiva }: PropriedadesHeader = {}) {
 
   return (
     <header
+      ref={referenciaHeader}
       className="bg-brand-darkCustom text-white sticky top-0 z-50 w-full border-b-4 
     border-street-yellowCustom"
     >
@@ -129,8 +150,11 @@ export function Header({ paginaAtiva }: PropriedadesHeader = {}) {
         </div>
       </div>
       {menuMobileAberto && (
-        <nav className="fixed left-0 right-0 top-24 bottom-0 lg:hidden border-t border-white/10 bg-brand-darkCustom backdrops-blur-md flex flex-col justify-between w-60">
-          <div className="flex-1 overflow-y-auto overscroll-contain px-4 pt-4 pb-6 space-y-3">
+        <nav
+          style={{ top: `${topoMenuMobilePx}px` }}
+          className="fixed left-0 bottom-0 lg:hidden border-t border-white/10 bg-brand-darkCustom backdrop-blur-md flex flex-col justify-between w-60"
+        >
+          <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain px-4 pt-4 pb-6 space-y-3">
             {linksDeNavegacao.map((linkNavegacao) => (
               <div
                 key={linkNavegacao.rotulo}
